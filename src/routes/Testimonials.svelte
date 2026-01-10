@@ -40,22 +40,26 @@
 		<div class="mx-auto max-w-xl text-center">
 			<h2
 				id="testimonials-title"
-				class="text-3xl font-bold tracking-tight text-center sm:text-4xl bg-gradient-to-r text-indigo-300 glow space-grotesk"
+				class="glow space-grotesk bg-gradient-to-r text-center text-3xl font-bold tracking-tight text-indigo-300 sm:text-4xl"
 			>
 				Testimonials
 			</h2>
 		</div>
-		<div class="relative isolate mx-auto mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 max-w-6xl">
-			<div id="animation-trigger" class="h-1 w-full absolute top-[30rem]"></div>
+		<div class="relative isolate mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2">
+			<div id="animation-trigger" class="absolute top-[30rem] h-1 w-full"></div>
 			{#each testimonials as { text, author, company, image }, i}
 				<figure
-					class="group rounded-2xl bg-gradient-to-tl from-slate-800 to-slate-600 p-6 shadow-lg ring-1 ring-gray-900/5 flex flex-col h-full flex-grow hover:outline-dotted hover:outline-4 outline-indigo-400 outline-offset-4"
+					class="group flex h-full flex-grow flex-col rounded-2xl bg-gradient-to-tl from-neutral-800 to-neutral-600 p-6 shadow-lg outline-offset-4 outline-indigo-400 ring-1 ring-gray-900/5 hover:outline-dotted hover:outline-4"
 				>
-					<blockquote class="text-gray-400 font-semibold text-base flex-grow">
+					<blockquote class="flex-grow text-base font-semibold text-gray-400">
 						<p>"{text}"</p>
 					</blockquote>
 					<figcaption class="mt-6 flex items-center gap-x-4">
-						<img class="h-10 w-10 rounded-full bg-gray-50 group-hover:motion-preset-shake" src={image} alt="" />
+						<img
+							class="group-hover:motion-preset-shake h-10 w-10 rounded-full bg-gray-50"
+							src={image}
+							alt=""
+						/>
 						<div>
 							<div class="font-semibold text-gray-300">{author}</div>
 							<div class="text-gray-300">{company}</div>
