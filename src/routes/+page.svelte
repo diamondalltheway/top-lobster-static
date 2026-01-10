@@ -22,7 +22,7 @@
 </script>
 
 {#if ready}
-	<div class="bg-neutral-900">
+	<div class="bg-neutral-800">
 		<Header />
 		<Hero />
 		<Testimonials />

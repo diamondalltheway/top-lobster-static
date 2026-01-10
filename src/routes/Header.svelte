@@ -29,12 +29,12 @@
 		</div>
 
 		<ul
-			class="flex rounded-full bg-white/90 px-2 text-sm font-bold text-indigo-500 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
+			class="flex rounded-full bg-neutral-700 px-2 text-sm font-bold text-indigo-300 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
 		>
-			<li class="relative flex items-center px-1 py-1 transition hover:text-indigo-700">
+			<li class="relative flex items-center px-1 py-1 transition hover:text-indigo-300">
 				Native: <span class="mx-1 text-xl">🇺🇸</span>
 			</li>
-			<li class="relative flex items-center px-1 py-1 transition hover:text-indigo-700">
+			<li class="relative flex items-center px-1 py-1 transition hover:text-indigo-300">
 				C1: <span class="mx-1 text-xl">🇪🇸</span>
 			</li>
 		</ul>
@@ -42,12 +42,12 @@
 
 	<nav class="pointer-events-auto hidden md:block">
 		<ul
-			class="flex rounded-full bg-white/90 px-3 text-sm font-bold text-indigo-500 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
+			class="flex rounded-full bg-neutral-700 px-3 text-sm font-bold text-indigo-300 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
 		>
 			{#each navItems as { href, text }}
 				<li>
 					<a
-						class="hover:motion-preset-expand hover:motion-preset-confetti relative block px-3 py-2 transition hover:text-indigo-700"
+						class="hover:motion-preset-expand hover:motion-preset-confetti relative block px-3 py-2 transition hover:text-indigo-300"
 						{href}
 					>
 						{text}
