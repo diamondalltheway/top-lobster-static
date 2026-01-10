@@ -1,16 +1,16 @@
 <script lang="ts">
 	interface Props {
-		icon1?: string;
-		col_1?: string;
-		icon2?: string;
-		col_2?: string;
+		itemIcon?: string;
+		name?: string;
+		subtitleIcon?: string;
+		subtitle?: string;
 	}
 
 	let {
-		icon1 = '',
-		col_1 = '',
-		icon2 = '',
-		col_2 = ''
+		itemIcon = '',
+		name = '',
+		subtitleIcon = '',
+		subtitle = ''
 	}: Props = $props();
 </script>
 
@@ -19,17 +19,17 @@
 		<p class="flex items-center font-bold text-indigo-300">
 			<span
 				class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-slate-600 bg-slate-800 p-1"
-				>{icon1}</span
+				>{itemIcon}</span
 			>
-			<span class="flex-1 px-2">{col_1}</span>
+			<span class="flex-1 px-2">{name}</span>
 		</p>
-		{#if icon2}
+		{#if subtitleIcon}
 			<p class="hidden items-center text-slate-100 md:flex">
 				<span
 					class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-slate-600 bg-slate-800 p-1"
-					>{icon2}</span
+					>{subtitleIcon}</span
 				>
-				<span class="flex-1 px-2 italic">{col_2}</span>
+				<span class="flex-1 px-2 italic">{subtitle}</span>
 			</p>
 		{/if}
 	</div>
