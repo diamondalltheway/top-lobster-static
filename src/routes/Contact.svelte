@@ -16,14 +16,14 @@
 				>
 					Contact
 				</h2>
-				<p class="mt-4 text-xl leading-7 text-gray-500" />
+				<p class="mt-4 text-xl leading-7 text-gray-500"></p>
 			</div>
 		</div>
 	</div>
 
 	<div class="mt-8 pb-16 sm:mt-12 sm:pb-20 lg:pb-28">
 		<div class="relative">
-			<div class="absolute h-1/2 bg-indigo-200" />
+			<div class="absolute h-1/2 bg-indigo-200"></div>
 			<div class="relative mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
 				<div class="glow-box mx-auto max-w-lg rounded-lg">
 					<div
@@ -35,7 +35,7 @@
 							Feel free to reach out!
 						</h3>
 						<p class="mt-6 text-center text-base font-bold leading-6 text-gray-600">
-							hunter@toplobster.io <span class=" mx-2 font-semibold" />
+							hunter@toplobster.io <span class=" mx-2 font-semibold"></span>
 						</p>
 						<div class="mt-8">
 							<div class="flex items-center">
@@ -44,7 +44,7 @@
 								>
 									Available for:
 								</h4>
-								<div class="flex-1 border-t-2 border-slate-800" />
+								<div class="flex-1 border-t-2 border-slate-800"></div>
 							</div>
 							<ul class="col-gap-8 row-gap-5 mt-8 grid grid-cols-2 lg:gap-y-6">
 								{#each positions as position}

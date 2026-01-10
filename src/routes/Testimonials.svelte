@@ -46,7 +46,7 @@
 			</h2>
 		</div>
 		<div class="relative isolate mx-auto mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 max-w-6xl">
-			<div id="animation-trigger" class="h-1 w-full absolute top-[30rem]" />
+			<div id="animation-trigger" class="h-1 w-full absolute top-[30rem]"></div>
 			{#each testimonials as { text, author, company, image }, i}
 				<figure
 					class="group rounded-2xl bg-gradient-to-tl from-slate-800 to-slate-600 p-6 shadow-lg ring-1 ring-gray-900/5 flex flex-col h-full flex-grow hover:outline-dotted hover:outline-4 outline-indigo-400 outline-offset-4"

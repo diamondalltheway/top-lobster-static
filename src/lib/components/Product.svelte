@@ -1,12 +1,23 @@
 <script lang="ts">
 	import Icon from './Icon.svelte';
 
-	export let title: string = '';
-	export let description: string = '';
-	export let linkURL: string = '';
-	export let imgURL: string = '';
-	export let icons: any[] = [];
-	export let legacy: boolean = false;
+	interface Props {
+		title?: string;
+		description?: string;
+		linkURL?: string;
+		imgURL?: string;
+		icons?: any[];
+		legacy?: boolean;
+	}
+
+	let {
+		title = '',
+		description = '',
+		linkURL = '',
+		imgURL = '',
+		icons = [],
+		legacy = false
+	}: Props = $props();
 </script>
 
 <article class="flex flex-col items-start gap-3">
@@ -16,13 +27,13 @@
 			alt=""
 			class="glow-box aspect-[16/9] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
 		/>
-		<div class="absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+		<div class="absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"></div>
 	</div>
 	<div class="max-w-xl">
 		<div class="mb-2 mt-8 flex items-center gap-x-4 text-xs">
 			<span
 				class="my-1 bg-gradient-to-r from-slate-600 via-slate-400 to-slate-400 bg-clip-text text-lg text-transparent"
-			/>
+			></span>
 		</div>
 		<div class="group relative">
 			<h3

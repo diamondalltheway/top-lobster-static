@@ -7,7 +7,7 @@
 	} from '$lib/components/ui/accordion';
 	import Button from '$lib/components/Button.svelte';
 
-	let isHovered: boolean = false;
+	let isHovered: boolean = $state(false);
 
 	const goals = [
 		{ icon: '✅', text: 'Harry Potter y La Piedra Filosofal (77,325 words)' },
@@ -22,10 +22,10 @@
 
 <div
 	role="main"
-	on:mouseover={() => (isHovered = true)}
-	on:mouseout={() => (isHovered = false)}
-	on:focus={() => (isHovered = true)}
-	on:blur={() => (isHovered = false)}
+	onmouseover={() => (isHovered = true)}
+	onmouseout={() => (isHovered = false)}
+	onfocus={() => (isHovered = true)}
+	onblur={() => (isHovered = false)}
 	class="glow-box mx-2 my-16 rounded-md bg-gradient-to-b from-neutral-100 to-neutral-300 object-cover p-6 py-32 text-left outline-offset-4 outline-indigo-400 hover:outline-dotted hover:outline-4 lg:px-8"
 >
 	<div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">

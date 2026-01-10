@@ -8,8 +8,8 @@
 	import AnimatedGradientText from '$lib/components/AnimatedGradientText.svelte';
 	import { cn } from '$lib/utils';
 	let image = '/hunter-coco.jpg';
-	let primaryTitleIsReady = false;
-	let secondaryTitleIsReady = false;
+	let primaryTitleIsReady = $state(false);
+	let secondaryTitleIsReady = $state(false);
 
 	onMount(() => {
 		setTimeout(() => {

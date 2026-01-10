@@ -1,8 +1,17 @@
 <script lang="ts">
-	export let icon1: string = '';
-	export let col_1: string = '';
-	export let icon2: string = '';
-	export let col_2: string = '';
+	interface Props {
+		icon1?: string;
+		col_1?: string;
+		icon2?: string;
+		col_2?: string;
+	}
+
+	let {
+		icon1 = '',
+		col_1 = '',
+		icon2 = '',
+		col_2 = ''
+	}: Props = $props();
 </script>
 
 <li class="border-b border-slate-800 py-2">

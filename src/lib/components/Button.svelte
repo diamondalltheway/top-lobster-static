@@ -1,16 +1,27 @@
 <script lang="ts">
-	export let text: string = '';
-	export let href: string = '';
-	export let targetBlank: boolean = false;
-	export let bgColor: string = '';
-	export let bgDepthColor: string = '';
-	export let disableLink: boolean = false;
+	interface Props {
+		text?: string;
+		href?: string;
+		targetBlank?: boolean;
+		bgColor?: string;
+		bgDepthColor?: string;
+		disableLink?: boolean;
+	}
+
+	let {
+		text = '',
+		href = '',
+		targetBlank = false,
+		bgColor = '',
+		bgDepthColor = '',
+		disableLink = false
+	}: Props = $props();
 </script>
 
 <a
 	{href}
 	target={targetBlank ? '_blank' : ''}
-	on:click={(e) => {
+	onclick={(e) => {
 		if (disableLink) {
 			e.preventDefault();
 		}

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	let isHoveredLS: boolean = false;
+	let isHoveredLS: boolean = $state(false);
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_mouse_events_have_key_events -->
 <div class="mx-auto max-w-7xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-24">
 	<img src="logo-ls.png" class="mx-auto w-3/4 md:w-1/3 my-4" alt="" />
 	<div class="mx-auto max-w-4xl text-center">
@@ -29,8 +29,8 @@
 
 	<!-- Reflection on LS -->
 	<div
-		on:mouseover={() => (isHoveredLS = true)}
-		on:mouseout={() => (isHoveredLS = false)}
+		onmouseover={() => (isHoveredLS = true)}
+		onmouseout={() => (isHoveredLS = false)}
 		class="bg-white mt-8 lg:mx-48 px-6 py-8 rounded-md bg-gradient-to-b from-neutral-100 to-neutral-300 hover:outline-dotted hover:outline-4 outline-red-400 outline-offset-4 glow-box-red"
 	>
 		<h2 class="mt-4 text-2xl font-bold tracking-tight text-gray-900 space-grotesk">

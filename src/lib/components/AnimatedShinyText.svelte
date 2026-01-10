@@ -1,9 +1,14 @@
 <script lang="ts">
   import { cn } from "$lib/utils";
 
-  export let shimmerWidth = 100;
-  let className: any = "";
-  export { className as class };
+  interface Props {
+    shimmerWidth?: number;
+    class?: any;
+    children?: import('svelte').Snippet;
+  }
+
+  let { shimmerWidth = 100, class: className = "", children }: Props = $props();
+  
 </script>
 
 <p
@@ -20,5 +25,5 @@
     className
   )}
 >
-  <slot>Shimmer Animation</slot>
+  {#if children}{@render children()}{:else}Shimmer Animation{/if}
 </p>

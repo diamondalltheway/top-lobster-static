@@ -90,7 +90,7 @@
 				alt=""
 				class="glow-box aspect-[16/9] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
 			/>
-			<div class="absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+			<div class="absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"></div>
 		</div>
 	</div>
 </div>

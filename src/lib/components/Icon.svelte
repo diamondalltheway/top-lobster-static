@@ -2,12 +2,16 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { createPopper } from '@popperjs/core';
 
-	export let name: string = '';
-	export let linkURL: string = '';
-	export let imgURL: string = '';
+	interface Props {
+		name?: string;
+		linkURL?: string;
+		imgURL?: string;
+	}
 
-	let tooltip: HTMLElement;
-	let referenceElement: HTMLElement;
+	let { name = '', linkURL = '', imgURL = '' }: Props = $props();
+
+	let tooltip: HTMLElement = $state();
+	let referenceElement: HTMLElement = $state();
 	let popperInstance: any = null;
 	let tooltipTimeout: ReturnType<typeof setTimeout>;
 

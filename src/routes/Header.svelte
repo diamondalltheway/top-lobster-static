@@ -2,7 +2,7 @@
 	import { blur } from 'svelte/transition';
 	import Button from '$lib/components/Button.svelte';
 
-	let mobileOpen = false;
+	let mobileOpen = $state(false);
 
 	const navItems = [
 		{ href: '#tech', text: 'Technologies' },
@@ -21,10 +21,10 @@
 		<div class="flex w-full items-center justify-between md:w-auto">
 			<div class="-mr-2 flex items-center md:hidden">
 				<button
-					on:click={() => (mobileOpen = !mobileOpen)}
+					onclick={() => (mobileOpen = !mobileOpen)}
 					type="button"
 					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-200 hover:text-gray-500 focus:bg-gray-200 focus:text-gray-500 focus:outline-none"
-				/>
+				></button>
 			</div>
 		</div>
 

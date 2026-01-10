@@ -12,7 +12,7 @@
 	import Testimonials from './Testimonials.svelte';
 	import OpenSource from './OpenSource.svelte';
 
-	let ready = false;
+	let ready = $state(false);
 
 	onMount(() => {
 		ready = true;
