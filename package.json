@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
+		"dev:cursor": "LAUNCH_EDITOR=\"/Applications/Cursor.app/Contents/Resources/app/bin/cursor\" npm run dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"test": "playwright test",
