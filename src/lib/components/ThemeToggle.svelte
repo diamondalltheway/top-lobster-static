@@ -19,10 +19,10 @@
 	aria-label={$isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
 >
 	{#if mounted}
-		<!-- Sun icon (shown in dark mode - click to go light) -->
+		<!-- Sun icon (shown in light mode - indicates current state) -->
 		<svg
 			class="absolute h-5 w-5 text-amber-400 transition-all duration-300
-				   {$isDarkMode ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-75 opacity-0'}"
+				   {!$isDarkMode ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-75 opacity-0'}"
 			fill="none"
 			stroke="currentColor"
 			viewBox="0 0 24 24"
@@ -35,10 +35,10 @@
 			/>
 		</svg>
 
-		<!-- Moon icon (shown in light mode - click to go dark) -->
+		<!-- Moon icon (shown in dark mode - indicates current state) -->
 		<svg
 			class="text-heading absolute h-5 w-5 transition-all duration-300
-				   {!$isDarkMode ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-75 opacity-0'}"
+				   {$isDarkMode ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-75 opacity-0'}"
 			fill="none"
 			stroke="currentColor"
 			viewBox="0 0 24 24"
