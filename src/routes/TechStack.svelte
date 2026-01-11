@@ -229,26 +229,54 @@
 
 	onMount(() => {
 		inView('#tech-icons-end', () => {
-			animate('li', { opacity: 1, y: [30, 0] }, { delay: stagger(0.02) });
+			animate('.tech-icon', { opacity: 1, y: [30, 0] }, { delay: stagger(0.02) });
 		});
 	});
 </script>
 
-<div class="mt-44 pb-1 pt-4" id="tech">
-	<div class="">
-		<h2
-			class="glow space-grotesk bg-gradient-to-r text-center text-3xl font-bold tracking-tight text-indigo-300 sm:text-4xl"
-		>
-			Technologies Used
-		</h2>
-		<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-			<ul id="tech-icons" class="grid grid-cols-4 gap-8 md:grid-cols-6 lg:grid-cols-8">
-				{#each technologies as tech}
-					<li class="tech-icon">
-						<Icon name={tech.name} linkURL={tech.linkURL} imgURL={tech.imgURL} />
-					</li>
-				{/each}
-			</ul>
+<div class="relative mt-44 pb-8 pt-4" id="tech">
+	<!-- Background effects -->
+	<div class="absolute inset-0 overflow-hidden pointer-events-none">
+		<div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[100px]"></div>
+		<div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px]"></div>
+	</div>
+
+	<div class="relative">
+		<!-- Section Header -->
+		<div class="text-center mb-12">
+			<h2
+				class="glow space-grotesk text-3xl font-bold tracking-tight text-indigo-300 sm:text-4xl lg:text-5xl"
+			>
+				Technologies Used
+			</h2>
+			<p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+				{technologies.length}+ technologies powering modern web experiences
+			</p>
+		</div>
+
+		<!-- Main Container -->
+		<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+			<div class="relative group">
+				<!-- Animated border glow -->
+				<div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-500/30 via-purple-500/30 to-indigo-500/30 rounded-3xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+
+				<!-- Container -->
+				<div class="relative rounded-3xl bg-neutral-900/80 backdrop-blur-md border border-indigo-500/20 p-8 lg:p-12">
+					<!-- Decorative grid pattern overlay -->
+					<div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+						<div class="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+					</div>
+
+					<!-- Tech Icons Grid -->
+					<ul id="tech-icons" class="relative grid grid-cols-4 gap-6 sm:gap-8 md:grid-cols-6 lg:grid-cols-8">
+						{#each technologies as tech}
+							<li class="tech-icon opacity-0">
+								<Icon name={tech.name} linkURL={tech.linkURL} imgURL={tech.imgURL} />
+							</li>
+						{/each}
+					</ul>
+				</div>
+			</div>
 		</div>
 		<div id="tech-icons-end"></div>
 	</div>
