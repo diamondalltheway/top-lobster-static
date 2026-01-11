@@ -20,18 +20,71 @@
 		},
 	];
 
+	// Floating shapes data - subtle dots and small shapes
+	const floatingShapes = [
+		{ type: 'dot', size: 4, x: '8%', y: '25%', delay: 0 },
+		{ type: 'dot', size: 3, x: '92%', y: '20%', delay: 0.5 },
+		{ type: 'dot', size: 5, x: '5%', y: '65%', delay: 1 },
+		{ type: 'dot', size: 3, x: '88%', y: '70%', delay: 1.5 },
+		{ type: 'ring', size: 40, x: '12%', y: '45%', delay: 0.3 },
+		{ type: 'ring', size: 30, x: '85%', y: '45%', delay: 0.8 },
+	];
+
 	onMount(() => {
 		inView('#contact-card', () => {
 			animate('#contact-card', { opacity: 1, y: [40, 0], scale: [0.95, 1] }, { duration: 0.6 });
 		});
+
+		// Animate floating shapes - very subtle movement
+		floatingShapes.forEach((_, i) => {
+			const el = document.querySelector(`#floating-shape-${i}`);
+			if (el) {
+				animate(
+					el,
+					{
+						y: [0, -8, 0],
+						opacity: [0.15, 0.3, 0.15]
+					},
+					{
+						duration: 6 + i * 0.8,
+						repeat: Infinity,
+						delay: floatingShapes[i].delay
+					}
+				);
+			}
+		});
 	});
 </script>
 
-<div id="contact" class="relative py-20 lg:py-28">
+<div id="contact" class="relative py-20 lg:py-28 overflow-hidden">
 	<!-- Background effects -->
 	<div class="absolute inset-0 overflow-hidden pointer-events-none">
-		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px]"></div>
+		<!-- Main glow -->
+		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/8 rounded-full blur-[120px]"></div>
+		<!-- Secondary glow -->
+		<div class="absolute top-1/3 left-1/3 w-[300px] h-[300px] bg-purple-500/5 rounded-full blur-[80px]"></div>
 	</div>
+
+	<!-- Floating Shapes - subtle dots and rings -->
+	{#each floatingShapes as shape, i}
+		<div
+			id="floating-shape-{i}"
+			class="absolute pointer-events-none opacity-0"
+			style="left: {shape.x}; top: {shape.y};"
+		>
+			{#if shape.type === 'dot'}
+				<div
+					class="rounded-full bg-indigo-400/40"
+					style="width: {shape.size}px; height: {shape.size}px;"
+				></div>
+			{:else if shape.type === 'ring'}
+				<div
+					class="rounded-full border border-indigo-400/20"
+					style="width: {shape.size}px; height: {shape.size}px;"
+				></div>
+			{/if}
+		</div>
+	{/each}
 
 	<div class="relative mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
 		<!-- Section Header -->
@@ -46,61 +99,74 @@
 		<!-- Contact Card -->
 		<div id="contact-card" class="opacity-0 mx-auto max-w-2xl">
 			<div class="relative group">
-				<!-- Glow effect -->
-				<div class="absolute -inset-1 bg-gradient-to-r from-indigo-500/30 via-purple-500/30 to-indigo-500/30 rounded-3xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
+				<!-- Animated gradient border -->
+				<div class="absolute -inset-[2px] bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-3xl opacity-50 group-hover:opacity-80 blur-sm transition-all duration-500 animate-gradient-xy"></div>
+				<div class="absolute -inset-[1px] bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-3xl opacity-70 animate-gradient-xy"></div>
 
-				<!-- Card -->
-				<div class="relative rounded-3xl bg-gradient-to-b from-neutral-100 to-neutral-200 p-8 lg:p-12 border-2 border-transparent hover:border-indigo-400/50 transition-all duration-300 shadow-2xl">
+				<!-- Glass Card -->
+				<div class="relative rounded-3xl bg-neutral-900/90 backdrop-blur-xl p-8 lg:p-12 border border-white/5 shadow-2xl">
+					<!-- Inner glow effects -->
+					<div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+						<div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent"></div>
+						<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-24 bg-indigo-500/5 blur-3xl"></div>
+					</div>
+
 					<!-- Content -->
 					<div class="relative text-center">
 						<!-- Heading -->
-						<h3 class="text-2xl lg:text-3xl font-extrabold text-gray-900 space-grotesk">
+						<h3 class="text-2xl lg:text-3xl font-extrabold text-white space-grotesk">
 							Feel free to reach out!
 						</h3>
+						<p class="mt-2 text-gray-400">I'd love to hear from you</p>
 
 						<!-- Email -->
 						<a
 							href="mailto:hunter@toplobster.io"
-							class="mt-6 inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-indigo-50 border border-indigo-200 hover:border-indigo-400 hover:bg-indigo-100 transition-all duration-300 group/email"
+							class="mt-8 inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white/5 border border-indigo-500/20 hover:border-indigo-400/50 hover:bg-white/10 transition-all duration-300 group/email hover:scale-[1.02]"
 						>
-							<svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+							<div class="p-2 rounded-lg bg-indigo-500/15 group-hover/email:bg-indigo-500/25 transition-colors">
+								<svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+								</svg>
+							</div>
+							<span class="text-lg font-semibold text-gray-200 group-hover/email:text-white transition-colors">hunter@toplobster.io</span>
+							<svg class="w-4 h-4 text-gray-500 group-hover/email:text-indigo-400 group-hover/email:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 							</svg>
-							<span class="text-lg font-bold text-gray-700 group-hover/email:text-indigo-600 transition-colors">hunter@toplobster.io</span>
 						</a>
 
 						<!-- Divider with Available for -->
 						<div class="mt-10 flex items-center gap-4">
-							<div class="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-							<h4 class="text-sm font-semibold uppercase tracking-wider text-indigo-600">
+							<div class="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+							<h4 class="text-xs font-semibold uppercase tracking-widest text-gray-500">
 								Available for
 							</h4>
-							<div class="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+							<div class="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 						</div>
 
 						<!-- Positions -->
-						<div class="mt-6 flex flex-wrap justify-center gap-4">
+						<div class="mt-6 flex flex-wrap justify-center gap-3">
 							{#each positions as position}
-								<div class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-gray-200 shadow-sm">
+								<div class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-default">
 									<span class="text-xl">{position.icon}</span>
-									<span class="text-sm font-medium text-gray-700">{position.name}</span>
+									<span class="text-sm font-medium text-gray-300">{position.name}</span>
 								</div>
 							{/each}
 						</div>
 
 						<!-- Social Links -->
-						<div class="mt-10 pt-8 border-t border-gray-200">
-							<p class="text-sm text-gray-500 mb-4">Connect with me</p>
+						<div class="mt-12 pt-8 border-t border-white/5">
+							<p class="text-sm text-gray-500 mb-6">Connect with me</p>
 							<div class="flex justify-center gap-4">
 								{#each socialLinks as social}
 									<a
 										href={social.url}
 										target="_blank"
 										rel="noopener noreferrer"
-										class="group/social p-3 rounded-xl bg-gray-100 hover:bg-indigo-100 border border-gray-200 hover:border-indigo-300 transition-all duration-300"
+										class="group/social relative p-4 rounded-xl bg-white/5 border border-white/10 hover:border-indigo-400/40 transition-all duration-300 hover:scale-105"
 										aria-label={social.name}
 									>
-										<svg class="w-6 h-6 text-gray-600 group-hover/social:text-indigo-600 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+										<svg class="relative w-6 h-6 text-gray-400 group-hover/social:text-indigo-300 transition-colors" fill="currentColor" viewBox="0 0 24 24">
 											<path d={social.icon} />
 										</svg>
 									</a>
@@ -113,3 +179,25 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	@keyframes gradient-xy {
+		0%, 100% {
+			background-position: 0% 0%;
+		}
+		25% {
+			background-position: 100% 0%;
+		}
+		50% {
+			background-position: 100% 100%;
+		}
+		75% {
+			background-position: 0% 100%;
+		}
+	}
+
+	.animate-gradient-xy {
+		background-size: 400% 400%;
+		animation: gradient-xy 10s ease infinite;
+	}
+</style>
