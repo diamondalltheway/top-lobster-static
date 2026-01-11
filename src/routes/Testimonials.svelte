@@ -7,6 +7,7 @@
 		author: 'David Montes',
 		company: 'AfterLib',
 		image: 'david-montes.jpg',
+		badge: 'Contract',
 	};
 
 	const testimonials = [
@@ -15,18 +16,21 @@
 			author: 'Sacha Dumay',
 			company: 'Chatnode.ai',
 			image: 'sacha.jpg',
+			badge: 'Full-time',
 		},
 		{
 			text: 'We had a pleasure working together and successfully completed the project. Hunter is skilled professional who adhered to our requirements and delivered great results.',
 			author: 'Michael Makedonsky',
 			company: 'Agatha Global Tech',
 			image: '/michael.png',
+			badge: 'Contract',
 		},
 		{
 			text: "Hunter was an absolute pleasure working with. He has very strong work ethics, very responsive and communicative. He's done a great job and fit in really well with the team.",
 			author: 'Josh Yang',
 			company: 'MLytica',
 			image: 'josh.jpg',
+			badge: 'Contract',
 		},
 	];
 
@@ -43,19 +47,6 @@
 </script>
 
 <div class="relative isolate overflow-hidden py-20 lg:py-28">
-	<!-- Background effects -->
-	<div class="pointer-events-none absolute inset-0">
-		<div
-			class="absolute left-1/2 top-0 h-[600px] w-[1000px] -translate-x-1/2 rounded-full bg-gradient-to-b from-indigo-500/10 via-purple-500/5 to-transparent blur-[100px]"
-		></div>
-		<div
-			class="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-indigo-500/5 blur-[80px]"
-		></div>
-		<div
-			class="absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full bg-purple-500/5 blur-[80px]"
-		></div>
-	</div>
-
 	<div class="relative mx-auto max-w-7xl px-6 lg:px-8">
 		<!-- Section Header -->
 		<div class="mx-auto mb-16 max-w-xl text-center">
@@ -135,8 +126,15 @@
 								/>
 							</div>
 							<div>
-								<div class="space-grotesk text-xl font-bold text-white">
-									{featuredTestimonial.author}
+								<div class="flex items-center gap-3">
+									<span class="space-grotesk text-xl font-bold text-white">
+										{featuredTestimonial.author}
+									</span>
+									<span
+										class="rounded-full bg-indigo-500/20 px-3 py-1 text-xs font-semibold text-indigo-300 ring-1 ring-indigo-500/30"
+									>
+										{featuredTestimonial.badge}
+									</span>
 								</div>
 								<div class="text-indigo-400">{featuredTestimonial.company}</div>
 							</div>
@@ -157,7 +155,7 @@
 
 		<!-- Other Testimonials -->
 		<div class="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">
-			{#each testimonials as { text, author, company, image }, i}
+			{#each testimonials as { text, author, company, image, badge }, i}
 				<figure class="testimonial-card group relative h-full opacity-0">
 					<!-- Glow on hover -->
 					<div
@@ -168,15 +166,25 @@
 					<div
 						class="relative flex h-full flex-col rounded-2xl border border-neutral-800 bg-neutral-900/95 p-6 backdrop-blur-sm transition-all duration-300 hover:border-indigo-500/50"
 					>
-						<!-- Stars -->
-						<div class="mb-4 flex gap-0.5">
-							{#each Array(5) as _}
-								<svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-									<path
-										d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-									/>
-								</svg>
-							{/each}
+						<!-- Stars and Badge -->
+						<div class="mb-4 flex items-center justify-between">
+							<div class="flex gap-0.5">
+								{#each Array(5) as _}
+									<svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+										/>
+									</svg>
+								{/each}
+							</div>
+							<span
+								class="rounded-full px-2.5 py-0.5 text-[10px] font-semibold ring-1 {badge ===
+								'Full-time'
+									? 'bg-emerald-500/20 text-emerald-300 ring-emerald-500/30'
+									: 'bg-indigo-500/20 text-indigo-300 ring-indigo-500/30'}"
+							>
+								{badge}
+							</span>
 						</div>
 
 						<!-- Quote -->
