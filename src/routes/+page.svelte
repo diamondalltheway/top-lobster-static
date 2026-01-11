@@ -31,8 +31,8 @@
 		<OpenSource />
 		<Products />
 		<LaunchSchool />
-		<Contact />
 		<Favorites />
+		<Contact />
 		<Footer />
 	</div>
 {/if}
