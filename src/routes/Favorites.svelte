@@ -19,7 +19,7 @@
 		>
 			Favorites
 		</h2>
-		<p class="mt-2 text-gray-400">Things I love, all in one place</p>
+		<p class="mt-2 text-txt-muted">Things I love, all in one place</p>
 	</div>
 
 	<!-- Bento Grid -->
@@ -31,28 +31,28 @@
 
 		<!-- GOAT tile -->
 		<button
-			class="goat-tile group relative overflow-hidden rounded-2xl border-2 border-amber-400/40 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 p-6"
+			class="goat-tile group relative overflow-hidden rounded-2xl border-2 border-favorites-amber/40 bg-gradient-to-br from-surface-muted via-surface to-surface-muted p-6"
 			style="grid-area: goat;"
 			onmouseenter={() => (goatExpanded = true)}
 			onmouseleave={() => (goatExpanded = false)}
 			onclick={() => (goatExpanded = !goatExpanded)}
 		>
 			<div
-				class="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-400/5 via-transparent to-amber-400/5 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+				class="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-favorites-amber/5 via-transparent to-favorites-amber/5 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
 			></div>
 
 			<div class="relative z-10 flex h-full flex-col items-center justify-center text-center">
 				<span class="mb-2 text-4xl">{favoritesConfig.goat.icon}</span>
-				<h3 class="text-xl font-bold text-amber-400 drop-shadow-sm">
+				<h3 class="text-xl font-bold text-favorites-amber drop-shadow-sm">
 					{favoritesConfig.goat.title}
 				</h3>
 				<div class="goat-reveal mt-3" class:expanded={goatExpanded}>
-					<p class="text-2xl font-bold text-gray-100">
+					<p class="text-2xl font-bold text-txt">
 						{favoritesConfig.goat.content}
 					</p>
 				</div>
 				<p
-					class="mt-2 text-sm text-amber-400/60 transition-opacity duration-500"
+					class="mt-2 text-sm text-favorites-amber/60 transition-opacity duration-500"
 					class:opacity-0={goatExpanded}
 				>
 					Hover to reveal

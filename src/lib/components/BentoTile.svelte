@@ -62,7 +62,7 @@
 </script>
 
 <div
-	class="bento-tile group relative overflow-hidden rounded-2xl border-2 bg-neutral-900/80 backdrop-blur-md {borderClass}"
+	class="bento-tile group relative overflow-hidden rounded-2xl border-2 bg-surface-muted/80 backdrop-blur-md {borderClass}"
 	style:grid-area={gridArea}
 	onmouseenter={handleMouseEnter}
 	onmouseleave={handleMouseLeave}
@@ -85,11 +85,11 @@
 			<span class="text-3xl">{category.icon}</span>
 			<div class="flex-1">
 				<h3 class="text-xl font-bold {category.color} drop-shadow-sm">{category.title}</h3>
-				<p class="text-sm text-gray-400">{category.items.length} items</p>
+				<p class="text-sm text-txt-muted">{category.items.length} items</p>
 			</div>
 			{#if isMobile && remainingCount > 0}
 				<svg
-					class="h-5 w-5 text-gray-400 transition-transform duration-500 ease-out"
+					class="h-5 w-5 text-txt-muted transition-transform duration-500 ease-out"
 					class:rotate-180={isExpanded}
 					fill="none"
 					stroke="currentColor"
@@ -104,12 +104,12 @@
 		<div class="flex-1 space-y-2">
 			<!-- Always visible preview items -->
 			{#each previewItems as item}
-				<div class="flex items-center gap-2 rounded-lg bg-neutral-800/40 px-3 py-2">
+				<div class="flex items-center gap-2 rounded-lg bg-surface/60 px-3 py-2">
 					<span class="text-sm">{category.itemIcon}</span>
 					<div class="flex-1 min-w-0">
-						<span class="block truncate text-sm font-medium text-indigo-300">{item.name}</span>
+						<span class="block truncate text-sm font-medium text-heading">{item.name}</span>
 						{#if item.subtitle}
-							<span class="block truncate text-xs text-gray-400 italic">{item.subtitle}</span>
+							<span class="block truncate text-xs text-txt-muted italic">{item.subtitle}</span>
 						{/if}
 					</div>
 				</div>
@@ -121,15 +121,15 @@
 					<div class="expandable-inner space-y-2">
 						{#each hiddenItems as item, index}
 							<div
-								class="item-row flex items-center gap-2 rounded-lg bg-neutral-800/40 px-3 py-2"
+								class="item-row flex items-center gap-2 rounded-lg bg-surface/60 px-3 py-2"
 								style="transition-delay: {isExpanded ? index * 25 : 0}ms;"
 								class:item-visible={isExpanded}
 							>
 								<span class="text-sm">{category.itemIcon}</span>
 								<div class="flex-1 min-w-0">
-									<span class="block truncate text-sm font-medium text-indigo-300">{item.name}</span>
+									<span class="block truncate text-sm font-medium text-heading">{item.name}</span>
 									{#if item.subtitle}
-										<span class="block truncate text-xs text-gray-400 italic">{item.subtitle}</span>
+										<span class="block truncate text-xs text-txt-muted italic">{item.subtitle}</span>
 									{/if}
 								</div>
 							</div>

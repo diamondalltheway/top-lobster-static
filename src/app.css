@@ -1,70 +1,200 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
+    /* Existing shadcn variables */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
- 
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
- 
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
- 
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
- 
+
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
- 
+
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
- 
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
- 
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
- 
+
     --destructive: 0 72.2% 50.6%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --ring: 222.2 84% 4.9%;
- 
+
     --radius: 0.5rem;
+
+    /* ========== THEME SYSTEM VARIABLES ========== */
+    /* Light mode - Warm cream tones inspired by Anthropic */
+
+    /* Page & Surface backgrounds - warm cream tones (Anthropic-inspired) */
+    --surface: 36 40% 95%;              /* Warm cream background - richer tone */
+    --surface-muted: 36 35% 91%;        /* Slightly darker warm cream */
+    --surface-elevated: 38 45% 97%;     /* Lighter warm cream for elevated cards */
+
+    /* Text colors - high contrast for light mode */
+    --heading: 226 71% 40%;
+    --heading-accent: 226 83% 48%;
+    --text-primary: 30 10% 15%;         /* Warm near-black */
+    --text-secondary: 30 8% 35%;        /* Warm dark gray */
+    --text-muted: 30 6% 50%;            /* Warm medium gray */
+
+    /* Border colors - warm tones */
+    --border-subtle: 35 20% 85%;
+    --border-strong: 35 15% 75%;
+
+    /* Navigation - warm cream */
+    --nav-bg: 40 25% 92%;
+    --nav-text: 226 71% 40%;
+    --nav-text-hover: 226 83% 48%;
+
+    /* Icon containers */
+    --icon-bg: 40 25% 92%;
+    --icon-border: 35 15% 80%;
+
+    /* Section-specific - Testimonials */
+    --testimonial-card-bg: 40 40% 98%;
+    --testimonial-border: 226 50% 80%;
+    --testimonial-star: 43 96% 50%;
+
+    /* Section-specific - Tech Stack */
+    --tech-card-bg: 40 40% 98%;
+    --tech-border: 226 50% 85%;
+    --tech-glow: 226 71% 40%;
+
+    /* Section-specific - Open Source */
+    --opensource-card-bg: 40 40% 98%;
+    --opensource-emerald: 160 84% 39%;
+    --opensource-pink: 330 81% 60%;
+
+    /* Section-specific - Products */
+    --product-card-bg: 40 40% 98%;
+    --product-image-bg: 40 25% 94%;
+
+    /* Section-specific - Launch School */
+    --launchschool-red: 0 72% 51%;
+    --launchschool-red-muted: 0 65% 45%;
+
+    /* Section-specific - Favorites */
+    --favorites-card-bg: 40 40% 98%;
+    --favorites-green: 142 71% 45%;
+    --favorites-amber: 43 96% 50%;
+
+    /* Section-specific - Contact */
+    --contact-card-bg: 40 40% 98%;
+    --contact-input-bg: 40 25% 94%;
+    --contact-input-border: 35 20% 82%;
+
+    /* Glow effects - subtle in light mode */
+    --glow-opacity: 0.1;
   }
- 
+
   .dark {
+    /* Existing shadcn variables */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
- 
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
- 
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
- 
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
- 
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
- 
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
- 
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --ring: hsl(212.7,26.8%,83.9);
+
+    /* ========== THEME SYSTEM VARIABLES - DARK ========== */
+    /* These preserve the current site appearance exactly */
+
+    /* Page & Surface backgrounds - matches neutral-800/900 */
+    --surface: 0 0% 15%;
+    --surface-muted: 0 0% 10%;
+    --surface-elevated: 0 0% 18%;
+
+    /* Text colors - current light text on dark */
+    --heading: 226 64% 68%;
+    --heading-accent: 226 83% 72%;
+    --text-primary: 0 0% 100%;
+    --text-secondary: 220 9% 84%;
+    --text-muted: 220 9% 64%;
+
+    /* Border colors */
+    --border-subtle: 0 0% 20%;
+    --border-strong: 0 0% 30%;
+
+    /* Navigation - matches neutral-700 and indigo-300 */
+    --nav-bg: 0 0% 36%;
+    --nav-text: 226 64% 68%;
+    --nav-text-hover: 226 64% 68%;
+
+    /* Icon containers */
+    --icon-bg: 0 0% 36%;
+    --icon-border: 0 0% 50%;
+
+    /* Section-specific - Testimonials */
+    --testimonial-card-bg: 0 0% 10%;
+    --testimonial-border: 0 0% 20%;
+    --testimonial-star: 43 96% 56%;
+
+    /* Section-specific - Tech Stack */
+    --tech-card-bg: 0 0% 10%;
+    --tech-border: 226 50% 50%;
+    --tech-glow: 226 64% 68%;
+
+    /* Section-specific - Open Source */
+    --opensource-card-bg: 0 0% 10%;
+    --opensource-emerald: 160 84% 39%;
+    --opensource-pink: 330 81% 60%;
+
+    /* Section-specific - Products */
+    --product-card-bg: 0 0% 10%;
+    --product-image-bg: 220 14% 96%;
+
+    /* Section-specific - Launch School */
+    --launchschool-red: 0 84% 60%;
+    --launchschool-red-muted: 0 72% 50%;
+
+    /* Section-specific - Favorites */
+    --favorites-card-bg: 0 0% 10%;
+    --favorites-green: 142 71% 45%;
+    --favorites-amber: 43 96% 56%;
+
+    /* Section-specific - Contact */
+    --contact-card-bg: 0 0% 10%;
+    --contact-input-bg: 0 0% 5%;
+    --contact-input-border: 0 0% 20%;
+
+    /* Glow effects - more visible in dark mode */
+    --glow-opacity: 0.3;
   }
 }
  
@@ -74,5 +204,53 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Theme-aware gradient text utilities */
+@layer utilities {
+  /* Product title gradient - indigo to light */
+  .gradient-title {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  :root:not(.dark) .gradient-title {
+    background-image: linear-gradient(to right, hsl(226, 71%, 40%), hsl(226, 71%, 50%), hsl(226, 83%, 48%));
+  }
+
+  :root.dark .gradient-title {
+    background-image: linear-gradient(to right, hsl(226, 71%, 60%), hsl(200, 90%, 80%), white);
+  }
+
+  /* Product description gradient - slate tones */
+  .gradient-description {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  :root:not(.dark) .gradient-description {
+    background-image: linear-gradient(to right, hsl(30, 10%, 25%), hsl(30, 8%, 35%), hsl(30, 6%, 40%));
+  }
+
+  :root.dark .gradient-description {
+    background-image: linear-gradient(to right, hsl(215, 16%, 47%), hsl(215, 16%, 70%), white);
+  }
+
+  /* Hero gradient for subtitle items */
+  .gradient-hero-subtitle {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  :root:not(.dark) .gradient-hero-subtitle {
+    background-image: linear-gradient(to bottom, hsl(30, 10%, 20%), hsl(30, 8%, 35%), hsl(30, 6%, 45%));
+  }
+
+  :root.dark .gradient-hero-subtitle {
+    background-image: linear-gradient(to bottom, hsl(210, 17%, 98%), hsl(220, 9%, 70%), hsl(215, 14%, 34%));
   }
 }

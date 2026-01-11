@@ -47,13 +47,13 @@
 
 <div class="mx-auto my-8 max-w-7xl px-6 lg:px-8">
 	<h2
-		class="glow space-grotesk bg-gradient-to-r text-center text-3xl font-bold tracking-tight text-indigo-300 sm:text-4xl"
+		class="glow space-grotesk bg-gradient-to-r text-center text-3xl font-bold tracking-tight text-heading sm:text-4xl"
 	>
 		Featured Product
 	</h2>
 
-	<p class="mx-auto mt-2 max-w-xl text-center text-lg leading-8 text-gray-400">
-		DataForest.io is the result of years spent solving Colombia’s core marketing challenge: the lack
+	<p class="mx-auto mt-2 max-w-xl text-center text-lg leading-8 text-txt-muted">
+		DataForest.io is the result of years spent solving Colombia's core marketing challenge: the lack
 		of accessible address data.
 	</p>
 </div>
@@ -64,14 +64,14 @@
 		<div class="flex flex-col">
 			<div class="group relative ml-2">
 				<h3
-					class="mt-3 bg-gradient-to-r from-indigo-500 via-sky-200 to-white bg-clip-text p-1 text-4xl font-semibold leading-10 text-transparent"
+					class="gradient-title mt-3 p-1 text-4xl font-semibold leading-10"
 				>
 					<a href={linkURL} target="_blank" class="flex items-center gap-x-2">
 						{title}
 					</a>
 				</h3>
 				<p
-					class="mt-5 bg-gradient-to-r from-slate-500 via-slate-300 to-white bg-clip-text text-lg leading-6 text-transparent"
+					class="gradient-description mt-5 text-lg leading-6"
 				>
 					{description}
 				</p>

@@ -15,33 +15,64 @@ body {
 	font-family: 'Caveat', sans-serif;
 }
 
+/* Glow effects - only show on dark mode */
 @media (min-width: 768px) {
-	.glow {
+	/* Dark mode glows - vibrant colored glows */
+	:root.dark .glow {
 		text-shadow: 5px 5px 25px #757575, 0px 0px 20px #614ad3;
 	}
 
-	.glow-red {
+	:root.dark .glow-red {
 		text-shadow: 5px 5px 25px #757575, 0px 0px 20px #c64653;
 	}
 
-	.glow-green {
+	:root.dark .glow-green {
 		text-shadow: 5px 5px 25px #757575, 0px 0px 20px #5bc461;
 	}
 
-	.glow-box {
+	:root.dark .glow-box {
 		box-shadow: 5px 5px 25px #757575, 0px 0px 20px #614ad3;
 	}
 
-	.glow-box-red {
+	:root.dark .glow-box-red {
 		box-shadow: 5px 5px 25px #757575, 0px 0px 20px #c64653;
 	}
 
-	.glow-box-lang {
+	:root.dark .glow-box-lang {
 		box-shadow: 5px 5px 25px #757575, 0px 0px 20px rgb(205, 21, 104);
 	}
 
-	.glow-box-contact {
+	:root.dark .glow-box-contact {
 		box-shadow: 5px 5px 25px #757575, 0px 0px 20px rgb(21, 205, 33);
+	}
+
+	/* Light mode - subtle shadows instead of glows */
+	:root:not(.dark) .glow {
+		text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+	}
+
+	:root:not(.dark) .glow-red {
+		text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+	}
+
+	:root:not(.dark) .glow-green {
+		text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+	}
+
+	:root:not(.dark) .glow-box {
+		box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+	}
+
+	:root:not(.dark) .glow-box-red {
+		box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+	}
+
+	:root:not(.dark) .glow-box-lang {
+		box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+	}
+
+	:root:not(.dark) .glow-box-contact {
+		box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
 	}
 }
 

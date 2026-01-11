@@ -90,7 +90,7 @@
 		<!-- Section Header -->
 		<div class="text-center mb-12">
 			<h2
-				class="glow space-grotesk text-3xl font-extrabold leading-9 text-indigo-300 sm:text-4xl lg:text-5xl"
+				class="glow space-grotesk text-3xl font-extrabold leading-9 text-heading sm:text-4xl lg:text-5xl"
 			>
 				Contact
 			</h2>
@@ -104,69 +104,69 @@
 				<div class="absolute -inset-[1px] bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-3xl opacity-70 animate-gradient-xy"></div>
 
 				<!-- Glass Card -->
-				<div class="relative rounded-3xl bg-neutral-900/90 backdrop-blur-xl p-8 lg:p-12 border border-white/5 shadow-2xl">
+				<div class="relative rounded-3xl bg-surface-muted/90 backdrop-blur-xl p-8 lg:p-12 border border-border-subtle shadow-2xl transition-colors">
 					<!-- Inner glow effects -->
 					<div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
-						<div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent"></div>
-						<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-24 bg-indigo-500/5 blur-3xl"></div>
+						<div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-heading/30 to-transparent"></div>
+						<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-24 bg-heading/5 blur-3xl"></div>
 					</div>
 
 					<!-- Content -->
 					<div class="relative text-center">
 						<!-- Heading -->
-						<h3 class="text-2xl lg:text-3xl font-extrabold text-white space-grotesk">
+						<h3 class="text-2xl lg:text-3xl font-extrabold text-txt space-grotesk">
 							Feel free to reach out!
 						</h3>
-						<p class="mt-2 text-gray-400">I'd love to hear from you</p>
+						<p class="mt-2 text-txt-muted">I'd love to hear from you</p>
 
 						<!-- Email -->
 						<a
 							href="mailto:hunter@toplobster.io"
-							class="mt-8 inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white/5 border border-indigo-500/20 hover:border-indigo-400/50 hover:bg-white/10 transition-all duration-300 group/email hover:scale-[1.02]"
+							class="mt-8 inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-surface/50 border border-heading/20 hover:border-heading/50 hover:bg-surface transition-all duration-300 group/email hover:scale-[1.02]"
 						>
-							<div class="p-2 rounded-lg bg-indigo-500/15 group-hover/email:bg-indigo-500/25 transition-colors">
-								<svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<div class="p-2 rounded-lg bg-heading/15 group-hover/email:bg-heading/25 transition-colors">
+								<svg class="w-5 h-5 text-heading" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 								</svg>
 							</div>
-							<span class="text-lg font-semibold text-gray-200 group-hover/email:text-white transition-colors">hunter@toplobster.io</span>
-							<svg class="w-4 h-4 text-gray-500 group-hover/email:text-indigo-400 group-hover/email:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<span class="text-lg font-semibold text-txt-secondary group-hover/email:text-txt transition-colors">hunter@toplobster.io</span>
+							<svg class="w-4 h-4 text-txt-muted group-hover/email:text-heading group-hover/email:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 							</svg>
 						</a>
 
 						<!-- Divider with Available for -->
 						<div class="mt-10 flex items-center gap-4">
-							<div class="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-							<h4 class="text-xs font-semibold uppercase tracking-widest text-gray-500">
+							<div class="flex-1 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent"></div>
+							<h4 class="text-xs font-semibold uppercase tracking-widest text-txt-muted">
 								Available for
 							</h4>
-							<div class="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+							<div class="flex-1 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent"></div>
 						</div>
 
 						<!-- Positions -->
 						<div class="mt-6 flex flex-wrap justify-center gap-3">
 							{#each positions as position}
-								<div class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-default">
+								<div class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-surface/50 border border-border-subtle hover:border-border-strong transition-all duration-300 cursor-default">
 									<span class="text-xl">{position.icon}</span>
-									<span class="text-sm font-medium text-gray-300">{position.name}</span>
+									<span class="text-sm font-medium text-txt-secondary">{position.name}</span>
 								</div>
 							{/each}
 						</div>
 
 						<!-- Social Links -->
-						<div class="mt-12 pt-8 border-t border-white/5">
-							<p class="text-sm text-gray-500 mb-6">Connect with me</p>
+						<div class="mt-12 pt-8 border-t border-border-subtle">
+							<p class="text-sm text-txt-muted mb-6">Connect with me</p>
 							<div class="flex justify-center gap-4">
 								{#each socialLinks as social}
 									<a
 										href={social.url}
 										target="_blank"
 										rel="noopener noreferrer"
-										class="group/social relative p-4 rounded-xl bg-white/5 border border-white/10 hover:border-indigo-400/40 transition-all duration-300 hover:scale-105"
+										class="group/social relative p-4 rounded-xl bg-surface/50 border border-border-subtle hover:border-heading/40 transition-all duration-300 hover:scale-105"
 										aria-label={social.name}
 									>
-										<svg class="relative w-6 h-6 text-gray-400 group-hover/social:text-indigo-300 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+										<svg class="relative w-6 h-6 text-txt-muted group-hover/social:text-heading transition-colors" fill="currentColor" viewBox="0 0 24 24">
 											<path d={social.icon} />
 										</svg>
 									</a>

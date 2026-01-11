@@ -1,11 +1,15 @@
+<script>
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+</script>
+
 <div
 	class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
 >
-	<div class="flex justify-center gap-4 md:order-2">
+	<div class="flex items-center justify-center gap-4 md:order-2">
 		<a
 			href="https://github.com/diamondalltheway"
 			target="_blank"
-			class="text-gray-500 transition-colors duration-300 hover:text-indigo-400"
+			class="text-txt-muted transition-colors duration-300 hover:text-heading"
 			aria-label="GitHub"
 		>
 			<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -19,7 +23,7 @@
 		<a
 			href="https://linkedin.com/in/hunterstevens"
 			target="_blank"
-			class="text-gray-500 transition-colors duration-300 hover:text-indigo-400"
+			class="text-txt-muted transition-colors duration-300 hover:text-heading"
 			aria-label="LinkedIn"
 		>
 			<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -28,9 +32,10 @@
 				/>
 			</svg>
 		</a>
+		<ThemeToggle />
 	</div>
 	<div class="mt-8 md:order-1 md:mt-0">
-		<p class="text-center text-base leading-6 text-gray-600">
+		<p class="text-center text-base leading-6 text-txt-muted">
 			&copy; {new Date().getFullYear()} Hunter Stevens All rights reserved.
 		</p>
 	</div>

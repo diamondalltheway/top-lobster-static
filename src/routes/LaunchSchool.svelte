@@ -32,13 +32,15 @@
 		<div class="flex justify-center mb-8">
 			<div class="relative group">
 				<div class="absolute -inset-4 bg-gradient-to-r from-red-500/20 via-red-400/10 to-red-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+				<!-- Light mode background for logo visibility -->
+				<div class="absolute -inset-4 rounded-2xl bg-neutral-800/90 dark:bg-transparent transition-colors duration-300"></div>
 				<img src="logo-ls.png" class="relative w-64 md:w-80 drop-shadow-2xl" alt="Launch School Logo" />
 			</div>
 		</div>
 
 		<!-- Title -->
 		<div class="mx-auto max-w-4xl text-center mb-12">
-			<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl glow-red space-grotesk">
+			<h2 class="text-3xl font-bold tracking-tight text-txt sm:text-4xl lg:text-5xl glow-red space-grotesk">
 				Core Curriculum Graduate
 			</h2>
 		</div>
@@ -48,10 +50,10 @@
 			{#each stats as stat, i}
 				<div class="stat-card opacity-0 group relative">
 					<div class="absolute -inset-0.5 bg-gradient-to-b from-red-400/50 to-red-600/50 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-300"></div>
-					<div class="relative flex flex-col items-center p-8 rounded-2xl bg-neutral-900/90 backdrop-blur-sm border border-red-500/20 hover:border-red-400/40 transition-all duration-300">
+					<div class="relative flex flex-col items-center p-8 rounded-2xl bg-surface-muted/90 backdrop-blur-sm border border-red-500/20 hover:border-red-400/40 transition-all duration-300">
 						<span class="text-3xl mb-3">{stat.icon}</span>
-						<dd class="text-5xl sm:text-6xl font-bold tracking-tight text-red-50 glow-red space-grotesk">{stat.value}</dd>
-						<dt class="mt-3 text-lg font-medium text-red-400/80">{stat.label}</dt>
+						<dd class="text-5xl sm:text-6xl font-bold tracking-tight text-txt glow-red space-grotesk">{stat.value}</dd>
+						<dt class="mt-3 text-lg font-medium text-launchschool-red">{stat.label}</dt>
 					</div>
 				</div>
 			{/each}

@@ -46,11 +46,11 @@
 		<div class="mb-12">
 			<h2
 				id="open-source-title"
-				class="glow space-grotesk text-3xl font-bold tracking-tight text-indigo-300 sm:text-4xl lg:text-5xl"
+				class="glow space-grotesk text-3xl font-bold tracking-tight text-heading sm:text-4xl lg:text-5xl"
 			>
 				Open Source Contributions
 			</h2>
-			<p class="mt-4 text-lg leading-8 text-gray-400">I'm always happy to contribute where I can!</p>
+			<p class="mt-4 text-lg leading-8 text-txt-muted">I'm always happy to contribute where I can!</p>
 		</div>
 
 		<!-- Contribution Cards -->
@@ -71,7 +71,7 @@
 						"></div>
 
 						<!-- Card -->
-						<div class="relative flex flex-col items-center p-8 rounded-2xl bg-neutral-900/90 backdrop-blur-sm border transition-all duration-300
+						<div class="relative flex flex-col items-center p-8 rounded-2xl bg-surface-muted/90 backdrop-blur-sm border transition-all duration-300
 							{contribution.color === 'emerald' ? 'border-emerald-500/20 hover:border-emerald-400/50' : ''}
 							{contribution.color === 'neutral' ? 'border-gray-500/20 hover:border-gray-400/50' : ''}
 							{contribution.color === 'pink' ? 'border-pink-500/20 hover:border-pink-400/50' : ''}
@@ -84,17 +84,17 @@
 									{contribution.color === 'pink' ? 'bg-pink-500/10' : ''}
 								"></div>
 								<img
-									class="relative h-20 w-20 rounded-xl object-contain p-2 bg-neutral-800 border border-neutral-700 group-hover:scale-110 transition-transform duration-300"
+									class="relative h-20 w-20 rounded-xl object-contain p-2 bg-surface border border-border-subtle group-hover:scale-110 transition-transform duration-300"
 									src={contribution.imgURL}
 									alt={contribution.name}
 								/>
 							</div>
 
 							<!-- Text content -->
-							<h3 class="text-xl font-bold text-white space-grotesk mb-2 group-hover:text-indigo-300 transition-colors duration-300">
+							<h3 class="text-xl font-bold text-txt space-grotesk mb-2 group-hover:text-heading transition-colors duration-300">
 								{contribution.name}
 							</h3>
-							<p class="text-sm text-gray-400 text-center leading-relaxed">
+							<p class="text-sm text-txt-muted text-center leading-relaxed">
 								{contribution.description}
 							</p>
 

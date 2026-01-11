@@ -1,6 +1,7 @@
 <script>
 	import { blur } from 'svelte/transition';
 	import Button from '$lib/components/Button.svelte';
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
 	let mobileOpen = $state(false);
 
@@ -8,8 +9,8 @@
 		{ href: '#tech', text: 'Technologies' },
 		{ href: '#open-source', text: 'Open Source' },
 		{ href: '#products', text: 'Products' },
-		{ href: '#contact', text: 'Contact' },
 		{ href: '#favorites', text: 'Favorites' },
+		{ href: '#contact', text: 'Contact' },
 	];
 </script>
 
@@ -23,18 +24,18 @@
 				<button
 					onclick={() => (mobileOpen = !mobileOpen)}
 					type="button"
-					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-200 hover:text-gray-500 focus:bg-gray-200 focus:text-gray-500 focus:outline-none"
+					class="text-txt-muted hover:bg-surface-muted hover:text-txt-secondary focus:bg-surface-muted focus:text-txt-secondary inline-flex items-center justify-center rounded-md p-2 transition duration-150 ease-in-out focus:outline-none"
 				></button>
 			</div>
 		</div>
 
 		<ul
-			class="flex rounded-full bg-neutral-700 px-2 text-sm font-bold text-indigo-300 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
+			class="bg-nav-bg text-nav-text flex rounded-full px-2 text-sm font-bold shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur"
 		>
-			<li class="relative flex items-center px-1 py-1 transition hover:text-indigo-300">
+			<li class="hover:text-nav-text-hover relative flex items-center px-1 py-1 transition">
 				Native: <span class="mx-1 mt-0.5 text-xl">🇺🇸</span>
 			</li>
-			<li class="relative flex items-center px-1 py-1 transition hover:text-indigo-300">
+			<li class="hover:text-nav-text-hover relative flex items-center px-1 py-1 transition">
 				C1: <span class="mx-1 mt-0.5 text-xl">🇪🇸</span>
 			</li>
 		</ul>
@@ -42,12 +43,12 @@
 
 	<nav class="pointer-events-auto hidden md:block">
 		<ul
-			class="flex rounded-full bg-neutral-700 px-3 text-sm font-bold text-indigo-300 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
+			class="bg-nav-bg text-nav-text flex rounded-full px-3 text-sm font-bold shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur"
 		>
 			{#each navItems as { href, text }}
 				<li>
 					<a
-						class="hover:motion-preset-expand hover:motion-preset-confetti relative block px-3 py-2 transition hover:text-indigo-300"
+						class="hover:motion-preset-expand hover:motion-preset-confetti hover:text-nav-text-hover relative block px-3 py-2 transition"
 						{href}
 					>
 						{text}
@@ -59,15 +60,15 @@
 
 	<div
 		transition:blur={{ duration: 2000 }}
-		class="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end"
+		class="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end md:gap-4"
 	>
 		<a
 			href="https://github.com/diamondalltheway"
 			target="_blank"
-			class="ml-6 text-gray-600 hover:text-gray-700"
+			class="text-txt-muted hover:text-heading transition-colors"
 		>
 			<svg
-				class="mx-6 h-8 w-8 rounded-full bg-indigo-200 text-indigo-500"
+				class="bg-surface-muted text-heading h-8 w-8 rounded-full p-1"
 				fill="currentColor"
 				viewBox="0 0 24 24"
 			>
@@ -78,14 +79,6 @@
 				/>
 			</svg>
 		</a>
-		<span class="inline-flex rounded-md">
-			<Button
-				text={'Contact'}
-				href={'#contact'}
-				targetBlank={false}
-				bgColor={'hsl(227, 66%, 55%)'}
-				bgDepthColor={'hsl(227, 66%, 25%)'}
-			/>
-		</span>
+		<ThemeToggle />
 	</div>
 </nav>

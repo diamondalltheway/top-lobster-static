@@ -22,7 +22,7 @@
 </script>
 
 {#if ready}
-	<div class="bg-neutral-800">
+	<div class="bg-surface transition-colors duration-300">
 		<Header />
 		<Hero />
 		<Testimonials />

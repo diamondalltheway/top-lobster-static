@@ -1,10 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon-blender.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Hunter Stevens • Software Engineer</title>
+		<!-- Prevent flash of wrong theme -->
+		<script>
+			(function() {
+				const theme = localStorage.getItem('theme');
+				if (theme === 'light') {
+					document.documentElement.classList.remove('dark');
+				}
+			})();
+		</script>
 		<!-- Google Fonts-->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +31,7 @@
 
 	<body
 		data-sveltekit-preload-data="hover"
-		class="custom-wrapper relative mx-auto max-w-7xl bg-neutral-800 p-2 antialiased md:p-4"
+		class="custom-wrapper relative mx-auto max-w-7xl bg-surface p-2 antialiased md:p-4 transition-colors duration-300"
 	>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>

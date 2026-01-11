@@ -61,14 +61,14 @@
 <div class="my-2">
 	<div
 		bind:this={tooltip}
-		class="py- glow space-grotesk fixed text-lg font-semibold text-indigo-300"
+		class="py- glow space-grotesk fixed text-lg font-semibold text-heading"
 		style="display: none;"
 	>
 		{name}
 	</div>
 	<a bind:this={referenceElement} href={linkURL} target="_blank">
 		<img
-			class="to hover:motion-preset-shake border-1 col-span-1 mx-auto flex h-14 justify-center rounded-lg border border-neutral-500 bg-neutral-700 bg-gradient-to-b from-neutral-500 object-cover p-2 shadow-md shadow-neutral-700
+			class="to hover:motion-preset-shake border-1 col-span-1 mx-auto flex h-14 justify-center rounded-lg border border-icon-border bg-icon-bg bg-gradient-to-b from-icon-border object-cover p-2 shadow-md shadow-surface-muted
 			{name === 'Docker' || name === 'Zod' ? 'p-0' : 'p-2'}"
 			src={imgURL}
 			alt=""

@@ -47,24 +47,24 @@
 		{#if primaryTitleIsReady}
 			<WordsFadeIn
 				words="Hunter Stevens"
-				class="glow space-grotesk mt-6 text-4xl font-extrabold leading-10 tracking-tight text-gray-100 drop-shadow-lg sm:text-5xl sm:leading-none md:text-6xl"
+				class="glow space-grotesk mt-6 text-4xl font-extrabold leading-10 tracking-tight text-txt drop-shadow-lg sm:text-5xl sm:leading-none md:text-6xl"
 			/>
 		{/if}
 
 		{#if secondaryTitleIsReady}
 			<WordsFadeIn
 				words="Software Engineer"
-				class="glow space-grotesk mt-2 text-4xl font-extrabold leading-10 tracking-tight text-gray-100 drop-shadow-lg sm:text-5xl sm:leading-none md:text-6xl"
+				class="glow space-grotesk mt-2 text-4xl font-extrabold leading-10 tracking-tight text-txt drop-shadow-lg sm:text-5xl sm:leading-none md:text-6xl"
 			/>
 		{/if}
 
 		<div
-			class="mx-auto mt-3 max-w-md text-base text-neutral-600 sm:text-xl md:mt-5 md:max-w-3xl md:text-xl"
+			class="mx-auto mt-3 max-w-md text-base text-txt-muted sm:text-xl md:mt-5 md:max-w-3xl md:text-xl"
 		>
 			<div transition:blur={{ delay: 1500, duration: 500 }} class="flex justify-center gap-2">
 				<BriefcaseIcon />
 				<span
-					class="bg-gradient-to-b from-slate-100 via-neutral-300 to-slate-600 bg-clip-text font-semibold text-transparent"
+					class="hero-gradient-text bg-clip-text font-semibold text-transparent"
 				>
 					StruCalc (Software for Structural Engineering)
 				</span>
@@ -74,7 +74,7 @@
 				<GraduationIcon />
 				<a href="https://www.uh.edu/" target="_blank">
 					<span
-						class="bg-gradient-to-b from-slate-100 via-neutral-300 to-slate-600 bg-clip-text font-semibold text-transparent"
+						class="hero-gradient-text bg-clip-text font-semibold text-transparent"
 					>
 						University of Houston <span class="hidden md:inline">(BBA in Marketing)</span>
 					</span>
@@ -86,7 +86,7 @@
 				<BadgeIcon />
 				<a href="https://launchschool.com/courses" target="_blank">
 					<span
-						class="bg-gradient-to-b from-slate-100 via-neutral-300 to-slate-600 bg-clip-text font-semibold text-transparent"
+						class="hero-gradient-text bg-clip-text font-semibold text-transparent"
 					>
 						Launch School <span class="hidden md:inline">(Core Curriculum Grad)</span>
 					</span>
@@ -119,10 +119,10 @@
 	.image-wrapper::before {
 		content: '';
 		position: absolute;
-		top: -2px; /* Adjust based on desired offset */
-		left: -2px; /* Adjust based on desired offset */
-		width: calc(100% + 4px); /* Adjust based on desired offset */
-		height: calc(100% + 4px); /* Adjust based on desired offset */
+		top: -2px;
+		left: -2px;
+		width: calc(100% + 4px);
+		height: calc(100% + 4px);
 		border: 4px dashed #aaabef;
 		border-radius: 50%;
 		animation: spin 100s linear infinite;
@@ -131,5 +131,15 @@
 	.image-wrapper img {
 		position: relative;
 		z-index: 1;
+	}
+
+	/* Theme-aware gradient for hero text */
+	.hero-gradient-text {
+		background-image: linear-gradient(
+			to bottom,
+			hsl(var(--text-primary)),
+			hsl(var(--text-secondary)),
+			hsl(var(--text-muted))
+		);
 	}
 </style>

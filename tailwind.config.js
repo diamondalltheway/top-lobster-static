@@ -70,6 +70,65 @@ const config = {
 					DEFAULT: 'hsl(var(--card) / <alpha-value>)',
 					foreground: 'hsl(var(--card-foreground) / <alpha-value>)',
 				},
+				/* ========== THEME SYSTEM COLORS ========== */
+				surface: {
+					DEFAULT: 'hsl(var(--surface) / <alpha-value>)',
+					muted: 'hsl(var(--surface-muted) / <alpha-value>)',
+					elevated: 'hsl(var(--surface-elevated) / <alpha-value>)',
+				},
+				heading: {
+					DEFAULT: 'hsl(var(--heading) / <alpha-value>)',
+					accent: 'hsl(var(--heading-accent) / <alpha-value>)',
+				},
+				txt: {
+					DEFAULT: 'hsl(var(--text-primary) / <alpha-value>)',
+					secondary: 'hsl(var(--text-secondary) / <alpha-value>)',
+					muted: 'hsl(var(--text-muted) / <alpha-value>)',
+				},
+				'border-subtle': 'hsl(var(--border-subtle) / <alpha-value>)',
+				'border-strong': 'hsl(var(--border-strong) / <alpha-value>)',
+				nav: {
+					bg: 'hsl(var(--nav-bg) / <alpha-value>)',
+					text: 'hsl(var(--nav-text) / <alpha-value>)',
+					'text-hover': 'hsl(var(--nav-text-hover) / <alpha-value>)',
+				},
+				icon: {
+					bg: 'hsl(var(--icon-bg) / <alpha-value>)',
+					border: 'hsl(var(--icon-border) / <alpha-value>)',
+				},
+				testimonial: {
+					'card-bg': 'hsl(var(--testimonial-card-bg) / <alpha-value>)',
+					border: 'hsl(var(--testimonial-border) / <alpha-value>)',
+					star: 'hsl(var(--testimonial-star) / <alpha-value>)',
+				},
+				tech: {
+					'card-bg': 'hsl(var(--tech-card-bg) / <alpha-value>)',
+					border: 'hsl(var(--tech-border) / <alpha-value>)',
+					glow: 'hsl(var(--tech-glow) / <alpha-value>)',
+				},
+				opensource: {
+					'card-bg': 'hsl(var(--opensource-card-bg) / <alpha-value>)',
+					emerald: 'hsl(var(--opensource-emerald) / <alpha-value>)',
+					pink: 'hsl(var(--opensource-pink) / <alpha-value>)',
+				},
+				product: {
+					'card-bg': 'hsl(var(--product-card-bg) / <alpha-value>)',
+					'image-bg': 'hsl(var(--product-image-bg) / <alpha-value>)',
+				},
+				launchschool: {
+					red: 'hsl(var(--launchschool-red) / <alpha-value>)',
+					'red-muted': 'hsl(var(--launchschool-red-muted) / <alpha-value>)',
+				},
+				favorites: {
+					'card-bg': 'hsl(var(--favorites-card-bg) / <alpha-value>)',
+					green: 'hsl(var(--favorites-green) / <alpha-value>)',
+					amber: 'hsl(var(--favorites-amber) / <alpha-value>)',
+				},
+				contact: {
+					'card-bg': 'hsl(var(--contact-card-bg) / <alpha-value>)',
+					'input-bg': 'hsl(var(--contact-input-bg) / <alpha-value>)',
+					'input-border': 'hsl(var(--contact-input-border) / <alpha-value>)',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
