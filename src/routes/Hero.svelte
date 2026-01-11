@@ -21,7 +21,7 @@
 	});
 </script>
 
-<div class="mx-auto h-screen max-w-screen-xl px-2 sm:px-6 md:mt-16">
+<div class="mx-auto h-[calc(100vh-10rem)] max-w-screen-xl px-2 sm:px-6 md:mt-16">
 	<div class="text-center">
 		<div class="group relative mx-auto aspect-square w-3/4 md:w-1/3">
 			<div

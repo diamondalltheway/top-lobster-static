@@ -55,15 +55,15 @@
 		background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c2), var(--c1));
 		background-size: 300% 100%;
 		animation:
-			flow 4s ease-in-out infinite,
-			pulse 2s ease-in-out infinite;
+			flow 8s ease-in-out infinite,
+			pulse 6s ease-in-out infinite;
 		transition: opacity 0.3s ease;
 	}
 
 	.gradient-border {
 		background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c2), var(--c1));
 		background-size: 300% 100%;
-		animation: flow 4s ease-in-out infinite;
+		animation: flow 8s ease-in-out infinite;
 	}
 
 	.gradient-border::before {
