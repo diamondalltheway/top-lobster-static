@@ -68,8 +68,8 @@
 			<!-- Glow effect behind card -->
 			<div class="absolute -inset-1 bg-gradient-to-r from-red-500/30 via-red-400/20 to-red-500/30 rounded-2xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
 
-			<div class="relative rounded-2xl bg-gradient-to-b from-neutral-100 to-neutral-200 p-8 lg:p-10 border-2 border-transparent hover:border-red-400/60 transition-all duration-300 shadow-2xl">
-				<h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 space-grotesk flex items-center gap-3">
+			<div class="relative rounded-2xl bg-launchschool-notes p-8 lg:p-10 border-2 border-transparent hover:border-red-400/60 transition-all duration-300 shadow-2xl">
+				<h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-txt space-grotesk flex items-center gap-3">
 					<span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-red-500/10">
 						<svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
@@ -78,7 +78,7 @@
 					Notes on Launch School
 				</h2>
 
-				<div class="mt-6 space-y-4 text-gray-600 leading-relaxed text-lg">
+				<div class="mt-6 space-y-4 text-txt-secondary leading-relaxed text-lg">
 					<p>
 						Launch School was one of the hardest things I have ever done. It was also one of the most
 						rewarding. During my time at Launch School, I learned much more than syntax and semantics, I
@@ -101,7 +101,7 @@
 						bgColor={'hsl(349, 98%, 58%)'}
 						bgDepthColor={'hsl(340, 97%, 38%)'}
 					/>
-					<span class="text-sm text-gray-500">Mastery-based learning</span>
+					<span class="text-sm text-txt-muted">Mastery-based learning</span>
 				</div>
 			</div>
 		</div>

@@ -15,7 +15,7 @@
 	<!-- Header -->
 	<div class="mb-10 text-center" transition:blur={{ delay: 100, duration: 400 }}>
 		<h2
-			class="glow-green space-grotesk inline-block bg-gradient-to-r from-green-300 via-emerald-400 to-green-500 bg-clip-text text-4xl font-extrabold text-transparent drop-shadow-lg sm:text-5xl"
+			class="glow-green space-grotesk inline-block bg-gradient-to-r from-green-700 via-emerald-600 to-green-700 dark:from-green-300 dark:via-emerald-400 dark:to-green-500 bg-clip-text text-4xl font-extrabold text-transparent drop-shadow-lg sm:text-5xl"
 		>
 			Favorites
 		</h2>
@@ -31,7 +31,7 @@
 
 		<!-- GOAT tile -->
 		<button
-			class="goat-tile group relative overflow-hidden rounded-2xl border-2 border-favorites-amber/40 bg-gradient-to-br from-surface-muted via-surface to-surface-muted p-6"
+			class="goat-tile group relative overflow-hidden rounded-2xl border-2 border-amber-500/50 dark:border-favorites-amber/40 bg-gradient-to-br from-surface-muted via-surface to-surface-muted p-6"
 			style="grid-area: goat;"
 			onmouseenter={() => (goatExpanded = true)}
 			onmouseleave={() => (goatExpanded = false)}
@@ -43,7 +43,7 @@
 
 			<div class="relative z-10 flex h-full flex-col items-center justify-center text-center">
 				<span class="mb-2 text-4xl">{favoritesConfig.goat.icon}</span>
-				<h3 class="text-xl font-bold text-favorites-amber drop-shadow-sm">
+				<h3 class="text-xl font-bold text-amber-600 dark:text-favorites-amber drop-shadow-sm">
 					{favoritesConfig.goat.title}
 				</h3>
 				<div class="goat-reveal mt-3" class:expanded={goatExpanded}>
@@ -52,7 +52,7 @@
 					</p>
 				</div>
 				<p
-					class="mt-2 text-sm text-favorites-amber/60 transition-opacity duration-500"
+					class="mt-2 text-sm text-amber-600/60 dark:text-favorites-amber/60 transition-opacity duration-500"
 					class:opacity-0={goatExpanded}
 				>
 					Hover to reveal

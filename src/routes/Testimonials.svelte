@@ -180,7 +180,7 @@
 							<span
 								class="rounded-full px-2.5 py-0.5 text-[10px] font-semibold ring-1 {badge ===
 								'Full-time'
-									? 'bg-emerald-500/20 text-emerald-300 ring-emerald-500/30'
+									? 'bg-emerald-500/30 text-emerald-700 ring-emerald-500/50 dark:bg-emerald-500/20 dark:text-emerald-300 dark:ring-emerald-500/30'
 									: 'bg-heading/20 text-heading ring-heading/30'}"
 							>
 								{badge}

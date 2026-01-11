@@ -1,42 +1,28 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
+	import { isDarkMode } from '$lib/stores/theme';
 
-	let isDark = $state(true);
 	let mounted = $state(false);
 
 	onMount(() => {
-		const stored = localStorage.getItem('theme');
-		isDark = stored ? stored === 'dark' : true;
+		isDarkMode.init();
 		mounted = true;
 	});
-
-	function toggle() {
-		isDark = !isDark;
-		if (browser) {
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-			if (isDark) {
-				document.documentElement.classList.add('dark');
-			} else {
-				document.documentElement.classList.remove('dark');
-			}
-		}
-	}
 </script>
 
 <button
-	onclick={toggle}
-	class="relative flex h-9 w-9 items-center justify-center rounded-full
-		   bg-surface-muted border border-border-subtle
-		   hover:border-heading transition-all duration-300
-		   focus:outline-none focus:ring-2 focus:ring-heading/50"
-	aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+	onclick={() => isDarkMode.toggle()}
+	class="bg-icon-bg border-icon-border hover:border-heading focus:ring-heading/50 relative flex h-9
+		   w-9 items-center justify-center
+		   rounded-full border transition-all
+		   duration-300 focus:outline-none focus:ring-2"
+	aria-label={$isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
 >
 	{#if mounted}
 		<!-- Sun icon (shown in dark mode - click to go light) -->
 		<svg
-			class="h-5 w-5 text-amber-400 transition-all duration-300 absolute
-				   {isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-75'}"
+			class="absolute h-5 w-5 text-amber-400 transition-all duration-300
+				   {$isDarkMode ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-75 opacity-0'}"
 			fill="none"
 			stroke="currentColor"
 			viewBox="0 0 24 24"
@@ -51,8 +37,8 @@
 
 		<!-- Moon icon (shown in light mode - click to go dark) -->
 		<svg
-			class="h-5 w-5 text-heading transition-all duration-300 absolute
-				   {!isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-75'}"
+			class="text-heading absolute h-5 w-5 transition-all duration-300
+				   {!$isDarkMode ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-75 opacity-0'}"
 			fill="none"
 			stroke="currentColor"
 			viewBox="0 0 24 24"

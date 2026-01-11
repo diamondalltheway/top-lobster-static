@@ -10,7 +10,7 @@
 	const socialLinks = [
 		{
 			name: 'GitHub',
-			url: 'https://github.com/huntermacias',
+			url: 'https://github.com/diamondalltheway',
 			icon: 'M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z',
 		},
 		{
@@ -43,12 +43,12 @@
 					el,
 					{
 						y: [0, -8, 0],
-						opacity: [0.15, 0.3, 0.15]
+						opacity: [0.15, 0.3, 0.15],
 					},
 					{
 						duration: 6 + i * 0.8,
 						repeat: Infinity,
-						delay: floatingShapes[i].delay
+						delay: floatingShapes[i].delay,
 					}
 				);
 			}
@@ -56,20 +56,24 @@
 	});
 </script>
 
-<div id="contact" class="relative py-20 lg:py-28 overflow-hidden">
+<div id="contact" class="relative overflow-hidden py-20 lg:py-28">
 	<!-- Background effects -->
-	<div class="absolute inset-0 overflow-hidden pointer-events-none">
+	<div class="pointer-events-none absolute inset-0 overflow-hidden">
 		<!-- Main glow -->
-		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/8 rounded-full blur-[120px]"></div>
+		<div
+			class="bg-indigo-500/8 absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
+		></div>
 		<!-- Secondary glow -->
-		<div class="absolute top-1/3 left-1/3 w-[300px] h-[300px] bg-purple-500/5 rounded-full blur-[80px]"></div>
+		<div
+			class="absolute left-1/3 top-1/3 h-[300px] w-[300px] rounded-full bg-purple-500/5 blur-[80px]"
+		></div>
 	</div>
 
 	<!-- Floating Shapes - subtle dots and rings -->
 	{#each floatingShapes as shape, i}
 		<div
 			id="floating-shape-{i}"
-			class="absolute pointer-events-none opacity-0"
+			class="pointer-events-none absolute opacity-0"
 			style="left: {shape.x}; top: {shape.y};"
 		>
 			{#if shape.type === 'dot'}
@@ -88,85 +92,130 @@
 
 	<div class="relative mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
 		<!-- Section Header -->
-		<div class="text-center mb-12">
+		<div class="mb-12 text-center">
 			<h2
-				class="glow space-grotesk text-3xl font-extrabold leading-9 text-heading sm:text-4xl lg:text-5xl"
+				class="glow space-grotesk text-heading text-3xl font-extrabold leading-9 sm:text-4xl lg:text-5xl"
 			>
 				Contact
 			</h2>
 		</div>
 
 		<!-- Contact Card -->
-		<div id="contact-card" class="opacity-0 mx-auto max-w-2xl">
-			<div class="relative group">
+		<div id="contact-card" class="mx-auto max-w-2xl opacity-0">
+			<div class="group relative">
 				<!-- Animated gradient border -->
-				<div class="absolute -inset-[2px] bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-3xl opacity-50 group-hover:opacity-80 blur-sm transition-all duration-500 animate-gradient-xy"></div>
-				<div class="absolute -inset-[1px] bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-3xl opacity-70 animate-gradient-xy"></div>
+				<div
+					class="animate-gradient-xy absolute -inset-[2px] rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 opacity-50 blur-sm transition-all duration-500 group-hover:opacity-80"
+				></div>
+				<div
+					class="animate-gradient-xy absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 opacity-70"
+				></div>
 
 				<!-- Glass Card -->
-				<div class="relative rounded-3xl bg-surface-muted/90 backdrop-blur-xl p-8 lg:p-12 border border-border-subtle shadow-2xl transition-colors">
+				<div
+					class="bg-surface-muted/90 border-border-subtle relative rounded-3xl border p-8 shadow-2xl backdrop-blur-xl transition-colors lg:p-12"
+				>
 					<!-- Inner glow effects -->
-					<div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
-						<div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-heading/30 to-transparent"></div>
-						<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-24 bg-heading/5 blur-3xl"></div>
+					<div class="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
+						<div
+							class="via-heading/30 absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent to-transparent"
+						></div>
+						<div
+							class="bg-heading/5 absolute left-1/2 top-0 h-24 w-1/2 -translate-x-1/2 blur-3xl"
+						></div>
 					</div>
 
 					<!-- Content -->
 					<div class="relative text-center">
 						<!-- Heading -->
-						<h3 class="text-2xl lg:text-3xl font-extrabold text-txt space-grotesk">
+						<h3 class="text-txt space-grotesk text-2xl font-extrabold lg:text-3xl">
 							Feel free to reach out!
 						</h3>
-						<p class="mt-2 text-txt-muted">I'd love to hear from you</p>
+						<p class="text-txt-muted mt-2">I'd love to hear from you</p>
 
 						<!-- Email -->
 						<a
 							href="mailto:hunter@toplobster.io"
-							class="mt-8 inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-surface/50 border border-heading/20 hover:border-heading/50 hover:bg-surface transition-all duration-300 group/email hover:scale-[1.02]"
+							class="bg-surface/50 border-heading/20 hover:border-heading/50 hover:bg-surface group/email mt-8 inline-flex items-center gap-3 rounded-2xl border px-8 py-4 transition-all duration-300 hover:scale-[1.02]"
 						>
-							<div class="p-2 rounded-lg bg-heading/15 group-hover/email:bg-heading/25 transition-colors">
-								<svg class="w-5 h-5 text-heading" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+							<div
+								class="bg-heading/15 group-hover/email:bg-heading/25 rounded-lg p-2 transition-colors"
+							>
+								<svg
+									class="text-heading h-5 w-5"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+									/>
 								</svg>
 							</div>
-							<span class="text-lg font-semibold text-txt-secondary group-hover/email:text-txt transition-colors">hunter@toplobster.io</span>
-							<svg class="w-4 h-4 text-txt-muted group-hover/email:text-heading group-hover/email:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							<span
+								class="text-txt-secondary group-hover/email:text-txt text-lg font-semibold transition-colors"
+								>hunter@toplobster.io</span
+							>
+							<svg
+								class="text-txt-muted group-hover/email:text-heading h-4 w-4 transition-all group-hover/email:translate-x-1"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M17 8l4 4m0 0l-4 4m4-4H3"
+								/>
 							</svg>
 						</a>
 
 						<!-- Divider with Available for -->
 						<div class="mt-10 flex items-center gap-4">
-							<div class="flex-1 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent"></div>
-							<h4 class="text-xs font-semibold uppercase tracking-widest text-txt-muted">
+							<div
+								class="via-border-subtle h-px flex-1 bg-gradient-to-r from-transparent to-transparent"
+							></div>
+							<h4 class="text-txt-muted text-xs font-semibold uppercase tracking-widest">
 								Available for
 							</h4>
-							<div class="flex-1 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent"></div>
+							<div
+								class="via-border-subtle h-px flex-1 bg-gradient-to-r from-transparent to-transparent"
+							></div>
 						</div>
 
 						<!-- Positions -->
 						<div class="mt-6 flex flex-wrap justify-center gap-3">
 							{#each positions as position}
-								<div class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-surface/50 border border-border-subtle hover:border-border-strong transition-all duration-300 cursor-default">
+								<div
+									class="bg-surface/50 border-border-subtle hover:border-border-strong inline-flex cursor-default items-center gap-2 rounded-xl border px-5 py-3 transition-all duration-300"
+								>
 									<span class="text-xl">{position.icon}</span>
-									<span class="text-sm font-medium text-txt-secondary">{position.name}</span>
+									<span class="text-txt-secondary text-sm font-medium">{position.name}</span>
 								</div>
 							{/each}
 						</div>
 
 						<!-- Social Links -->
-						<div class="mt-12 pt-8 border-t border-border-subtle">
-							<p class="text-sm text-txt-muted mb-6">Connect with me</p>
+						<div class="border-border-subtle mt-12 border-t pt-8">
+							<p class="text-txt-muted mb-6 text-sm">Connect with me</p>
 							<div class="flex justify-center gap-4">
 								{#each socialLinks as social}
 									<a
 										href={social.url}
 										target="_blank"
 										rel="noopener noreferrer"
-										class="group/social relative p-4 rounded-xl bg-surface/50 border border-border-subtle hover:border-heading/40 transition-all duration-300 hover:scale-105"
+										class="group/social bg-surface/50 border-border-subtle hover:border-heading/40 relative rounded-xl border p-4 transition-all duration-300 hover:scale-105"
 										aria-label={social.name}
 									>
-										<svg class="relative w-6 h-6 text-txt-muted group-hover/social:text-heading transition-colors" fill="currentColor" viewBox="0 0 24 24">
+										<svg
+											class="text-txt-muted group-hover/social:text-heading relative h-6 w-6 transition-colors"
+											fill="currentColor"
+											viewBox="0 0 24 24"
+										>
 											<path d={social.icon} />
 										</svg>
 									</a>
@@ -182,7 +231,8 @@
 
 <style>
 	@keyframes gradient-xy {
-		0%, 100% {
+		0%,
+		100% {
 			background-position: 0% 0%;
 		}
 		25% {

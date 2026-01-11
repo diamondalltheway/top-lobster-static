@@ -118,6 +118,7 @@ const config = {
 				launchschool: {
 					red: 'hsl(var(--launchschool-red) / <alpha-value>)',
 					'red-muted': 'hsl(var(--launchschool-red-muted) / <alpha-value>)',
+					notes: 'hsl(var(--launchschool-notes-bg) / <alpha-value>)',
 				},
 				favorites: {
 					'card-bg': 'hsl(var(--favorites-card-bg) / <alpha-value>)',

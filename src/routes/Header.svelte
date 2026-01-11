@@ -32,10 +32,10 @@
 		<ul
 			class="bg-nav-bg text-nav-text flex rounded-full px-2 text-sm font-bold shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur"
 		>
-			<li class="hover:text-nav-text-hover relative flex items-center px-1 py-1 transition">
+			<li class="hover:text-nav-text-hover hover:motion-preset-seesaw relative flex cursor-default items-center px-1 py-1 transition">
 				Native: <span class="mx-1 mt-0.5 text-xl">🇺🇸</span>
 			</li>
-			<li class="hover:text-nav-text-hover relative flex items-center px-1 py-1 transition">
+			<li class="hover:text-nav-text-hover hover:motion-preset-seesaw relative flex cursor-default items-center px-1 py-1 transition">
 				C1: <span class="mx-1 mt-0.5 text-xl">🇪🇸</span>
 			</li>
 		</ul>
@@ -65,10 +65,13 @@
 		<a
 			href="https://github.com/diamondalltheway"
 			target="_blank"
-			class="text-txt-muted hover:text-heading transition-colors"
+			class="flex h-9 w-9 items-center justify-center rounded-full
+				   bg-icon-bg border border-icon-border
+				   hover:border-heading transition-all duration-300"
+			aria-label="GitHub"
 		>
 			<svg
-				class="bg-surface-muted text-heading h-8 w-8 rounded-full p-1"
+				class="h-5 w-5 text-heading"
 				fill="currentColor"
 				viewBox="0 0 24 24"
 			>

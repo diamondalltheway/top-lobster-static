@@ -250,7 +250,7 @@
 				Technologies Used
 			</h2>
 			<p class="mt-4 text-lg text-txt-muted max-w-2xl mx-auto">
-				{technologies.length}+ technologies powering modern web experiences
+				40+ technologies powering modern web experiences
 			</p>
 		</div>
 
@@ -264,7 +264,7 @@
 				<div class="relative rounded-3xl bg-surface-muted/80 backdrop-blur-md border border-heading/20 p-8 lg:p-12 transition-colors">
 					<!-- Decorative grid pattern overlay -->
 					<div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
-						<div class="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+						<div class="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.08)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(99,102,241,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.15)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
 					</div>
 
 					<!-- Tech Icons Grid -->

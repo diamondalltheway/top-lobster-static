@@ -7,7 +7,7 @@
 		<title>Hunter Stevens • Software Engineer</title>
 		<!-- Prevent flash of wrong theme -->
 		<script>
-			(function() {
+			(function () {
 				const theme = localStorage.getItem('theme');
 				if (theme === 'light') {
 					document.documentElement.classList.remove('dark');
@@ -31,7 +31,7 @@
 
 	<body
 		data-sveltekit-preload-data="hover"
-		class="custom-wrapper relative mx-auto max-w-7xl bg-surface p-2 antialiased md:p-4 transition-colors duration-300"
+		class="custom-wrapper relative mx-auto max-w-7xl bg-background p-2 antialiased transition-colors duration-300 md:p-4"
 	>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
