@@ -28,8 +28,11 @@ const config = {
 					},
 				},
 				gradient: {
-					to: {
-						'background-position': '200% center',
+					'0%': {
+						'background-position': '0% center',
+					},
+					'100%': {
+						'background-position': 'var(--bg-size) center',
 					},
 				},
 			},

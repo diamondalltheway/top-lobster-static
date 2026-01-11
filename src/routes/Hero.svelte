@@ -91,7 +91,6 @@
 					<AnimatedGradientText
 						class="flex items-center gap-2 rounded-xl bg-white/10 px-1.5 text-xl"
 					>
-						🍿
 						<span
 							class={cn(
 								`animate-gradient inline bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-xl text-transparent`
@@ -99,19 +98,6 @@
 						>
 							@HunterScript
 						</span>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
-							><path d="m9 18 6-6-6-6" /></svg
-						>
 					</AnimatedGradientText>
 				</a>
 			</div>

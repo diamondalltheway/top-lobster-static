@@ -7,22 +7,92 @@
 	}
 
 	let { class: className = '', children }: Props = $props();
-	
-	let colorClass: string = '';
 </script>
 
 <button
 	class={cn(
-		'group relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-2xl bg-white/40 px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#8fdfff1f] backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-[inset_0_-5px_10px_#8fdfff3f] dark:bg-black/40',
+		'animated-btn group relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-2xl px-4 py-1.5 text-sm font-medium transition-all duration-300',
 		className
 	)}
 >
-	<div
-		class={cn(
-			'animate-gradient absolute inset-0 block h-full w-full bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:var(--bg-size)_100%] p-[1px] [border-radius:inherit] ![mask-composite:subtract] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]',
-			colorClass
-		)}
-	></div>
+	<!-- Pulsing glow -->
+	<div class="glow absolute -inset-1 rounded-[inherit] opacity-70 blur-xl"></div>
+	<div class="glow-intense absolute -inset-0.5 rounded-[inherit] opacity-50 blur-md"></div>
 
-	{#if children}{@render children()}{:else}Gradient{/if}
+	<!-- Border gradient -->
+	<div class="gradient-border absolute inset-0 rounded-[inherit]"></div>
+
+	<!-- Inner background -->
+	<div class="absolute inset-[1.5px] rounded-[inherit] bg-black/90"></div>
+
+	<!-- Content -->
+	<span class="relative z-10">
+		{#if children}{@render children()}{:else}Gradient{/if}
+	</span>
 </button>
+
+<style>
+	.animated-btn {
+		--c1: #ff6b2b;
+		--c2: #a855f7;
+		--c3: #06b6d4;
+	}
+
+	.animated-btn:hover {
+		transform: scale(1.02);
+	}
+
+	.animated-btn:hover .glow {
+		opacity: 1;
+	}
+
+	.animated-btn:hover .glow-intense {
+		opacity: 0.8;
+	}
+
+	.glow,
+	.glow-intense {
+		background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c2), var(--c1));
+		background-size: 300% 100%;
+		animation:
+			flow 4s ease-in-out infinite,
+			pulse 2s ease-in-out infinite;
+		transition: opacity 0.3s ease;
+	}
+
+	.gradient-border {
+		background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c2), var(--c1));
+		background-size: 300% 100%;
+		animation: flow 4s ease-in-out infinite;
+	}
+
+	.gradient-border::before {
+		content: '';
+		position: absolute;
+		inset: 1.5px;
+		border-radius: inherit;
+		background: black;
+	}
+
+	@keyframes flow {
+		0%,
+		100% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			opacity: 0.5;
+			filter: blur(12px);
+		}
+		50% {
+			opacity: 0.8;
+			filter: blur(18px);
+		}
+	}
+</style>
