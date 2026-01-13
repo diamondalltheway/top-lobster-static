@@ -31,28 +31,37 @@
 	];
 
 	onMount(() => {
-		inView('#contact-card', () => {
-			animate('#contact-card', { opacity: 1, y: [40, 0], scale: [0.95, 1] }, { duration: 0.6 });
-		});
+		const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-		// Animate floating shapes - very subtle movement
-		floatingShapes.forEach((_, i) => {
-			const el = document.querySelector(`#floating-shape-${i}`);
-			if (el) {
-				animate(
-					el,
-					{
-						y: [0, -8, 0],
-						opacity: [0.15, 0.3, 0.15],
-					},
-					{
-						duration: 6 + i * 0.8,
-						repeat: Infinity,
-						delay: floatingShapes[i].delay,
-					}
-				);
+		inView('#contact-card', () => {
+			if (isMobile) {
+				// On mobile, show card immediately without animation
+				animate('#contact-card', { opacity: 1, y: 0, scale: 1 }, { duration: 0.2 });
+			} else {
+				animate('#contact-card', { opacity: 1, y: [40, 0], scale: [0.95, 1] }, { duration: 0.6 });
 			}
 		});
+
+		// Only animate floating shapes on desktop (skip on mobile for performance)
+		if (!isMobile) {
+			floatingShapes.forEach((_, i) => {
+				const el = document.querySelector(`#floating-shape-${i}`);
+				if (el) {
+					animate(
+						el,
+						{
+							y: [0, -8, 0],
+							opacity: [0.15, 0.3, 0.15],
+						},
+						{
+							duration: 6 + i * 0.8,
+							repeat: Infinity,
+							delay: floatingShapes[i].delay,
+						}
+					);
+				}
+			});
+		}
 	});
 </script>
 
@@ -136,13 +145,13 @@
 						<!-- Email -->
 						<a
 							href="mailto:hunter@toplobster.io"
-							class="bg-surface/50 border-heading/20 hover:border-heading/50 hover:bg-surface group/email mt-8 inline-flex items-center gap-3 rounded-2xl border px-8 py-4 transition-all duration-300 hover:scale-[1.02]"
+							class="bg-surface/50 border-heading/20 hover:border-heading/50 hover:bg-surface group/email mt-8 inline-flex items-center gap-2 sm:gap-3 rounded-2xl border px-4 py-3 sm:px-8 sm:py-4 transition-all duration-300 hover:scale-[1.02]"
 						>
 							<div
-								class="bg-heading/15 group-hover/email:bg-heading/25 rounded-lg p-2 transition-colors"
+								class="bg-heading/15 group-hover/email:bg-heading/25 rounded-lg p-1.5 sm:p-2 transition-colors"
 							>
 								<svg
-									class="text-heading h-5 w-5"
+									class="text-heading h-4 w-4 sm:h-5 sm:w-5"
 									fill="none"
 									stroke="currentColor"
 									viewBox="0 0 24 24"
@@ -156,11 +165,11 @@
 								</svg>
 							</div>
 							<span
-								class="text-txt-secondary group-hover/email:text-txt text-lg font-semibold transition-colors"
+								class="text-txt-secondary group-hover/email:text-txt text-sm sm:text-lg font-semibold transition-colors"
 								>hunter@toplobster.io</span
 							>
 							<svg
-								class="text-txt-muted group-hover/email:text-heading h-4 w-4 transition-all group-hover/email:translate-x-1"
+								class="text-txt-muted group-hover/email:text-heading h-3 w-3 sm:h-4 sm:w-4 transition-all group-hover/email:translate-x-1"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"

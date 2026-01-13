@@ -1,9 +1,6 @@
 <script>
 	import { blur } from 'svelte/transition';
-	import Button from '$lib/components/Button.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
-
-	let mobileOpen = $state(false);
 
 	const navItems = [
 		{ href: '#tech', text: 'Technologies' },
@@ -14,21 +11,12 @@
 	];
 </script>
 
-<nav class="relative m-4 flex items-center justify-center">
+<nav class="relative m-4 flex items-center justify-between md:justify-center">
+	<!-- Left side: Languages -->
 	<div
 		transition:blur={{ duration: 2000 }}
-		class="flex flex-1 items-center md:absolute md:inset-y-0 md:left-0"
+		class="flex items-center md:absolute md:inset-y-0 md:left-0"
 	>
-		<div class="flex w-full items-center justify-between md:w-auto">
-			<div class="-mr-2 flex items-center md:hidden">
-				<button
-					onclick={() => (mobileOpen = !mobileOpen)}
-					type="button"
-					class="text-txt-muted hover:bg-surface-muted hover:text-txt-secondary focus:bg-surface-muted focus:text-txt-secondary inline-flex items-center justify-center rounded-md p-2 transition duration-150 ease-in-out focus:outline-none"
-				></button>
-			</div>
-		</div>
-
 		<ul
 			class="bg-nav-bg text-nav-text flex rounded-full px-2 text-sm font-bold shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur"
 		>
@@ -41,6 +29,7 @@
 		</ul>
 	</div>
 
+	<!-- Center: Navigation (hidden on mobile) -->
 	<nav class="pointer-events-auto hidden md:block">
 		<ul
 			class="bg-nav-bg text-nav-text flex rounded-full px-3 text-sm font-bold shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur"
@@ -58,20 +47,21 @@
 		</ul>
 	</nav>
 
+	<!-- Right side: GitHub & Theme Toggle (visible on all screens) -->
 	<div
 		transition:blur={{ duration: 2000 }}
-		class="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end md:gap-4"
+		class="flex items-center gap-2 md:gap-4 md:absolute md:inset-y-0 md:right-0"
 	>
 		<a
 			href="https://github.com/diamondalltheway"
 			target="_blank"
-			class="flex h-9 w-9 items-center justify-center rounded-full
+			class="flex h-8 w-8 md:h-9 md:w-9 items-center justify-center rounded-full
 				   bg-icon-bg border border-icon-border
 				   hover:border-heading transition-all duration-300"
 			aria-label="GitHub"
 		>
 			<svg
-				class="h-5 w-5 text-heading"
+				class="h-4 w-4 md:h-5 md:w-5 text-heading"
 				fill="currentColor"
 				viewBox="0 0 24 24"
 			>

@@ -228,8 +228,14 @@
 	];
 
 	onMount(() => {
+		const isMobile = window.matchMedia('(max-width: 768px)').matches;
 		inView('#tech-icons-end', () => {
-			animate('.tech-icon', { opacity: 1, y: [30, 0] }, { delay: stagger(0.02) });
+			if (isMobile) {
+				// On mobile, show icons immediately without stagger delay
+				animate('.tech-icon', { opacity: 1, y: 0 }, { duration: 0.2 });
+			} else {
+				animate('.tech-icon', { opacity: 1, y: [30, 0] }, { delay: stagger(0.02) });
+			}
 		});
 	});
 </script>

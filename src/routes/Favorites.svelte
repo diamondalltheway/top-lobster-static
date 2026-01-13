@@ -55,7 +55,8 @@
 					class="mt-2 text-sm text-amber-600/60 dark:text-favorites-amber/60 transition-opacity duration-500"
 					class:opacity-0={goatExpanded}
 				>
-					Hover to reveal
+					<span class="hidden md:inline">Hover to reveal</span>
+					<span class="md:hidden">Click to reveal</span>
 				</p>
 			</div>
 		</button>

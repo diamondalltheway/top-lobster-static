@@ -35,13 +35,20 @@
 	];
 
 	onMount(() => {
+		const isMobile = window.matchMedia('(max-width: 768px)').matches;
 		inView('#testimonials-trigger', () => {
-			animate('.featured-card', { opacity: 1, y: [50, 0], scale: [0.95, 1] }, { duration: 0.6 });
-			animate(
-				'.testimonial-card',
-				{ opacity: 1, y: [40, 0] },
-				{ delay: stagger(0.15, { start: 0.3 }) }
-			);
+			if (isMobile) {
+				// On mobile, show cards immediately without delays
+				animate('.featured-card', { opacity: 1, y: 0, scale: 1 }, { duration: 0.2 });
+				animate('.testimonial-card', { opacity: 1, y: 0 }, { duration: 0.2 });
+			} else {
+				animate('.featured-card', { opacity: 1, y: [50, 0], scale: [0.95, 1] }, { duration: 0.6 });
+				animate(
+					'.testimonial-card',
+					{ opacity: 1, y: [40, 0] },
+					{ delay: stagger(0.15, { start: 0.3 }) }
+				);
+			}
 		});
 	});
 </script>
@@ -56,7 +63,7 @@
 			>
 				Testimonials
 			</h2>
-			<p class="mt-4 text-lg text-txt-muted">What clients and collaborators have to say</p>
+			<p class="mt-4 text-lg text-txt-muted text-balance">What clients and collaborators have to say</p>
 			<!-- Star rating -->
 			<div class="mt-6 flex items-center justify-center gap-2">
 				<div class="flex gap-1">
@@ -68,7 +75,7 @@
 						</svg>
 					{/each}
 				</div>
-				<span class="ml-2 text-sm text-txt-muted">5.0 from clients</span>
+				<span class="ml-2 text-sm text-txt-muted">From employers</span>
 			</div>
 		</div>
 

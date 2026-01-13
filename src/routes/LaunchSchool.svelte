@@ -12,9 +12,16 @@
 	];
 
 	onMount(() => {
+		const isMobile = window.matchMedia('(max-width: 768px)').matches;
 		inView('#ls-section', () => {
-			animate('.stat-card', { opacity: 1, y: [40, 0], scale: [0.9, 1] }, { delay: stagger(0.15) });
-			animate('.ls-reflection', { opacity: 1, y: [30, 0] }, { delay: 0.5 });
+			if (isMobile) {
+				// On mobile, show elements immediately without delays
+				animate('.stat-card', { opacity: 1, y: 0, scale: 1 }, { duration: 0.2 });
+				animate('.ls-reflection', { opacity: 1, y: 0 }, { duration: 0.2 });
+			} else {
+				animate('.stat-card', { opacity: 1, y: [40, 0], scale: [0.9, 1] }, { delay: stagger(0.15) });
+				animate('.ls-reflection', { opacity: 1, y: [30, 0] }, { delay: 0.5 });
+			}
 		});
 	});
 </script>
@@ -101,7 +108,7 @@
 						bgColor={'hsl(349, 98%, 58%)'}
 						bgDepthColor={'hsl(340, 97%, 38%)'}
 					/>
-					<span class="text-sm text-txt-muted">Mastery-based learning</span>
+					<span class="hidden md:inline text-sm text-txt-muted">Mastery-based learning</span>
 				</div>
 			</div>
 		</div>
