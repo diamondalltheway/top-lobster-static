@@ -11,7 +11,7 @@
 	];
 </script>
 
-<nav class="relative m-4 flex items-center justify-between md:justify-center">
+<nav class="relative m-4 mb-14 md:mb-4 flex items-center justify-between md:justify-center">
 	<!-- Left side: Languages -->
 	<div
 		transition:blur={{ duration: 2000 }}
@@ -55,13 +55,13 @@
 		<a
 			href="https://github.com/diamondalltheway"
 			target="_blank"
-			class="flex h-8 w-8 md:h-9 md:w-9 items-center justify-center rounded-full
+			class="flex h-9 w-9 items-center justify-center rounded-full
 				   bg-icon-bg border border-icon-border
 				   hover:border-heading transition-all duration-300"
 			aria-label="GitHub"
 		>
 			<svg
-				class="h-4 w-4 md:h-5 md:w-5 text-heading"
+				class="h-5 w-5 text-heading"
 				fill="currentColor"
 				viewBox="0 0 24 24"
 			>
