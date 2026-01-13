@@ -228,15 +228,14 @@
 	];
 
 	onMount(() => {
-		const isMobile = window.matchMedia('(max-width: 768px)').matches;
-		inView('#tech-icons-end', () => {
-			if (isMobile) {
-				// On mobile, show icons immediately without stagger delay
-				animate('.tech-icon', { opacity: 1, y: 0 }, { duration: 0.2 });
-			} else {
+		// Only run scroll-triggered animation on tablet/desktop (768px+)
+		// On mobile, icons are visible immediately via CSS (no md:opacity-0)
+		const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+		if (isDesktop) {
+			inView('#tech-icons-end', () => {
 				animate('.tech-icon', { opacity: 1, y: [30, 0] }, { delay: stagger(0.02) });
-			}
-		});
+			});
+		}
 	});
 </script>
 
@@ -274,9 +273,10 @@
 					</div>
 
 					<!-- Tech Icons Grid -->
+					<!-- Mobile: visible immediately (opacity-100), Desktop: hidden until animated (md:opacity-0) -->
 					<ul id="tech-icons" class="relative grid grid-cols-4 gap-6 sm:gap-8 md:grid-cols-6 lg:grid-cols-8">
 						{#each technologies as tech}
-							<li class="tech-icon opacity-0">
+							<li class="tech-icon md:opacity-0">
 								<Icon name={tech.name} linkURL={tech.linkURL} imgURL={tech.imgURL} />
 							</li>
 						{/each}
