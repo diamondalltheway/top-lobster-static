@@ -27,17 +27,23 @@
 	];
 
 	onMount(() => {
+		const isMobile = window.matchMedia('(max-width: 768px)').matches;
 		inView('#open-source-end', () => {
-			setTimeout(() => {
-				animate('.os-card', { opacity: 1, y: [40, 0], scale: [0.95, 1] }, { delay: stagger(0.15) });
-			}, 200);
+			if (isMobile) {
+				// On mobile, show cards immediately without animations
+				animate('.os-card', { opacity: 1, y: 0, scale: 1 }, { duration: 0.2 });
+			} else {
+				setTimeout(() => {
+					animate('.os-card', { opacity: 1, y: [40, 0], scale: [0.95, 1] }, { delay: stagger(0.15) });
+				}, 200);
+			}
 		});
 	});
 </script>
 
 <div class="relative my-24 pb-8 pt-4" id="open-source">
-	<!-- Background effects -->
-	<div class="absolute inset-0 overflow-hidden pointer-events-none">
+	<!-- Background effects - hidden on mobile for performance -->
+	<div class="hidden md:block absolute inset-0 overflow-hidden pointer-events-none">
 		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-emerald-500/5 via-indigo-500/5 to-pink-500/5 rounded-full blur-[100px]"></div>
 	</div>
 

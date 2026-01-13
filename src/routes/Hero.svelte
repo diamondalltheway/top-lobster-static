@@ -12,25 +12,31 @@
 	let primaryTitleIsReady = $state(false);
 	let secondaryTitleIsReady = $state(false);
 	let isMobile = $state(false);
+	let mounted = $state(false);
 
 	onMount(() => {
 		isMobile = window.matchMedia('(max-width: 768px)').matches;
+		mounted = true;
 
-		// Faster delays on mobile
-		const titleDelay1 = isMobile ? 100 : 500;
-		const titleDelay2 = isMobile ? 300 : 1200;
-
-		setTimeout(() => {
+		// On mobile, show everything immediately - no delays
+		if (isMobile) {
 			primaryTitleIsReady = true;
-		}, titleDelay1);
-		setTimeout(() => {
 			secondaryTitleIsReady = true;
-		}, titleDelay2);
+		} else {
+			// Desktop: staggered reveals
+			setTimeout(() => {
+				primaryTitleIsReady = true;
+			}, 500);
+			setTimeout(() => {
+				secondaryTitleIsReady = true;
+			}, 1200);
+		}
 	});
 
-	// Computed transition params based on mobile
-	const getTransitionParams = (desktopDelay: number, duration: number = 500) => {
-		return { delay: isMobile ? Math.min(desktopDelay, 100) : desktopDelay, duration: isMobile ? 200 : duration };
+	// Return transition params only for desktop, empty object for mobile (no transition)
+	const getBlurParams = (desktopDelay: number, duration: number = 500) => {
+		if (isMobile) return { duration: 0 };
+		return { delay: desktopDelay, duration };
 	};
 </script>
 
@@ -38,7 +44,7 @@
 	<div class="text-center">
 		<div class="group relative mx-auto aspect-square w-3/4 md:w-1/3">
 			<div
-				transition:blur={{ delay: 200, duration: 600 }}
+				transition:blur={getBlurParams(200, 600)}
 				class="image-wrapper absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
 			>
 				<div class="absolute inset-3 overflow-hidden rounded-full">
@@ -47,7 +53,7 @@
 			</div>
 
 			<div
-				transition:blur={{ delay: 200, duration: 600 }}
+				transition:blur={getBlurParams(200, 600)}
 				class="image-wrapper absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 			>
 				<div class="absolute inset-3 overflow-hidden rounded-full">
@@ -73,7 +79,7 @@
 		<div
 			class="mx-auto mt-3 max-w-md text-base text-txt-muted sm:text-xl md:mt-5 md:max-w-3xl md:text-xl"
 		>
-			<div transition:blur={{ delay: isMobile ? 100 : 1500, duration: isMobile ? 200 : 500 }} class="flex justify-center gap-2">
+			<div transition:blur={getBlurParams(1500, 500)} class="flex justify-center gap-2">
 				<BriefcaseIcon />
 				<span
 					class="hero-gradient-text bg-clip-text font-semibold text-transparent"
@@ -83,7 +89,7 @@
 				</span>
 			</div>
 
-			<div transition:blur={{ delay: isMobile ? 150 : 2000, duration: isMobile ? 200 : 500 }} class="flex justify-center gap-2">
+			<div transition:blur={getBlurParams(2000, 500)} class="flex justify-center gap-2">
 				<GraduationIcon />
 				<a href="https://www.uh.edu/" target="_blank">
 					<span
@@ -95,7 +101,7 @@
 				<br />
 			</div>
 
-			<div transition:blur={{ delay: isMobile ? 200 : 2500, duration: isMobile ? 200 : 500 }} class="flex justify-center gap-2">
+			<div transition:blur={getBlurParams(2500, 500)} class="flex justify-center gap-2">
 				<BadgeIcon />
 				<a href="https://launchschool.com/courses" target="_blank">
 					<span
@@ -107,7 +113,7 @@
 			</div>
 
 			<div
-				transition:blur={{ delay: isMobile ? 250 : 3000, duration: isMobile ? 200 : 500 }}
+				transition:blur={getBlurParams(3000, 500)}
 				class="mt-4 flex items-center justify-center gap-2"
 			>
 				<a href="https://www.youtube.com/@HunterScript/featured" target="_blank" class="my-3">
@@ -139,6 +145,13 @@
 		border: 4px dashed #aaabef;
 		border-radius: 50%;
 		animation: spin 100s linear infinite;
+	}
+
+	/* Disable spinning animation on mobile */
+	@media (max-width: 768px) {
+		.image-wrapper::before {
+			animation: none;
+		}
 	}
 
 	.image-wrapper img {

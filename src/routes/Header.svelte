@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
 	import { blur } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
 	const navItems = [
@@ -9,12 +10,24 @@
 		{ href: '#favorites', text: 'Favorites' },
 		{ href: '#contact', text: 'Contact' },
 	];
+
+	let isMobile = $state(false);
+
+	onMount(() => {
+		isMobile = window.matchMedia('(max-width: 768px)').matches;
+	});
+
+	// No transitions on mobile
+	const getBlurParams = (duration: number) => {
+		if (isMobile) return { duration: 0 };
+		return { duration };
+	};
 </script>
 
 <nav class="relative m-4 mb-14 md:mb-4 flex items-center justify-between md:justify-center">
 	<!-- Left side: Languages -->
 	<div
-		transition:blur={{ duration: 2000 }}
+		transition:blur={getBlurParams(2000)}
 		class="flex items-center md:absolute md:inset-y-0 md:left-0"
 	>
 		<ul
@@ -49,7 +62,7 @@
 
 	<!-- Right side: GitHub & Theme Toggle (visible on all screens) -->
 	<div
-		transition:blur={{ duration: 2000 }}
+		transition:blur={getBlurParams(2000)}
 		class="flex items-center gap-2 md:gap-4 md:absolute md:inset-y-0 md:right-0"
 	>
 		<a

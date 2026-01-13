@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { blur } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	import BentoTile from '$lib/components/BentoTile.svelte';
 	import { favoritesConfig } from '$lib/config/favorites';
 
@@ -9,11 +10,22 @@
 	const places = favoritesConfig.categories.find((c) => c.id === 'places')!;
 
 	let goatExpanded = $state(false);
+	let isMobile = $state(false);
+
+	onMount(() => {
+		isMobile = window.matchMedia('(max-width: 768px)').matches;
+	});
+
+	// No transitions on mobile
+	const getBlurParams = () => {
+		if (isMobile) return { duration: 0 };
+		return { delay: 100, duration: 400 };
+	};
 </script>
 
 <div class="favorites-container mx-auto w-11/12 py-8 md:w-4/5 lg:w-3/4" id="favorites">
 	<!-- Header -->
-	<div class="mb-10 text-center" transition:blur={{ delay: 100, duration: 400 }}>
+	<div class="mb-10 text-center" transition:blur={getBlurParams()}>
 		<h2
 			class="glow-green space-grotesk inline-block bg-gradient-to-r from-green-700 via-emerald-600 to-green-700 dark:from-green-300 dark:via-emerald-400 dark:to-green-500 bg-clip-text text-4xl font-extrabold text-transparent drop-shadow-lg sm:text-5xl"
 		>

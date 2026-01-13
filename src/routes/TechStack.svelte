@@ -241,8 +241,8 @@
 </script>
 
 <div class="relative mt-44 pb-8 pt-4" id="tech">
-	<!-- Background effects -->
-	<div class="absolute inset-0 overflow-hidden pointer-events-none">
+	<!-- Background effects - hidden on mobile for performance -->
+	<div class="hidden md:block absolute inset-0 overflow-hidden pointer-events-none">
 		<div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-heading/5 rounded-full blur-[100px]"></div>
 		<div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px]"></div>
 	</div>
@@ -263,13 +263,13 @@
 		<!-- Main Container -->
 		<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 			<div class="relative group">
-				<!-- Animated border glow -->
-				<div class="absolute -inset-0.5 bg-gradient-to-r from-heading/30 via-purple-500/30 to-heading/30 rounded-3xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+				<!-- Animated border glow - hidden on mobile for performance -->
+				<div class="hidden md:block absolute -inset-0.5 bg-gradient-to-r from-heading/30 via-purple-500/30 to-heading/30 rounded-3xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
 
 				<!-- Container -->
 				<div class="relative rounded-3xl bg-surface-muted/80 backdrop-blur-md border border-heading/20 p-8 lg:p-12 transition-colors">
-					<!-- Decorative grid pattern overlay -->
-					<div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+					<!-- Decorative grid pattern overlay - hidden on mobile for performance -->
+					<div class="hidden md:block absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
 						<div class="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.08)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(99,102,241,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.15)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
 					</div>
 

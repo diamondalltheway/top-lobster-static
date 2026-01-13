@@ -238,4 +238,12 @@
 		background-size: 200% 200%;
 		animation: gradient-slow 6s ease infinite;
 	}
+
+	/* Disable animations on mobile for performance */
+	@media (max-width: 768px) {
+		.animate-gradient-slow {
+			animation: none;
+			background-position: 50% 50%;
+		}
+	}
 </style>

@@ -66,8 +66,8 @@
 </script>
 
 <div id="contact" class="relative overflow-hidden py-20 lg:py-28">
-	<!-- Background effects -->
-	<div class="pointer-events-none absolute inset-0 overflow-hidden">
+	<!-- Background effects - hidden on mobile for performance -->
+	<div class="hidden md:block pointer-events-none absolute inset-0 overflow-hidden">
 		<!-- Main glow -->
 		<div
 			class="bg-indigo-500/8 absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
@@ -258,5 +258,13 @@
 	.animate-gradient-xy {
 		background-size: 400% 400%;
 		animation: gradient-xy 10s ease infinite;
+	}
+
+	/* Disable animations on mobile for performance */
+	@media (max-width: 768px) {
+		.animate-gradient-xy {
+			animation: none;
+			background-position: 50% 50%;
+		}
 	}
 </style>

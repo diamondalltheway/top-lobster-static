@@ -29,8 +29,8 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <!-- svelte-ignore a11y_mouse_events_have_key_events -->
 <div id="ls-section" class="relative mx-auto max-w-7xl py-16 px-4 sm:py-20 sm:px-6 lg:px-8 lg:py-28">
-	<!-- Background glow effect -->
-	<div class="absolute inset-0 overflow-hidden pointer-events-none">
+	<!-- Background glow effect - hidden on mobile for performance -->
+	<div class="hidden md:block absolute inset-0 overflow-hidden pointer-events-none">
 		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/10 rounded-full blur-[120px]"></div>
 	</div>
 

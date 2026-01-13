@@ -205,6 +205,34 @@
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Roboto+Mono&family=Roboto:wght@400;900&family=Space+Grotesk:wght@500&display=swap');
 
+	/* Mobile: Simple lightweight gradient - no heavy computations */
+	@media (max-width: 768px) {
+		.glow-box {
+			background: linear-gradient(
+				172deg,
+				#e5d9c3 0%,
+				#d1c4a9 25%,
+				#c4b594 50%,
+				#b8a682 75%,
+				#a89570 100%
+			) !important;
+			box-shadow:
+				0 4px 12px rgba(0, 0, 0, 0.1),
+				0 2px 4px rgba(0, 0, 0, 0.08) !important;
+			border: 1px solid #a89570 !important;
+			filter: none !important;
+		}
+
+		.glow-box::before,
+		.glow-box::after {
+			display: none !important;
+		}
+
+		.wave {
+			animation: none !important;
+		}
+	}
+
 	/* Ultra-realistic high-definition parchment texture */
 	.glow-box {
 		/* Rich warm brown parchment palette */

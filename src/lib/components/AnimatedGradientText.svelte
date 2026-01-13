@@ -74,6 +74,20 @@
 		background: black;
 	}
 
+	/* Disable animations on mobile for performance */
+	@media (max-width: 768px) {
+		.glow,
+		.glow-intense {
+			animation: none;
+			background-position: 50% 50%;
+		}
+
+		.gradient-border {
+			animation: none;
+			background-position: 50% 50%;
+		}
+	}
+
 	@keyframes flow {
 		0%,
 		100% {
