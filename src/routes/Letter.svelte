@@ -65,6 +65,11 @@
 				<span class="text-lg font-bold text-black">Shadcn UI</span>, the Tailwind-based component
 				library and it's now one of my favorites.
 
+				<br /><br />
+				At the end of the day, I have a
+				lot of respect for getting to the finish line.
+				There's something deeply satisfying about taking an idea from concept to completion.
+
 				<div class="flex justify-start">
 					<Accordion type="single" collapsible>
 						<AccordionItem value="goals" class="border-none">
