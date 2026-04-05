@@ -32,6 +32,20 @@
 			image: 'josh.jpg',
 			badge: 'Contract',
 		},
+		{
+			text: "I've worked with Hunter on various projects over the years, and right now we're at the same company together. What stands out most is Hunter's generosity with his knowledge and time. Whether I need technical guidance, career advice, or just someone to talk through a problem with, he's always there. He's helped me grow as a developer and as a person. Hunter is the kind of colleague and friend everyone should be lucky enough to have.",
+			author: 'Alonso Lobato',
+			company: 'StruCalc',
+			image: 'alonso-lobato.jpg',
+			badge: 'Full-time',
+		},
+		{
+			text: "It has been an absolute honor to get to work under and alongside Hunter. He is truly dedicated to fix and complete any task or problem that is thrown his way. He makes for an incredible teacher, starting with building a foundation in any coding language he is teaching, nurturing an environment that feels comfortable and safe to ask questions, and he truly knows the topics that he teaches on, communicating clearly his understanding and mastery over them. He has been amazing to work with and his ability to problem-solve is second to none. I can't wait to work with him more in the future!",
+			author: 'Colin White',
+			company: 'StruCalc',
+			image: 'colin-white.jpg',
+			badge: 'Full-time',
+		},
 	];
 
 	onMount(() => {
