@@ -66,7 +66,7 @@
 		{
 			name: 'Stripe',
 			linkURL: 'https://stripe.com/',
-			imgURL: 'https://www.solodev.com/file/2e7ff4de-48b3-11ed-bb2e-0eaef3759f5f/stripe-icon.png',
+			imgURL: '/stripe.webp',
 		},
 		{ name: 'Lucia Auth', linkURL: 'https://lucia-auth.com/', imgURL: 'lucia.png' },
 		{ name: 'Vitest', linkURL: 'https://vitest.dev/', imgURL: 'vite-test.png' },
@@ -177,7 +177,7 @@
 		{
 			name: 'Stripe',
 			linkURL: 'https://stripe.com/',
-			imgURL: 'https://www.solodev.com/file/2e7ff4de-48b3-11ed-bb2e-0eaef3759f5f/stripe-icon.png',
+			imgURL: '/stripe.webp',
 		},
 		{ name: 'Lucia Auth', linkURL: 'https://lucia-auth.com/', imgURL: 'lucia.png' },
 		{ name: 'Vercel', linkURL: 'https://vercel.com/', imgURL: 'vercel.png' },

@@ -40,7 +40,7 @@
 		{
 			name: 'Stripe',
 			linkURL: 'https://stripe.com/',
-			imgURL: 'https://www.solodev.com/file/2e7ff4de-48b3-11ed-bb2e-0eaef3759f5f/stripe-icon.png',
+			imgURL: '/stripe.webp',
 		},
 	];
 </script>
