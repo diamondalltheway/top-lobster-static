@@ -49,13 +49,6 @@
 		{ name: 'Vite.js', linkURL: 'https://vitejs.dev/', imgURL: 'vite.png' },
 		{ name: 'Supabase', linkURL: 'https://supabase.com', imgURL: '/supabase.png' },
 		{
-			name: 'PostgreSQL',
-			linkURL: 'https://www.postgresql.org/',
-			imgURL:
-				'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-		},
-		{ name: 'Prisma', linkURL: 'https://www.prisma.io/', imgURL: '/prisma.png' },
-		{
 			name: 'Tailwind CSS',
 			linkURL: 'https://tailwindcss.com/',
 			imgURL:
@@ -91,13 +84,6 @@
 			imgURL: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
 		},
 		{ name: 'Supabase', linkURL: 'https://supabase.com', imgURL: 'supabase.png' },
-		{
-			name: 'PostgreSQL',
-			linkURL: 'https://www.postgresql.org/',
-			imgURL:
-				'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-		},
-		{ name: 'Prisma', linkURL: 'https://www.prisma.io/', imgURL: 'prisma.png' },
 		{
 			name: 'Tailwind CSS',
 			linkURL: 'https://tailwindcss.com/',
@@ -161,13 +147,6 @@
 		{ name: 'Vite.js', linkURL: 'https://vitejs.dev/', imgURL: 'vite.png' },
 		{ name: 'Supabase', linkURL: 'https://supabase.com', imgURL: 'supabase.png' },
 		{
-			name: 'PostgreSQL',
-			linkURL: 'https://www.postgresql.org/',
-			imgURL:
-				'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-		},
-		{ name: 'Prisma', linkURL: 'https://www.prisma.io/', imgURL: 'prisma.png' },
-		{
 			name: 'Tailwind CSS',
 			linkURL: 'https://tailwindcss.com/',
 			imgURL:
@@ -196,27 +175,17 @@
 			imgURL: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg',
 		},
 		{ name: 'Vite.js', linkURL: 'https://vitejs.dev/', imgURL: 'vite.png' },
-		{ name: 'Supabase', linkURL: 'https://supabase.com', imgURL: 'supabase.png' },
 		{
-			name: 'PostgreSQL',
-			linkURL: 'https://www.postgresql.org/',
-			imgURL:
-				'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+			name: 'IndexedDB',
+			linkURL: 'https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API',
+			imgURL: 'indexeddb.png',
 		},
-		{ name: 'Prisma', linkURL: 'https://www.prisma.io/', imgURL: 'prisma.png' },
 		{
 			name: 'Tailwind CSS',
 			linkURL: 'https://tailwindcss.com/',
 			imgURL:
 				'https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/tailwindcss/tailwindcss-original.svg',
 		},
-		{
-			name: 'Algolia',
-			linkURL: 'https://www.algolia.com/',
-			imgURL:
-				'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/12_Algolia_logo_logos-512.png',
-		},
-		{ name: 'Contentful', linkURL: 'https://www.contentful.com/', imgURL: 'contentful.png' },
 		{ name: 'Vercel', linkURL: 'https://vercel.com/', imgURL: 'vercel.png' },
 	];
 </script>
@@ -240,11 +209,11 @@
 		<div
 			class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
 		>
-			<Product
-				title="VerticalSpanish.com"
-				description="Vertical Spanish allows Spanish students to study spanish verbs in a world that inspires. Conjugators are notorious for being overpopulated with ads, but not here!"
-				linkURL="https://verticalspanish.com"
-				imgURL="landscape.png"
+				<Product
+					title="VerticalSpanish.com"
+					description="Vertical Spanish is a lightweight verb study app for Spanish students. It leans into IndexedDB so conjugation practice stays fast, local, and distraction-free."
+					linkURL="https://verticalspanish.com"
+					imgURL="landscape.png"
 				icons={vertical_spanish_icons}
 			/>
 
@@ -276,7 +245,7 @@
 
 			<Product
 				title="DataForest.io"
-				description="DataForest.io allows marketers to market geotarget homeowners. Think, Google Maps for homeowner + propery data."
+				description="DataForest.io helps marketers explore geotargeted homeowner and address data on a map, then export campaign-ready lists."
 				linkURL="https://dataforest.io"
 				imgURL="dataforest_ss.png"
 				icons={data_forest_icons}

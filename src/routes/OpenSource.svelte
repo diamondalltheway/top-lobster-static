@@ -7,7 +7,7 @@
 			name: 'Supabase',
 			linkURL: 'https://supabase.com/',
 			imgURL: 'supabase.png',
-			description: 'The open source Firebase alternative with Postgres',
+			description: 'The open source Firebase alternative for shipping apps quickly',
 			color: 'emerald',
 		},
 		{

@@ -31,10 +31,9 @@ There's something deeply satisfying about taking an idea from concept to complet
     <img src="https://toplobster.io/supabase.png" height="50" width="50" />
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="50" width="50" />
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" height="50" width="50" />
+    <img src="https://toplobster.io/indexeddb.png" height="50" width="50" />
     <img src="https://yepcode.io/docs/img/integrations/icons/pinecone.svg" height="50" width="50" />
-    <img src="https://toplobster.io/prisma.png" height="50" width="50" />
     <img src="https://toplobster.io/drizzle.png" height="50" width="50" />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="50" width="50" />
     <img src="https://toplobster.io/mysql.png" height="50" width="50" />
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="50" width="50" />
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="50" width="50" />
@@ -55,13 +54,11 @@ There's something deeply satisfying about taking an idea from concept to complet
     <img src="https://www.solodev.com/file/2e7ff4de-48b3-11ed-bb2e-0eaef3759f5f/stripe-icon.png" height="50" width="50" />
     <img src="https://toplobster.io/cloudinary.png" height="50" width="50" />
     <img src="https://toplobster.io/replicate.jpg" height="50" width="50" />
-    <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/12_Algolia_logo_logos-512.png" height="50" width="50" />
     <img src="https://toplobster.io/google-drive.png" height="50" width="50" />
-    <img src="https://toplobster.io/contentful.png" height="50" width="50" />
     <img src="https://toplobster.io/lucia.png" height="50" width="50" />
     <img src="https://toplobster.io/driver.png" height="50" width="50" />
   </div>
-  
+
 ## 🌱 Technologies and Tools I want to learn/use:
   <div>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" height="50" />

@@ -77,25 +77,19 @@
 			imgURL: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
 		},
 		{
+			name: 'IndexedDB',
+			linkURL: 'https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API',
+			imgURL: 'indexeddb.png',
+		},
+		{
 			name: 'Pinecone',
 			linkURL: 'https://pinecone.io',
 			imgURL: 'https://yepcode.io/docs/img/integrations/icons/pinecone.svg',
 		},
 		{
-			name: 'Prisma',
-			linkURL: 'https://www.prisma.io/',
-			imgURL: 'prisma.png',
-		},
-		{
 			name: 'Drizzle',
 			linkURL: 'https://www.drizzle.team/',
 			imgURL: 'drizzle.png',
-		},
-		{
-			name: 'Postgres',
-			linkURL: 'https://www.postgresql.org/',
-			imgURL:
-				'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
 		},
 		{
 			name: 'MySQL',
@@ -200,20 +194,9 @@
 			imgURL: 'replicate.jpg',
 		},
 		{
-			name: 'Algolia',
-			linkURL: 'https://www.algolia.com/',
-			imgURL:
-				'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/12_Algolia_logo_logos-512.png',
-		},
-		{
 			name: 'Google Drive API',
 			linkURL: 'https://developers.google.com/drive/api/guides/about-sdk',
 			imgURL: 'google-drive.png',
-		},
-		{
-			name: 'Contentful',
-			linkURL: 'https://www.contentful.com/',
-			imgURL: 'contentful.png',
 		},
 		{
 			name: 'Lucia Auth',
@@ -255,7 +238,7 @@
 				Technologies Used
 			</h2>
 			<p class="mt-4 text-lg text-txt-muted max-w-2xl mx-auto">
-				40+ technologies powering modern web experiences
+				Browser-native and server-side tools for lightweight web experiences
 			</p>
 		</div>
 
