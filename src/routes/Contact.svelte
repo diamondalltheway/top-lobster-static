@@ -1,7 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-	import { animate, inView } from 'motion';
-
 	const positions = [
 		{ name: 'Contract Positions', icon: '📝' },
 		{ name: 'Consulting Positions', icon: '💼' },
@@ -19,50 +16,6 @@
 			icon: 'M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z',
 		},
 	];
-
-	// Floating shapes data - subtle dots and small shapes
-	const floatingShapes = [
-		{ type: 'dot', size: 4, x: '8%', y: '25%', delay: 0 },
-		{ type: 'dot', size: 3, x: '92%', y: '20%', delay: 0.5 },
-		{ type: 'dot', size: 5, x: '5%', y: '65%', delay: 1 },
-		{ type: 'dot', size: 3, x: '88%', y: '70%', delay: 1.5 },
-		{ type: 'ring', size: 40, x: '12%', y: '45%', delay: 0.3 },
-		{ type: 'ring', size: 30, x: '85%', y: '45%', delay: 0.8 },
-	];
-
-	onMount(() => {
-		const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
-		inView('#contact-card', () => {
-			if (isMobile) {
-				// On mobile, show card immediately without animation
-				animate('#contact-card', { opacity: 1, y: 0, scale: 1 }, { duration: 0.2 });
-			} else {
-				animate('#contact-card', { opacity: 1, y: [40, 0], scale: [0.95, 1] }, { duration: 0.6 });
-			}
-		});
-
-		// Only animate floating shapes on desktop (skip on mobile for performance)
-		if (!isMobile) {
-			floatingShapes.forEach((_, i) => {
-				const el = document.querySelector(`#floating-shape-${i}`);
-				if (el) {
-					animate(
-						el,
-						{
-							y: [0, -8, 0],
-							opacity: [0.15, 0.3, 0.15],
-						},
-						{
-							duration: 6 + i * 0.8,
-							repeat: Infinity,
-							delay: floatingShapes[i].delay,
-						}
-					);
-				}
-			});
-		}
-	});
 </script>
 
 <div id="contact" class="relative overflow-hidden py-20 lg:py-28">
@@ -70,34 +23,13 @@
 	<div class="hidden md:block pointer-events-none absolute inset-0 overflow-hidden">
 		<!-- Main glow -->
 		<div
-			class="bg-indigo-500/8 absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
+			class="bg-heading/10 absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
 		></div>
 		<!-- Secondary glow -->
 		<div
-			class="absolute left-1/3 top-1/3 h-[300px] w-[300px] rounded-full bg-purple-500/5 blur-[80px]"
+			class="absolute left-1/3 top-1/3 h-[300px] w-[300px] rounded-full bg-heading/5 blur-[80px]"
 		></div>
 	</div>
-
-	<!-- Floating Shapes - subtle dots and rings -->
-	{#each floatingShapes as shape, i}
-		<div
-			id="floating-shape-{i}"
-			class="pointer-events-none absolute opacity-0"
-			style="left: {shape.x}; top: {shape.y};"
-		>
-			{#if shape.type === 'dot'}
-				<div
-					class="rounded-full bg-indigo-400/40"
-					style="width: {shape.size}px; height: {shape.size}px;"
-				></div>
-			{:else if shape.type === 'ring'}
-				<div
-					class="rounded-full border border-indigo-400/20"
-					style="width: {shape.size}px; height: {shape.size}px;"
-				></div>
-			{/if}
-		</div>
-	{/each}
 
 	<div class="relative mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
 		<!-- Section Header -->
@@ -110,30 +42,12 @@
 		</div>
 
 		<!-- Contact Card -->
-		<div id="contact-card" class="mx-auto max-w-2xl opacity-0">
-			<div class="group relative">
-				<!-- Animated gradient border -->
+		<div id="contact-card" class="mx-auto max-w-2xl">
+			<div class="relative">
+				<!-- Stable theme-aware card -->
 				<div
-					class="animate-gradient-xy absolute -inset-[2px] rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 opacity-50 blur-sm transition-all duration-500 group-hover:opacity-80"
-				></div>
-				<div
-					class="animate-gradient-xy absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 opacity-70"
-				></div>
-
-				<!-- Glass Card -->
-				<div
-					class="bg-surface-muted/90 border-border-subtle relative rounded-3xl border p-8 shadow-2xl backdrop-blur-xl transition-colors lg:p-12"
+					class="contact-card bg-contact-card-bg border-border-subtle relative overflow-hidden rounded-3xl border p-8 shadow-xl transition-colors lg:p-12"
 				>
-					<!-- Inner glow effects -->
-					<div class="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
-						<div
-							class="via-heading/30 absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent to-transparent"
-						></div>
-						<div
-							class="bg-heading/5 absolute left-1/2 top-0 h-24 w-1/2 -translate-x-1/2 blur-3xl"
-						></div>
-					</div>
-
 					<!-- Content -->
 					<div class="relative text-center">
 						<!-- Heading -->
@@ -239,32 +153,21 @@
 </div>
 
 <style>
-	@keyframes gradient-xy {
-		0%,
-		100% {
-			background-position: 0% 0%;
-		}
-		25% {
-			background-position: 100% 0%;
-		}
-		50% {
-			background-position: 100% 100%;
-		}
-		75% {
-			background-position: 0% 100%;
-		}
+	.contact-card::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		pointer-events: none;
+		background:
+			linear-gradient(hsl(var(--heading) / 0.045) 1px, transparent 1px),
+			linear-gradient(90deg, hsl(var(--heading) / 0.045) 1px, transparent 1px);
+		background-size: 32px 32px;
+		mask-image: linear-gradient(to bottom, black, transparent 82%);
 	}
 
-	.animate-gradient-xy {
-		background-size: 400% 400%;
-		animation: gradient-xy 10s ease infinite;
-	}
-
-	/* Disable animations on mobile for performance */
-	@media (max-width: 768px) {
-		.animate-gradient-xy {
-			animation: none;
-			background-position: 50% 50%;
-		}
+	.contact-card > * {
+		position: relative;
+		z-index: 1;
 	}
 </style>

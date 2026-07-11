@@ -43,7 +43,7 @@
 					{title}
 					{#if legacy}
 						<span
-							class="inline-flex items-center rounded-md bg-blue-200 px-2 py-1 text-xs font-medium text-blue-700 ring-2 ring-inset ring-blue-500/10"
+							class="inline-flex items-center rounded-md bg-heading/10 px-2 py-1 text-xs font-medium text-heading ring-1 ring-inset ring-heading/20"
 							>Legacy</span
 						>
 					{/if}

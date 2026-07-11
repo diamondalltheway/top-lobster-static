@@ -27,11 +27,11 @@
 	onmouseout={() => (isHovered = false)}
 	onfocus={() => (isHovered = true)}
 	onblur={() => (isHovered = false)}
-	class="glow-box mx-2 my-16 rounded-md bg-gradient-to-b from-neutral-100 to-neutral-300 object-cover p-6 py-32 text-left outline-offset-4 outline-indigo-400 hover:outline-dotted hover:outline-4 lg:px-8"
+	class="letter-panel mx-2 my-20 rounded-[2rem] p-6 py-20 text-left sm:p-10 sm:py-24 lg:px-8"
 >
-	<div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
-		<p class="text-base font-semibold leading-7 text-indigo-600">Bio</p>
-		<h1 class="space-grotesk mt-2 text-3xl font-bold tracking-tight text-gray-700 sm:text-4xl">
+	<div class="mx-auto max-w-3xl text-base leading-7 text-txt-secondary">
+		<p class="text-base font-semibold leading-7 text-heading">/ Bio</p>
+		<h1 class="space-grotesk mt-2 text-3xl font-bold tracking-tight text-txt sm:text-4xl">
 			Hey there! <span class:wave={isHovered}>👋</span>
 		</h1>
 		<p class="mt-6 text-xl font-semibold leading-8">
@@ -41,13 +41,13 @@
 		<div class="mt-10 max-w-2xl text-lg font-medium">
 			<div>
 				<p>
-					I am a huge fan of <span class="text-lg font-bold text-black">TypeScript. </span>The
+					I am a huge fan of <span class="text-lg font-bold text-txt">TypeScript.</span>&nbsp;The
 					tooling is fantastic, but what really stands out about TypeScript is how it encourages me
 					to be more mindful of the code I write.
 
 					<br /><br />
 
-					As far as frameworks go, <span class="text-lg font-bold text-black">🥇 Svelte</span> is
+					As far as frameworks go, <span class="text-lg font-bold text-txt">🥇 Svelte</span> is
 					always my first choice. The developer experience is excellent and it's a dream to use.
 					<span class="italic">Rich Harris</span>
 					has been a big influence on the way I think about building applications. I admire his first-principles
@@ -55,14 +55,14 @@
 					<br /><br />
 				</p>
 				<p>
-					The runner-up goes to <span class="text-lg font-bold text-black">🥈 React/Next.js</span>.
+					The runner-up goes to <span class="text-lg font-bold text-txt">🥈 React/Next.js</span>.
 					Its strong community and ecosystem are something I highly value.
 				</p>
 				<br />
 
-				I discovered <span class="text-lg font-bold text-black">Tailwind CSS</span> in 2019 and have
+				I discovered <span class="text-lg font-bold text-txt">Tailwind CSS</span> in 2019 and have
 				been exclusively using it ever since. In recent projects, I have been using
-				<span class="text-lg font-bold text-black">Shadcn UI</span>, the Tailwind-based component
+				<span class="text-lg font-bold text-txt">Shadcn UI</span>, the Tailwind-based component
 				library and it's now one of my favorites.
 
 				<br /><br />
@@ -77,14 +77,14 @@
 								<Button
 									text={'More'}
 									disableLink={true}
-									bgColor={'hsl(227, 66%, 55%)'}
-									bgDepthColor={'hsl(227, 66%, 25%)'}
+									bgColor={'hsl(var(--heading))'}
+									bgDepthColor={'hsl(236, 55%, 30%)'}
 								/>
 							</AccordionTrigger>
 							<AccordionContent
-								class="mt-2 rounded-md border-[3px] border-dashed border-indigo-400 p-4"
+								class="mt-2 rounded-xl border border-heading/30 bg-surface/70 p-4"
 							>
-								<p class="my-4 text-lg font-medium text-black">
+								<p class="my-4 text-lg font-medium text-txt">
 									Although TypeScript is my language of choice, I've recently been interested in Go.
 									<br /><br />
 									In my spare time, I am either working on a project or listening to podcasts / watching
@@ -108,63 +108,67 @@
 						</AccordionItem>
 					</Accordion>
 				</div>
-				<hr class="my-8 border-t-2 border-slate-800" />
+				<hr class="my-10 border-border-subtle" />
 
-				<ul class="mt-8 max-w-2xl space-y-2 text-gray-600">
-					<h2 class="space-grotesk mx-auto my-8 text-2xl font-bold tracking-tight text-gray-900">
-						The <span class="underline decoration-indigo-600 decoration-wavy underline-offset-8"
+				<ul class="mt-8 max-w-2xl space-y-3 text-txt-secondary">
+					<h2 class="space-grotesk mx-auto my-8 text-2xl font-bold tracking-tight text-txt">
+						The <span class="underline decoration-heading decoration-wavy underline-offset-8"
 							>perfect</span
 						> day looks like...
 					</h2>
 					<li class="flex gap-x-3">
 						<Check />
 						<span
-							><strong class="font-semibold text-gray-900">Programming.</strong> Building
+							><strong class="font-semibold text-txt">Programming.</strong> Building
 							applications gives me energy. <span class="text-xl">⚡️</span></span
 						>
 					</li>
 					<li class="flex gap-x-3">
 						<Check />
 						<span
-							><strong class="font-semibold text-gray-900">Reading in Spanish.</strong> Best way to
+							><strong class="font-semibold text-txt">Reading in Spanish.</strong> Best way to
 							improve overall comprehension. <span class="text-xl">📈</span></span
 						>
 					</li>
 					<li class="flex gap-x-3">
 						<Check />
 						<span
-							><strong class="font-semibold text-gray-900">Barbecuing.</strong> Experimenting with
-							new recipies. <span class="text-xl">🔬</span></span
+							><strong class="font-semibold text-txt">Barbecuing.</strong> Experimenting with
+							new recipes. <span class="text-xl">🔬</span></span
 						>
 					</li>
 					<li class="flex gap-x-3">
 						<Check />
 						<span
-							><strong class="font-semibold text-gray-900">Watching UFC.</strong> Enjoying pure
+							><strong class="font-semibold text-txt">Watching UFC.</strong> Enjoying pure
 							competition. <span class="text-xl">🥊 </span></span
 						>
 					</li>
 				</ul>
 
-				<hr class="my-8 border-t-2 border-neutral-800" />
+				<hr class="my-10 border-border-subtle" />
 
-				<h2 class="space-grotesk mt-8 text-2xl font-bold tracking-tight text-gray-900">
+				<h2 class="space-grotesk mt-8 text-2xl font-bold tracking-tight text-txt">
 					Notes on Spanish
 				</h2>
 				<p class="mt-6">
 					The Spanish language has been many things to me. It has been a teacher, teaching me <span
-						class="caveat text-2xl font-bold text-indigo-500">dedication</span
+						class="caveat text-2xl font-bold text-heading">dedication</span
 					>,
-					<span class="caveat text-2xl font-bold text-indigo-500">patience</span>, and
-					<span class="caveat text-2xl font-bold text-indigo-500">discipline</span>. It has also
+					<span class="caveat text-2xl font-bold text-heading">patience</span>, and
+					<span class="caveat text-2xl font-bold text-heading">discipline</span>. It has also
 					been a vehicle for self-confidence. And after non-stop intense study, Spanish is now a
-					part of my identity. I've spent the last
-					<span class="font-bold text-indigo-500">7+ years</span>
+					part of my identity.
+					
+					<br /><br />
+					
+					I've spent the last
+					<span class="font-bold text-heading">8+ years</span>
 					living among the Latino community, taking the opportunity to listen, learn and eventually gain
 					a deep understanding. <br /><br /> I've integrated many positive aspects of the Latin
 					American lifestyle into my own life, with the most important lesson at the top of mind -
 					<strong
-						class="bg-gradient-to-b from-pink-600 via-red-600 to-fuchsia-700 bg-clip-text text-xl font-black text-transparent"
+						class="text-xl font-black text-heading"
 						>Love life</strong
 					>
 					<span class="p-2 text-xl">❤️</span>
@@ -178,17 +182,17 @@
 								<Button
 									text={'Spanish Goals'}
 									disableLink={true}
-									bgColor={'hsl(227, 66%, 55%)'}
-									bgDepthColor={'hsl(227, 66%, 25%)'}
+									bgColor={'hsl(var(--heading))'}
+									bgDepthColor={'hsl(236, 55%, 30%)'}
 								/>
 							</AccordionTrigger>
 							<AccordionContent
-								class="mt-2 rounded-md border-[3px] border-dashed border-indigo-400 p-4"
+								class="mt-2 rounded-xl border border-heading/30 bg-surface/70 p-4"
 							>
-								<p class="my-4 text-lg font-medium text-black">
+								<p class="my-4 text-lg font-medium text-txt">
 									I was challenged to read 1 million words in Spanish to enhance my overall literacy
 									and significantly grow my vocabulary. The complete Harry Potter series totals 1.1
-									million words. <span class="font-bold text-indigo-500"
+									million words. <span class="font-bold text-heading"
 										>Challenge Accepted. 😎</span
 									>
 								</p>
@@ -212,34 +216,39 @@
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Roboto+Mono&family=Roboto:wght@400;900&family=Space+Grotesk:wght@500&display=swap');
 
-	/* Real paper texture with subtle parchment depth */
-	.glow-box {
+	.letter-panel {
 		background:
-			linear-gradient(rgba(224, 195, 145, 0.58), rgba(224, 195, 145, 0.58)),
-			linear-gradient(135deg, rgba(236, 205, 136, 0.14), rgba(126, 82, 38, 0.2)),
-			url('/paper.jpg') center / cover no-repeat !important;
-		background-blend-mode: normal, multiply, normal;
-		background-size:
-			100% 100%,
-			100% 100%,
-			cover;
+			radial-gradient(circle at 12% 0%, hsl(var(--heading) / 0.18), transparent 30rem),
+			radial-gradient(circle at 92% 88%, hsl(var(--heading-accent) / 0.12), transparent 28rem),
+			linear-gradient(135deg, hsl(var(--surface-elevated) / 0.97), hsl(var(--surface-muted) / 0.94));
+		background-size: 140% 140%, 150% 150%, 100% 100%;
 		box-shadow:
-			inset 0 0 90px rgba(82, 58, 31, 0.16),
-			inset 0 1px 1px rgba(255, 251, 236, 0.5),
-			0 1px 2px rgba(58, 38, 20, 0.1),
-			0 12px 28px rgba(58, 38, 20, 0.1);
-		border: 1px solid rgba(120, 94, 58, 0.42);
+			inset 0 1px hsl(var(--text-primary) / 0.05),
+			0 0 0 1px hsl(var(--heading) / 0.04),
+			0 28px 80px -40px hsl(var(--heading) / 0.34);
+		border: 1px solid hsl(var(--border-subtle));
 		isolation: isolate;
 		position: relative;
 		overflow: hidden;
+		animation: letter-aurora 12s ease-in-out infinite;
+		transition: border-color 400ms ease, box-shadow 400ms ease;
+		will-change: background-position, box-shadow;
 	}
 
-	.glow-box > * {
+	.letter-panel:hover {
+		border-color: hsl(var(--heading) / 0.34);
+		box-shadow:
+			inset 0 1px hsl(var(--text-primary) / 0.06),
+			0 0 0 1px hsl(var(--heading) / 0.08),
+			0 30px 92px -36px hsl(var(--heading) / 0.46);
+	}
+
+	.letter-panel > * {
 		position: relative;
 		z-index: 1;
 	}
 
-	.glow-box::before {
+	.letter-panel::before {
 		content: '';
 		position: absolute;
 		inset: 0;
@@ -247,47 +256,53 @@
 		pointer-events: none;
 		z-index: 0;
 		background:
-			radial-gradient(ellipse 70% 50% at 50% 42%, rgba(255, 238, 202, 0.16), transparent 68%),
-			linear-gradient(90deg, rgba(66, 45, 22, 0.05), transparent 5%, transparent 95%, rgba(66, 45, 22, 0.05)),
-			linear-gradient(180deg, rgba(66, 45, 22, 0.045), transparent 5%, transparent 95%, rgba(66, 45, 22, 0.06));
-		opacity: 0.36;
+			linear-gradient(hsl(var(--heading) / 0.045) 1px, transparent 1px),
+			linear-gradient(90deg, hsl(var(--heading) / 0.045) 1px, transparent 1px);
+		background-size: 32px 32px;
+		mask-image: linear-gradient(to bottom, black, transparent 75%);
 	}
 
-	.glow-box::after {
+	.letter-panel::after {
 		content: '';
 		position: absolute;
-		inset: 0;
-		border-radius: inherit;
+		inset: 0 auto 0 0;
+		width: 4px;
 		pointer-events: none;
-		z-index: 0;
-		background:
-			radial-gradient(ellipse 120px 84px at 72% 78%, transparent 38%, rgba(96, 66, 34, 0.014) 48%, transparent 72%),
-			radial-gradient(ellipse 92px 62px at 18% 24%, transparent 42%, rgba(96, 66, 34, 0.012) 52%, transparent 74%);
-		opacity: 0.24;
+		background: linear-gradient(to bottom, transparent, hsl(var(--heading)), transparent);
+		opacity: 0.8;
+		animation: letter-spine 7s ease-in-out infinite;
+	}
+
+	@keyframes letter-aurora {
+		0%, 100% {
+			background-position: 0% 0%, 100% 100%, 0 0;
+		}
+		50% {
+			background-position: 18% 12%, 82% 76%, 0 0;
+		}
+	}
+
+	@keyframes letter-spine {
+		0%, 100% {
+			opacity: 0.55;
+			filter: drop-shadow(0 0 5px hsl(var(--heading) / 0.25));
+		}
+		50% {
+			opacity: 1;
+			filter: drop-shadow(0 0 12px hsl(var(--heading) / 0.65));
+		}
 	}
 
 	@media (max-width: 768px) {
-		.glow-box {
-			background:
-				linear-gradient(rgba(224, 195, 145, 0.62), rgba(224, 195, 145, 0.62)),
-				linear-gradient(135deg, rgba(236, 205, 136, 0.12), rgba(126, 82, 38, 0.16)),
-				url('/paper.jpg') center / cover no-repeat !important;
-			background-blend-mode: normal, multiply, normal;
-			box-shadow:
-				inset 0 0 54px rgba(82, 58, 31, 0.12),
-				0 4px 12px rgba(58, 38, 20, 0.12) !important;
-		}
-
-		.glow-box::before {
-			opacity: 0.24;
-		}
-
-		.glow-box::after {
-			display: none;
-		}
-
 		.wave {
 			animation: none !important;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.letter-panel,
+		.letter-panel::after {
+			animation: none;
 		}
 	}
 

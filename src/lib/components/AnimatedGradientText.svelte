@@ -23,7 +23,7 @@
 	<div class="gradient-border absolute inset-0 rounded-[inherit]"></div>
 
 	<!-- Inner background -->
-	<div class="absolute inset-[1.5px] rounded-[inherit] bg-black/90"></div>
+	<div class="inner-background absolute inset-[1.5px] rounded-[inherit] bg-surface/95"></div>
 
 	<!-- Content -->
 	<span class="relative z-10">
@@ -33,9 +33,9 @@
 
 <style>
 	.animated-btn {
-		--c1: #ff6b2b;
-		--c2: #a855f7;
-		--c3: #06b6d4;
+		--c1: hsl(var(--heading));
+		--c2: hsl(var(--heading-accent));
+		--c3: hsl(var(--heading));
 	}
 
 	.animated-btn:hover {
@@ -71,7 +71,26 @@
 		position: absolute;
 		inset: 1.5px;
 		border-radius: inherit;
-		background: black;
+		background: hsl(var(--surface));
+	}
+
+	/* Keep the atmospheric treatment in dark mode, but use a crisp pill in light mode. */
+	:global(:root:not(.dark)) .animated-btn {
+		box-shadow: 0 8px 20px -14px hsl(var(--heading) / 0.45);
+	}
+
+	:global(:root:not(.dark)) .animated-btn .glow,
+	:global(:root:not(.dark)) .animated-btn .glow-intense {
+		display: none;
+	}
+
+	:global(:root:not(.dark)) .animated-btn .gradient-border {
+		background: hsl(var(--heading) / 0.48);
+		animation: none;
+	}
+
+	:global(:root:not(.dark)) .animated-btn .inner-background {
+		background: hsl(var(--surface-muted));
 	}
 
 	/* Disable animations on mobile for performance */

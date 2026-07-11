@@ -118,11 +118,11 @@
 			>
 				<a href="https://www.youtube.com/@HunterScript/featured" target="_blank" class="my-3">
 					<AnimatedGradientText
-						class="flex items-center gap-2 rounded-xl bg-white/10 px-1.5 text-xl"
+						class="flex items-center gap-2 rounded-xl px-1.5 text-xl"
 					>
 						<span
 							class={cn(
-								`animate-gradient inline bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-xl text-transparent`
+								`animate-gradient inline bg-gradient-to-r from-heading via-heading-accent to-heading bg-[length:var(--bg-size)_100%] bg-clip-text text-xl text-transparent`
 							)}
 						>
 							@HunterScript
@@ -142,7 +142,7 @@
 		left: -2px;
 		width: calc(100% + 4px);
 		height: calc(100% + 4px);
-		border: 4px dashed #aaabef;
+		border: 4px dashed hsl(var(--heading) / 0.6);
 		border-radius: 50%;
 		animation: spin 100s linear infinite;
 	}

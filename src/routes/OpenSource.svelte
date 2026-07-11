@@ -44,7 +44,7 @@
 <div class="relative my-24 pb-8 pt-4" id="open-source">
 	<!-- Background effects - hidden on mobile for performance -->
 	<div class="hidden md:block absolute inset-0 overflow-hidden pointer-events-none">
-		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-emerald-500/5 via-indigo-500/5 to-pink-500/5 rounded-full blur-[100px]"></div>
+		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-heading/5 rounded-full blur-[100px]"></div>
 	</div>
 
 	<div class="relative text-center">
@@ -71,23 +71,23 @@
 					>
 						<!-- Card glow effect -->
 						<div class="absolute -inset-0.5 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500
-							{contribution.color === 'emerald' ? 'bg-gradient-to-b from-emerald-400/40 to-emerald-600/40' : ''}
-							{contribution.color === 'neutral' ? 'bg-gradient-to-b from-gray-400/40 to-gray-600/40' : ''}
-							{contribution.color === 'pink' ? 'bg-gradient-to-b from-pink-400/40 to-pink-600/40' : ''}
+							{contribution.color === 'emerald' ? 'bg-gradient-to-b from-heading/45 to-heading-accent/35' : ''}
+							{contribution.color === 'neutral' ? 'bg-gradient-to-b from-heading/45 to-heading-accent/35' : ''}
+							{contribution.color === 'pink' ? 'bg-gradient-to-b from-heading/45 to-heading-accent/35' : ''}
 						"></div>
 
 						<!-- Card -->
 						<div class="relative flex flex-col items-center p-8 rounded-2xl bg-surface-muted/90 backdrop-blur-sm border transition-all duration-300
-							{contribution.color === 'emerald' ? 'border-emerald-500/20 hover:border-emerald-400/50' : ''}
-							{contribution.color === 'neutral' ? 'border-gray-500/20 hover:border-gray-400/50' : ''}
-							{contribution.color === 'pink' ? 'border-pink-500/20 hover:border-pink-400/50' : ''}
+							{contribution.color === 'emerald' ? 'border-heading/20 hover:border-heading/50' : ''}
+							{contribution.color === 'neutral' ? 'border-heading/20 hover:border-heading/50' : ''}
+							{contribution.color === 'pink' ? 'border-heading/20 hover:border-heading/50' : ''}
 						">
 							<!-- Icon container -->
 							<div class="relative mb-6">
 								<div class="absolute -inset-3 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300
-									{contribution.color === 'emerald' ? 'bg-emerald-500/10' : ''}
-									{contribution.color === 'neutral' ? 'bg-gray-500/10' : ''}
-									{contribution.color === 'pink' ? 'bg-pink-500/10' : ''}
+									{contribution.color === 'emerald' ? 'bg-heading/10' : ''}
+									{contribution.color === 'neutral' ? 'bg-heading/10' : ''}
+									{contribution.color === 'pink' ? 'bg-heading/10' : ''}
 								"></div>
 								<img
 									class="relative h-20 w-20 rounded-xl object-contain p-2 bg-surface border border-border-subtle group-hover:scale-110 transition-transform duration-300"
@@ -106,9 +106,9 @@
 
 							<!-- Hover indicator -->
 							<div class="mt-6 flex items-center gap-2 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300
-								{contribution.color === 'emerald' ? 'text-emerald-400' : ''}
-								{contribution.color === 'neutral' ? 'text-gray-300' : ''}
-								{contribution.color === 'pink' ? 'text-pink-400' : ''}
+								{contribution.color === 'emerald' ? 'text-heading' : ''}
+								{contribution.color === 'neutral' ? 'text-heading' : ''}
+								{contribution.color === 'pink' ? 'text-heading' : ''}
 							">
 								<span>View Project</span>
 								<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

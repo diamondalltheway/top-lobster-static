@@ -11,15 +11,12 @@ export interface FavoriteCategory {
 	title: string;
 	icon: string;
 	itemIcon: string;
-	subtitleIcon?: string;
-	color: string;
 	items: FavoriteItem[];
 }
 
 export interface GoatConfig {
 	title: string;
 	icon: string;
-	color: string;
 	content: string;
 }
 
@@ -35,8 +32,6 @@ export const favoritesConfig: FavoritesConfig = {
 			title: 'Favorite Books',
 			icon: '📚',
 			itemIcon: '📖',
-			subtitleIcon: '✍️',
-			color: 'text-green-300',
 			items: [
 				{ name: 'The Little Prince', subtitle: 'Antoine de Saint-Exupéry' },
 				{ name: '12 Rules for Life', subtitle: 'Jordan B. Peterson' },
@@ -60,7 +55,6 @@ export const favoritesConfig: FavoritesConfig = {
 			title: 'Favorite Movies',
 			icon: '🍿',
 			itemIcon: '🎥',
-			color: 'text-green-400',
 			items: [
 				{ name: "You've Got Mail" },
 				{ name: 'Interstellar' },
@@ -79,7 +73,6 @@ export const favoritesConfig: FavoritesConfig = {
 			title: 'Favorite TV Shows',
 			icon: '🎬',
 			itemIcon: '📺',
-			color: 'text-green-500',
 			items: [
 				{ name: 'Severance' },
 				{ name: 'Suits' },
@@ -98,12 +91,10 @@ export const favoritesConfig: FavoritesConfig = {
 			title: 'Favorite Places on Earth',
 			icon: '🌎',
 			itemIcon: '📍',
-			subtitleIcon: '⭐️',
-			color: 'text-green-600',
 			items: [
 				{ name: 'The Woodlands, Texas', subtitle: "I'm a hometown kind of guy" },
 				{ name: 'Tenerife, Spain', subtitle: 'Incredible amount of microclimates' },
-				{ name: 'Medellín, Colombia', subtitle: 'Lived here for 6 years' },
+				{ name: 'Medellín, Colombia', subtitle: 'Lived here for 8 years' },
 				{ name: 'Santa Fé de Antioquia, Colombia', subtitle: 'Perfectly slow pace of life' },
 				{ name: 'Denver, Colorado', subtitle: 'Lived here for a year, Rocky Mountain Air' },
 				{ name: 'Papagayo, Costa Rica', subtitle: 'Great family memories' },
@@ -132,7 +123,6 @@ export const favoritesConfig: FavoritesConfig = {
 	goat: {
 		title: 'Greatest of All Time',
 		icon: '🏀',
-		color: 'text-green-700',
 		content: 'Jordan. 🏆 🏆 🏆 🏆 🏆 🏆'
 	}
 };

@@ -21,7 +21,7 @@
 	{#if mounted}
 		<!-- Sun icon (shown in light mode - indicates current state) -->
 		<svg
-			class="absolute h-5 w-5 text-amber-400 transition-all duration-300
+			class="absolute h-5 w-5 text-heading transition-all duration-300
 				   {!$isDarkMode ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-75 opacity-0'}"
 			fill="none"
 			stroke="currentColor"

@@ -103,11 +103,11 @@
 			<div class="group relative">
 				<!-- Animated gradient border -->
 				<div
-					class="animate-gradient-slow absolute -inset-[2px] rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-60 blur-sm transition-opacity duration-500 group-hover:opacity-100"
+					class="animate-gradient-slow absolute -inset-[2px] rounded-3xl bg-gradient-to-r from-heading/60 via-heading-accent/80 to-heading/60 opacity-60 blur-sm transition-opacity duration-500 group-hover:opacity-100"
 				></div>
 
 				<!-- Card -->
-				<div class="relative rounded-3xl bg-surface-muted p-8 lg:p-12 transition-colors">
+				<div class="relative rounded-3xl bg-testimonial-card-bg p-8 lg:p-12 transition-colors">
 					<!-- Grid pattern overlay -->
 					<div class="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl opacity-30">
 						<div
@@ -138,7 +138,7 @@
 						<div class="mt-10 flex items-center gap-6">
 							<div class="relative">
 								<div
-									class="absolute -inset-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 opacity-60 blur"
+									class="absolute -inset-2 rounded-full bg-gradient-to-r from-heading to-heading-accent opacity-60 blur"
 								></div>
 								<img
 									class="relative h-16 w-16 rounded-full object-cover ring-4 ring-surface-muted"
@@ -157,7 +157,7 @@
 										{featuredTestimonial.badge}
 									</span>
 								</div>
-								<div class="text-heading-accent">{featuredTestimonial.company}</div>
+								<div class="text-heading">{featuredTestimonial.company}</div>
 							</div>
 							<div class="ml-auto hidden gap-1 sm:flex">
 								{#each Array(5) as _}
@@ -180,12 +180,12 @@
 				<figure class="testimonial-card group relative h-full opacity-0">
 					<!-- Glow on hover -->
 					<div
-						class="absolute -inset-0.5 rounded-2xl bg-gradient-to-b from-indigo-500/30 to-purple-500/30 opacity-0 blur transition-opacity duration-500 group-hover:opacity-100"
+						class="absolute -inset-0.5 rounded-2xl bg-gradient-to-b from-heading/35 to-heading-accent/25 opacity-0 blur transition-opacity duration-500 group-hover:opacity-100"
 					></div>
 
 					<!-- Card -->
 					<div
-						class="relative flex h-full flex-col rounded-2xl border border-border-subtle bg-surface-muted/95 p-6 backdrop-blur-sm transition-all duration-300 hover:border-heading/50"
+						class="relative flex h-full flex-col rounded-2xl border border-testimonial-border bg-testimonial-card-bg/95 p-6 backdrop-blur-sm transition-all duration-300 hover:border-heading/50"
 					>
 						<!-- Stars and Badge -->
 						<div class="mb-4 flex items-center justify-between">
@@ -201,7 +201,7 @@
 							<span
 								class="rounded-full px-2.5 py-0.5 text-[10px] font-semibold ring-1 {badge ===
 								'Full-time'
-									? 'bg-emerald-500/30 text-emerald-700 ring-emerald-500/50 dark:bg-emerald-500/20 dark:text-emerald-300 dark:ring-emerald-500/30'
+									? 'bg-heading/15 text-heading ring-heading/30'
 									: 'bg-heading/20 text-heading ring-heading/30'}"
 							>
 								{badge}

@@ -4,196 +4,191 @@
 
 @layer base {
 	:root {
-		/* Existing shadcn variables */
-		--background: 40 40% 95%;
-		--foreground: 222.2 84% 4.9%;
+		/* Warm, editorial light palette inspired by the Majd reference. */
+		--background: 33 34% 95%;
+		--foreground: 24 10% 7%;
 
-		--muted: 210 40% 96.1%;
-		--muted-foreground: 215.4 16.3% 46.9%;
+		--muted: 32 24% 90%;
+		--muted-foreground: 24 6% 42%;
 
-		--popover: 0 0% 100%;
-		--popover-foreground: 222.2 84% 4.9%;
+		--popover: 36 45% 99%;
+		--popover-foreground: 24 10% 7%;
 
-		--card: 0 0% 100%;
-		--card-foreground: 222.2 84% 4.9%;
+		--card: 36 45% 99%;
+		--card-foreground: 24 10% 7%;
 
-		--border: 214.3 31.8% 91.4%;
-		--input: 214.3 31.8% 91.4%;
+		--border: 30 15% 84%;
+		--input: 30 15% 84%;
 
-		--primary: 222.2 47.4% 11.2%;
-		--primary-foreground: 210 40% 98%;
+		--primary: 15 62% 60%;
+		--primary-foreground: 24 10% 7%;
 
-		--secondary: 210 40% 96.1%;
-		--secondary-foreground: 222.2 47.4% 11.2%;
+		--secondary: 32 24% 90%;
+		--secondary-foreground: 24 10% 12%;
 
-		--accent: 210 40% 96.1%;
-		--accent-foreground: 222.2 47.4% 11.2%;
+		--accent: 15 62% 60%;
+		--accent-foreground: 24 10% 7%;
 
 		--destructive: 0 72.2% 50.6%;
 		--destructive-foreground: 210 40% 98%;
 
-		--ring: 222.2 84% 4.9%;
+		--ring: 15 62% 60%;
 
 		--radius: 0.5rem;
 
-		/* ========== THEME SYSTEM VARIABLES ========== */
-		/* Light mode - Warm cream tones inspired by Anthropic */
-
-		/* Page & Surface backgrounds - warm cream tones (Anthropic-inspired) */
-		--surface: 40 40% 98%; /* Warm cream background - the beautiful card color */
-		--surface-muted: 38 35% 92%; /* Slightly darker warm cream for cards */
-		--surface-elevated: 40 45% 99%; /* Lighter warm cream for elevated elements */
+		--surface: 33 34% 95%;
+		--surface-muted: 32 27% 90%;
+		--surface-elevated: 36 45% 99%;
 
 		/* Text colors - high contrast for light mode */
-		--heading: 226 71% 40%;
-		--heading-accent: 226 83% 48%;
-		--text-primary: 30 10% 15%; /* Warm near-black */
-		--text-secondary: 30 8% 35%; /* Warm dark gray */
-		--text-muted: 30 6% 50%; /* Warm medium gray */
+		--heading: 12 60% 43%;
+		--heading-accent: 15 62% 60%;
+		--text-primary: 24 10% 7%;
+		--text-secondary: 24 7% 26%;
+		--text-muted: 24 5% 44%;
 
 		/* Border colors - warm tones */
-		--border-subtle: 35 20% 85%;
-		--border-strong: 35 15% 75%;
+		--border-subtle: 30 15% 84%;
+		--border-strong: 28 12% 69%;
 
 		/* Navigation - warm cream */
-		--nav-bg: 40 25% 92%;
-		--nav-text: 226 71% 40%;
-		--nav-text-hover: 226 83% 48%;
+		--nav-bg: 32 27% 90%;
+		--nav-text: 24 10% 12%;
+		--nav-text-hover: 12 60% 43%;
 
 		/* Icon containers */
-		--icon-bg: 40 25% 92%;
-		--icon-border: 35 15% 80%;
+		--icon-bg: 32 27% 90%;
+		--icon-border: 30 15% 82%;
 
 		/* Section-specific - Testimonials */
-		--testimonial-card-bg: 38 35% 92%;
-		--testimonial-border: 226 50% 80%;
-		--testimonial-star: 43 96% 50%;
+		--testimonial-card-bg: 32 27% 90%;
+		--testimonial-border: 15 38% 72%;
+		--testimonial-star: 15 62% 60%;
 
 		/* Section-specific - Tech Stack */
-		--tech-card-bg: 38 35% 92%;
-		--tech-border: 226 50% 85%;
-		--tech-glow: 226 71% 40%;
+		--tech-card-bg: 32 27% 90%;
+		--tech-border: 15 38% 72%;
+		--tech-glow: 15 62% 60%;
 
 		/* Section-specific - Open Source */
-		--opensource-card-bg: 38 35% 92%;
-		--opensource-emerald: 160 84% 39%;
-		--opensource-pink: 330 81% 60%;
+		--opensource-card-bg: 32 27% 90%;
+		--opensource-emerald: 15 62% 60%;
+		--opensource-pink: 15 62% 60%;
 
 		/* Section-specific - Products */
-		--product-card-bg: 38 35% 92%;
-		--product-image-bg: 38 30% 88%;
+		--product-card-bg: 32 27% 90%;
+		--product-image-bg: 30 18% 88%;
 
 		/* Section-specific - Launch School */
-		--launchschool-red: 0 72% 51%;
-		--launchschool-red-muted: 0 65% 45%;
-		--launchschool-notes-bg: 38 35% 92%;
+		--launchschool-red: 12 60% 43%;
+		--launchschool-red-muted: 12 58% 38%;
+		--launchschool-notes-bg: 32 27% 90%;
 
 		/* Section-specific - Favorites */
-		--favorites-card-bg: 38 35% 92%;
-		--favorites-green: 142 71% 45%;
-		--favorites-amber: 43 96% 50%;
+		--favorites-card-bg: 32 27% 90%;
+		--favorites-green: 15 62% 60%;
+		--favorites-amber: 15 62% 60%;
 
 		/* Section-specific - Contact */
-		--contact-card-bg: 38 35% 92%;
-		--contact-input-bg: 36 30% 88%;
-		--contact-input-border: 35 20% 82%;
+		--contact-card-bg: 32 27% 90%;
+		--contact-input-bg: 36 35% 95%;
+		--contact-input-border: 30 15% 82%;
 
 		/* Glow effects - subtle in light mode */
 		--glow-opacity: 0.1;
 	}
 
 	.dark {
-		/* Existing shadcn variables */
-		--background: 0 0% 15%;
-		--foreground: 210 40% 98%;
+		/* Warm-neutral charcoal foundation. */
+		--background: 24 6% 16%;
+		--foreground: 36 25% 96%;
 
-		--muted: 217.2 32.6% 17.5%;
-		--muted-foreground: 215 20.2% 65.1%;
+		--muted: 24 5% 23%;
+		--muted-foreground: 30 6% 68%;
 
-		--popover: 222.2 84% 4.9%;
-		--popover-foreground: 210 40% 98%;
+		--popover: 24 6% 21%;
+		--popover-foreground: 36 25% 96%;
 
-		--card: 222.2 84% 4.9%;
-		--card-foreground: 210 40% 98%;
+		--card: 24 6% 21%;
+		--card-foreground: 36 25% 96%;
 
-		--border: 217.2 32.6% 17.5%;
-		--input: 217.2 32.6% 17.5%;
+		--border: 24 5% 28%;
+		--input: 24 5% 28%;
 
-		--primary: 210 40% 98%;
-		--primary-foreground: 222.2 47.4% 11.2%;
+		--primary: 234 94% 80%;
+		--primary-foreground: 24 6% 16%;
 
-		--secondary: 217.2 32.6% 17.5%;
-		--secondary-foreground: 210 40% 98%;
+		--secondary: 24 5% 23%;
+		--secondary-foreground: 36 25% 96%;
 
-		--accent: 217.2 32.6% 17.5%;
-		--accent-foreground: 210 40% 98%;
+		--accent: 234 94% 80%;
+		--accent-foreground: 24 6% 16%;
 
 		--destructive: 0 62.8% 30.6%;
 		--destructive-foreground: 210 40% 98%;
 
-		--ring: hsl(212.7, 26.8%, 83.9);
+		--ring: 234 94% 80%;
 
 		/* ========== THEME SYSTEM VARIABLES - DARK ========== */
-		/* These preserve the current site appearance exactly */
 
-		/* Page & Surface backgrounds - matches neutral-800/900 */
-		--surface: 0 0% 15%;
-		--surface-muted: 0 0% 10%;
-		--surface-elevated: 0 0% 18%;
+		/* Page and surface backgrounds - warm Tailwind-neutral direction */
+		--surface: 24 6% 16%;
+		--surface-muted: 24 6% 21%;
+		--surface-elevated: 24 5% 24%;
 
 		/* Text colors - current light text on dark */
-		--heading: 226 64% 68%;
-		--heading-accent: 226 83% 72%;
-		--text-primary: 0 0% 100%;
-		--text-secondary: 220 9% 84%;
-		--text-muted: 220 9% 64%;
+		--heading: 234 94% 80%;
+		--heading-accent: 225 100% 86%;
+		--text-primary: 36 25% 96%;
+		--text-secondary: 30 8% 82%;
+		--text-muted: 28 5% 64%;
 
 		/* Border colors */
-		--border-subtle: 0 0% 20%;
-		--border-strong: 0 0% 30%;
+		--border-subtle: 24 5% 28%;
+		--border-strong: 24 4% 38%;
 
-		/* Navigation - matches neutral-700 and indigo-300 */
-		--nav-bg: 0 0% 36%;
-		--nav-text: 226 64% 68%;
-		--nav-text-hover: 226 64% 68%;
+		/* Navigation */
+		--nav-bg: 24 6% 26%;
+		--nav-text: 30 8% 90%;
+		--nav-text-hover: 234 94% 80%;
 
 		/* Icon containers */
-		--icon-bg: 0 0% 36%;
-		--icon-border: 0 0% 50%;
+		--icon-bg: 24 6% 26%;
+		--icon-border: 24 5% 36%;
 
 		/* Section-specific - Testimonials */
-		--testimonial-card-bg: 0 0% 10%;
-		--testimonial-border: 0 0% 20%;
-		--testimonial-star: 43 96% 56%;
+		--testimonial-card-bg: 24 6% 23%;
+		--testimonial-border: 24 5% 34%;
+		--testimonial-star: 234 94% 80%;
 
 		/* Section-specific - Tech Stack */
-		--tech-card-bg: 0 0% 10%;
-		--tech-border: 226 50% 50%;
-		--tech-glow: 226 64% 68%;
+		--tech-card-bg: 24 6% 21%;
+		--tech-border: 234 50% 42%;
+		--tech-glow: 234 94% 80%;
 
 		/* Section-specific - Open Source */
-		--opensource-card-bg: 0 0% 10%;
-		--opensource-emerald: 160 84% 39%;
-		--opensource-pink: 330 81% 60%;
+		--opensource-card-bg: 24 6% 21%;
+		--opensource-emerald: 234 94% 80%;
+		--opensource-pink: 234 94% 80%;
 
 		/* Section-specific - Products */
-		--product-card-bg: 0 0% 10%;
-		--product-image-bg: 220 14% 96%;
+		--product-card-bg: 24 6% 21%;
+		--product-image-bg: 36 25% 96%;
 
 		/* Section-specific - Launch School */
-		--launchschool-red: 0 84% 60%;
-		--launchschool-red-muted: 0 72% 50%;
-		--launchschool-notes-bg: 0 0% 10%;
+		--launchschool-red: 234 94% 80%;
+		--launchschool-red-muted: 236 62% 62%;
+		--launchschool-notes-bg: 24 6% 21%;
 
 		/* Section-specific - Favorites */
-		--favorites-card-bg: 0 0% 10%;
-		--favorites-green: 142 71% 45%;
-		--favorites-amber: 43 96% 56%;
+		--favorites-card-bg: 24 6% 21%;
+		--favorites-green: 234 94% 80%;
+		--favorites-amber: 234 94% 80%;
 
 		/* Section-specific - Contact */
-		--contact-card-bg: 0 0% 10%;
-		--contact-input-bg: 0 0% 5%;
-		--contact-input-border: 0 0% 20%;
+		--contact-card-bg: 24 6% 21%;
+		--contact-input-bg: 24 6% 16%;
+		--contact-input-border: 24 5% 28%;
 
 		/* Glow effects - more visible in dark mode */
 		--glow-opacity: 0.3;
@@ -206,6 +201,18 @@
 	}
 	body {
 		@apply bg-background text-foreground;
+		min-height: 100vh;
+		background-image: radial-gradient(circle at 50% -12rem, hsl(var(--heading) / 0.06), transparent 34rem);
+		transition: background-color 300ms ease, color 300ms ease;
+	}
+	.dark body {
+		background-image:
+			radial-gradient(circle at 50% -10rem, hsl(var(--heading) / 0.07), transparent 38rem),
+			radial-gradient(circle at 100% 45%, hsl(var(--heading-accent) / 0.025), transparent 36rem);
+	}
+	::selection {
+		background: hsl(var(--heading) / 0.22);
+		color: hsl(var(--text-primary));
 	}
 }
 
@@ -219,16 +226,11 @@
 	}
 
 	:root:not(.dark) .gradient-title {
-		background-image: linear-gradient(
-			to right,
-			hsl(226, 71%, 40%),
-			hsl(226, 71%, 50%),
-			hsl(226, 83%, 48%)
-		);
+		background-image: linear-gradient(to right, hsl(var(--heading)), hsl(var(--heading-accent)));
 	}
 
 	:root.dark .gradient-title {
-		background-image: linear-gradient(to right, hsl(226, 71%, 60%), hsl(200, 90%, 80%), white);
+		background-image: linear-gradient(to right, hsl(var(--heading)), hsl(var(--heading-accent)), hsl(var(--text-primary)));
 	}
 
 	/* Product description gradient - slate tones */
