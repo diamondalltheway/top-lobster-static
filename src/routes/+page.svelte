@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Header from './Header.svelte';
 	import Hero from './Hero.svelte';
 	import Letter from './Letter.svelte';
@@ -11,19 +10,12 @@
 	import Footer from './Footer.svelte';
 	import Testimonials from './Testimonials.svelte';
 	import OpenSource from './OpenSource.svelte';
-
-	let ready = $state(false);
-
-	onMount(() => {
-		ready = true;
-	});
-
-	// Test Deployment
 </script>
 
-{#if ready}
-	<div class="bg-background transition-colors duration-300">
-		<Header />
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div class="portfolio">
+	<Header />
+	<main id="main-content">
 		<Hero />
 		<Testimonials />
 		<Letter />
@@ -33,6 +25,6 @@
 		<LaunchSchool />
 		<Favorites />
 		<Contact />
-		<Footer />
-	</div>
-{/if}
+	</main>
+	<Footer />
+</div>

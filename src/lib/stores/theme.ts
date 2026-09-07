@@ -11,7 +11,11 @@ function createThemeStore() {
 			update((isDark) => {
 				const newValue = !isDark;
 				if (browser) {
-					localStorage.setItem('theme', newValue ? 'dark' : 'light');
+					try {
+						localStorage.setItem('theme', newValue ? 'dark' : 'light');
+					} catch {
+						/* Theme still works when storage is unavailable. */
+					}
 					if (newValue) {
 						document.documentElement.classList.add('dark');
 					} else {
@@ -23,7 +27,12 @@ function createThemeStore() {
 		},
 		init: () => {
 			if (browser) {
-				const stored = localStorage.getItem('theme');
+				let stored: string | null = null;
+				try {
+					stored = localStorage.getItem('theme');
+				} catch {
+					/* Use the default theme. */
+				}
 				const isDark = stored ? stored === 'dark' : true;
 				set(isDark);
 				if (isDark) {
@@ -32,7 +41,7 @@ function createThemeStore() {
 					document.documentElement.classList.remove('dark');
 				}
 			}
-		}
+		},
 	};
 }
 

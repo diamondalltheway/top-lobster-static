@@ -1,8 +1,5 @@
 <script lang="ts">
 	import Icon from '$lib/components/Icon.svelte';
-	import { animate, stagger, inView } from 'motion';
-	import { onMount } from 'svelte';
-
 	const technologies = [
 		{
 			name: 'TypeScript',
@@ -169,11 +166,6 @@
 				'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
 		},
 		{
-			name: 'Heroku',
-			linkURL: 'https://heroku.com/',
-			imgURL: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg',
-		},
-		{
 			name: 'Mapbox',
 			linkURL: 'https://www.mapbox.com/',
 			imgURL: 'mapbox.png',
@@ -209,64 +201,19 @@
 			imgURL: 'driver.png',
 		},
 	];
-
-	onMount(() => {
-		// Only run scroll-triggered animation on tablet/desktop (768px+)
-		// On mobile, icons are visible immediately via CSS (no md:opacity-0)
-		const isDesktop = window.matchMedia('(min-width: 768px)').matches;
-		if (isDesktop) {
-			inView('#tech-icons-end', () => {
-				animate('.tech-icon', { opacity: 1, y: [30, 0] }, { delay: stagger(0.02) });
-			});
-		}
-	});
 </script>
 
-<div class="relative mt-44 pb-8 pt-4" id="tech">
-	<!-- Background effects - hidden on mobile for performance -->
-	<div class="hidden md:block absolute inset-0 overflow-hidden pointer-events-none">
-		<div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-heading/5 rounded-full blur-[100px]"></div>
-		<div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-heading/5 rounded-full blur-[100px]"></div>
+<section id="tech" class="section shell" aria-labelledby="tech-title">
+	<div class="section-heading">
+		<p class="eyebrow">The toolkit</p>
+		<h2 id="tech-title" class="section-title">Built with the right tools.</h2>
+		<p>Browser-native and server-side technologies for thoughtful web experiences.</p>
 	</div>
-
-	<div class="relative">
-		<!-- Section Header -->
-		<div class="text-center mb-12">
-			<h2
-				class="glow space-grotesk text-3xl font-bold tracking-tight text-heading sm:text-4xl lg:text-5xl"
-			>
-				Technologies Used
-			</h2>
-			<p class="mt-4 text-lg text-txt-muted max-w-2xl mx-auto">
-				Browser-native and server-side tools for lightweight web experiences
-			</p>
-		</div>
-
-		<!-- Main Container -->
-		<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-			<div class="relative group">
-				<!-- Animated border glow - hidden on mobile for performance -->
-				<div class="hidden md:block absolute -inset-0.5 bg-gradient-to-r from-heading/30 via-heading-accent/40 to-heading/30 rounded-3xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
-
-				<!-- Container -->
-				<div class="relative rounded-3xl bg-surface-muted/80 backdrop-blur-md border border-heading/20 p-8 lg:p-12 transition-colors">
-					<!-- Decorative grid pattern overlay - hidden on mobile for performance -->
-					<div class="hidden md:block absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
-						<div class="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.08)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(99,102,241,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.15)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-					</div>
-
-					<!-- Tech Icons Grid -->
-					<!-- Mobile: visible immediately (opacity-100), Desktop: hidden until animated (md:opacity-0) -->
-					<ul id="tech-icons" class="relative grid grid-cols-4 gap-6 sm:gap-8 md:grid-cols-6 lg:grid-cols-8">
-						{#each technologies as tech}
-							<li class="tech-icon md:opacity-0">
-								<Icon name={tech.name} linkURL={tech.linkURL} imgURL={tech.imgURL} />
-							</li>
-						{/each}
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div id="tech-icons-end"></div>
+	<div class="tech-panel panel">
+		<ul class="tech-grid">
+			{#each technologies as tech}<li>
+					<Icon name={tech.name} linkURL={tech.linkURL} imgURL={tech.imgURL} />
+				</li>{/each}
+		</ul>
 	</div>
-</div>
+</section>

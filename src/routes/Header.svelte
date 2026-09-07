@@ -1,90 +1,63 @@
 <script lang="ts">
-	import { blur } from 'svelte/transition';
-	import { onMount } from 'svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
-
+	let menuOpen = $state(false);
 	const navItems = [
-		{ href: '#tech', text: 'Technologies' },
-		{ href: '#open-source', text: 'Open Source' },
 		{ href: '#products', text: 'Products' },
+		{ href: '#tech', text: 'Technologies' },
+		{ href: '#open-source', text: 'Open source' },
 		{ href: '#favorites', text: 'Favorites' },
-		{ href: '#contact', text: 'Contact' },
 	];
-
-	let isMobile = $state(false);
-
-	onMount(() => {
-		isMobile = window.matchMedia('(max-width: 768px)').matches;
-	});
-
-	// No transitions on mobile
-	const getBlurParams = (duration: number) => {
-		if (isMobile) return { duration: 0 };
-		return { duration };
-	};
 </script>
 
-<nav class="relative m-4 mb-14 md:mb-4 flex items-center justify-between md:justify-center">
-	<!-- Left side: Languages -->
-	<div
-		transition:blur={getBlurParams(2000)}
-		class="flex items-center md:absolute md:inset-y-0 md:left-0"
-	>
-		<ul
-			class="bg-nav-bg text-nav-text flex rounded-full px-2 text-sm font-bold shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur"
-		>
-			<li class="hover:text-nav-text-hover hover:motion-preset-seesaw relative flex cursor-default items-center px-1 py-1 transition">
-				Native: <span class="mx-1 mt-0.5 text-xl">🇺🇸</span>
-			</li>
-			<li class="hover:text-nav-text-hover hover:motion-preset-seesaw relative flex cursor-default items-center px-1 py-1 transition">
-				C1: <span class="mx-1 mt-0.5 text-xl">🇪🇸</span>
-			</li>
-		</ul>
-	</div>
+<svelte:window
+	onkeydown={(event) => {
+		if (event.key === 'Escape') menuOpen = false;
+	}}
+/>
 
-	<!-- Center: Navigation (hidden on mobile) -->
-	<nav class="pointer-events-auto hidden md:block">
-		<ul
-			class="bg-nav-bg text-nav-text flex rounded-full px-3 text-sm font-bold shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur"
-		>
-			{#each navItems as { href, text }}
-				<li>
-					<a
-						class="hover:motion-preset-expand hover:motion-preset-confetti hover:text-nav-text-hover relative block px-3 py-2 transition"
-						{href}
-					>
-						{text}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</nav>
-
-	<!-- Right side: GitHub & Theme Toggle (visible on all screens) -->
-	<div
-		transition:blur={getBlurParams(2000)}
-		class="flex items-center gap-2 md:gap-4 md:absolute md:inset-y-0 md:right-0"
-	>
-		<a
-			href="https://github.com/diamondalltheway"
-			target="_blank"
-			class="flex h-9 w-9 items-center justify-center rounded-full
-				   bg-icon-bg border border-icon-border
-				   hover:border-heading transition-all duration-300"
-			aria-label="GitHub"
-		>
-			<svg
-				class="h-5 w-5 text-heading"
-				fill="currentColor"
-				viewBox="0 0 24 24"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-					clip-rule="evenodd"
-				/>
-			</svg>
+<header class="site-header">
+	<nav class="site-nav shell" aria-label="Main navigation">
+		<a class="wordmark" href="#top" aria-label="Hunter Stevens home">
+			<img src="/favicon-blender.png" alt="" width="28" height="28" />
+			<span>Hunter Stevens<span class="brand-period">.</span></span>
 		</a>
-		<ThemeToggle />
-	</div>
-</nav>
+		<div class="desktop-nav">
+			{#each navItems as item}<a href={item.href}>{item.text}</a>{/each}
+		</div>
+		<div class="nav-actions">
+			<ThemeToggle />
+			<a href="#contact" class="surface-button nav-contact"
+				>Get in touch <span aria-hidden="true">↗</span></a
+			>
+			<button
+				class="icon-button menu-toggle"
+				aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+				aria-expanded={menuOpen}
+				aria-controls="mobile-menu"
+				onclick={() => (menuOpen = !menuOpen)}
+			>
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					aria-hidden="true"
+				>
+					{#if menuOpen}<path d="m6 6 12 12M6 18 18 6" />{:else}<path d="M4 8h16M4 16h16" />{/if}
+				</svg>
+			</button>
+		</div>
+	</nav>
+	{#if menuOpen}
+		<nav id="mobile-menu" class="mobile-nav shell" aria-label="Mobile navigation">
+			{#each navItems as item}<a href={item.href} onclick={() => (menuOpen = false)}
+					>{item.text}<span aria-hidden="true">↗</span></a
+				>{/each}
+			<a href="#contact" onclick={() => (menuOpen = false)}
+				>Get in touch <span aria-hidden="true">↗</span></a
+			>
+		</nav>
+	{/if}
+</header>

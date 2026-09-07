@@ -2,41 +2,39 @@
 	import { run, createBubbler } from 'svelte/legacy';
 
 	const bubble = createBubbler();
-	import { writable } from "svelte/store";
-	import { onDestroy } from "svelte";
-	import { type CarouselAPI, type CarouselProps, setEmblaContex } from "./context.js";
-	import { cn } from "$lib/utils.js";
+	import { writable } from 'svelte/store';
+	import { onDestroy, untrack } from 'svelte';
+	import { type CarouselAPI, type CarouselProps, setEmblaContex } from './context.js';
+	import { cn } from '$lib/utils.js';
 
 	type $$Props = CarouselProps;
 
-
 	interface Props {
 		opts?: any;
-		plugins?: NonNullable<$$Props["plugins"]>;
-		api?: $$Props["api"];
-		orientation?: NonNullable<$$Props["orientation"]>;
-		class?: $$Props["class"];
+		plugins?: NonNullable<$$Props['plugins']>;
+		api?: $$Props['api'];
+		orientation?: NonNullable<$$Props['orientation']>;
+		class?: $$Props['class'];
 		children?: import('svelte').Snippet;
-		[key: string]: any
+		[key: string]: any;
 	}
 
 	let {
 		opts = {},
 		plugins = [],
 		api = $bindable(undefined),
-		orientation = "horizontal",
+		orientation = 'horizontal',
 		class: className = undefined,
 		children,
 		...rest
 	}: Props = $props();
-	
 
 	const apiStore = writable<CarouselAPI | undefined>(undefined);
-	const orientationStore = writable(orientation);
+	const orientationStore = writable(untrack(() => orientation));
 	const canScrollPrev = writable(false);
 	const canScrollNext = writable(false);
-	const optionsStore = writable(opts);
-	const pluginStore = writable(plugins);
+	const optionsStore = writable(untrack(() => opts));
+	const pluginStore = writable(untrack(() => plugins));
 
 	run(() => {
 		orientationStore.set(orientation);
@@ -64,16 +62,16 @@
 	run(() => {
 		if (api) {
 			onSelect(api);
-			api.on("select", onSelect);
-			api.on("reInit", onSelect);
+			api.on('select', onSelect);
+			api.on('reInit', onSelect);
 		}
 	});
 
 	function handleKeyDown(e: KeyboardEvent) {
-		if (e.key === "ArrowLeft") {
+		if (e.key === 'ArrowLeft') {
 			e.preventDefault();
 			scrollPrev();
-		} else if (e.key === "ArrowRight") {
+		} else if (e.key === 'ArrowRight') {
 			e.preventDefault();
 			scrollNext();
 		}
@@ -98,12 +96,12 @@
 	}
 
 	onDestroy(() => {
-		api?.off("select", onSelect);
+		api?.off('select', onSelect);
 	});
 </script>
 
 <div
-	class={cn("relative", className)}
+	class={cn('relative', className)}
 	onmouseenter={bubble('mouseenter')}
 	onmouseleave={bubble('mouseleave')}
 	role="region"

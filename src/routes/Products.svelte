@@ -125,11 +125,6 @@
 				'https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/tailwindcss/tailwindcss-original.svg',
 		},
 		{ name: 'Mapbox', linkURL: 'https://www.mapbox.com/', imgURL: 'mapbox.png' },
-		{
-			name: 'Heroku',
-			linkURL: 'https://heroku.com/',
-			imgURL: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg',
-		},
 	];
 
 	const chat_node_icons = [
@@ -192,65 +187,66 @@
 
 <FeaturedProduct />
 
-<div id="products" class="py-12 sm:py-16">
-	<div class="mx-auto max-w-7xl px-6 lg:px-8">
-		<div class="mx-auto max-w-2xl text-center">
-			<h2
-				class="glow space-grotesk bg-gradient-to-r text-3xl font-bold tracking-tight text-heading sm:text-4xl"
-			>
-				Public Products
-			</h2>
+<div id="products" class="section">
+	<div class="shell">
+		<div class="section-heading mx-auto max-w-2xl">
+			<h2 class="section-title">Ideas, out in the world.</h2>
 			<p class="mt-2 text-lg leading-8 text-txt-muted">
-				Here are a few of public facing products that I have worked on.
+				A selection of public-facing products I have worked on.
 			</p>
 		</div>
 
-		<!-- Products -->
-		<div
-			class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-		>
+		<section class="product-group" aria-labelledby="live-products-title">
+			<h3 id="live-products-title" class="product-group-title">Live products</h3>
+			<div class="product-grid product-grid-live">
 				<Product
 					title="VerticalSpanish.com"
 					description="Vertical Spanish is a lightweight verb study app for Spanish students. It leans into IndexedDB so conjugation practice stays fast, local, and distraction-free."
 					linkURL="https://verticalspanish.com"
-					imgURL="landscape.png"
-				icons={vertical_spanish_icons}
-			/>
+					imgURL="vertical-spanish-homepage.jpg"
+					icons={vertical_spanish_icons}
+				/>
 
-			<Product
-				title="CampaginHero.io"
-				description="CampaignHero.io is a search/discovery platform for 14,200 email designs. It leverages vector databases to enable semantic and image-based search."
-				linkURL="https://CampaginHero.io"
-				imgURL="ch-demo.png"
-				icons={campaign_hero_icons}
-			/>
+				<Product
+					title="CampaginHero.io"
+					description="CampaignHero.io is a search/discovery platform for 14,200 email designs. It leverages vector databases to enable semantic and image-based search."
+					linkURL="https://CampaginHero.io"
+					imgURL="ch-demo.png"
+					icons={campaign_hero_icons}
+				/>
+			</div>
+		</section>
 
-			<Product
-				title="AirMailer.io"
-				description="AirMailer.io allows marketers to generate mailing list with just a few clicks. I like to think of it as a vending machine for addresses. (94 Million Addresses)"
-				linkURL="https://airmailer.io"
-				imgURL="airmailer_ss.png"
-				icons={air_mailer_icons}
-				legacy={true}
-			/>
+		<section class="product-group" aria-labelledby="legacy-products-title">
+			<h3 id="legacy-products-title" class="product-group-title">Legacy products</h3>
+			<div class="product-grid product-grid-legacy">
+				<Product
+					title="AirMailer.io"
+					description="AirMailer.io allows marketers to generate mailing list with just a few clicks. I like to think of it as a vending machine for addresses. (94 Million Addresses)"
+					linkURL="https://airmailer.io"
+					imgURL="airmailer_ss.png"
+					icons={air_mailer_icons}
+					legacy={true}
+				/>
 
-			<Product
-				title="UpScout.io"
-				description="Messaging and filtering system for UpWork. We allow freelancers to filter out the noise and focus on the jobs that matter. Sit back and let the jobs come to you."
-				linkURL="https://upscout.io"
-				imgURL="upscout_ss.png"
-				icons={up_scout_icons}
-				legacy={true}
-			/>
+				<Product
+					title="UpScout.io"
+					description="Messaging and filtering system for UpWork. We allow freelancers to filter out the noise and focus on the jobs that matter. Sit back and let the jobs come to you."
+					linkURL="https://upscout.io"
+					imgURL="upscout_ss.png"
+					icons={up_scout_icons}
+					legacy={true}
+				/>
 
-			<Product
-				title="DataForest.io"
-				description="DataForest.io helps marketers explore geotargeted homeowner and address data on a map, then export campaign-ready lists."
-				linkURL="https://dataforest.io"
-				imgURL="dataforest_ss.png"
-				icons={data_forest_icons}
-				legacy={true}
-			/>
-		</div>
+				<Product
+					title="DataForest.io"
+					description="DataForest.io helps marketers explore geotargeted homeowner and address data on a map, then export campaign-ready lists."
+					linkURL="https://dataforest.io"
+					imgURL="df-demo.png"
+					icons={data_forest_icons}
+					legacy={true}
+				/>
+			</div>
+		</section>
 	</div>
 </div>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import '../reskin.css';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}

@@ -1,38 +1,18 @@
 <script lang="ts">
 	import { Tooltip as TooltipPrimitive } from 'bits-ui';
-	import { cn, flyAndScale } from '$lib/utils.js';
-
-	type $$Props = TooltipPrimitive.ContentProps;
-
-	interface Props {
-		class?: $$Props['class'];
-		sideOffset?: $$Props['sideOffset'];
-		transition?: $$Props['transition'];
-		transitionConfig?: $$Props['transitionConfig'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
-
+	import { cn } from '$lib/utils.js';
 	let {
-		class: className = undefined,
+		class: className,
 		sideOffset = 4,
-		transition = flyAndScale,
-		transitionConfig = {
-		y: 8,
-		duration: 150,
-	},
 		children,
 		...rest
-	}: Props = $props();
-	
+	}: TooltipPrimitive.ContentProps = $props();
 </script>
 
 <TooltipPrimitive.Content
-	{transition}
-	{transitionConfig}
 	{sideOffset}
 	class={cn(
-		'bg-primary text-primary-foreground z-50 overflow-hidden rounded-md px-3 py-1.5 text-xs',
+		'bg-popover text-popover-foreground z-50 overflow-hidden rounded-md border px-3 py-1.5 text-xs',
 		className
 	)}
 	{...rest}

@@ -1,7 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-	import { animate, stagger, inView } from 'motion';
-
 	const contributions = [
 		{
 			name: 'Supabase',
@@ -25,102 +22,31 @@
 			color: 'pink',
 		},
 	];
-
-	onMount(() => {
-		const isMobile = window.matchMedia('(max-width: 768px)').matches;
-		inView('#open-source-end', () => {
-			if (isMobile) {
-				// On mobile, show cards immediately without animations
-				animate('.os-card', { opacity: 1, y: 0, scale: 1 }, { duration: 0.2 });
-			} else {
-				setTimeout(() => {
-					animate('.os-card', { opacity: 1, y: [40, 0], scale: [0.95, 1] }, { delay: stagger(0.15) });
-				}, 200);
-			}
-		});
-	});
 </script>
 
-<div class="relative my-24 pb-8 pt-4" id="open-source">
-	<!-- Background effects - hidden on mobile for performance -->
-	<div class="hidden md:block absolute inset-0 overflow-hidden pointer-events-none">
-		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-heading/5 rounded-full blur-[100px]"></div>
+<section id="open-source" class="section shell" aria-labelledby="open-source-title">
+	<div class="section-heading">
+		<p class="eyebrow">A little give and take</p>
+		<h2 id="open-source-title" class="section-title">Better when we build together.</h2>
+		<p>Open source powers my work. I'm always happy to contribute where I can.</p>
 	</div>
-
-	<div class="relative text-center">
-		<!-- Section Header -->
-		<div class="mb-12">
-			<h2
-				id="open-source-title"
-				class="glow space-grotesk text-3xl font-bold tracking-tight text-heading sm:text-4xl lg:text-5xl"
-			>
-				Open Source Contributions
-			</h2>
-			<p class="mt-4 text-lg leading-8 text-txt-muted">I'm always happy to contribute where I can!</p>
-		</div>
-
-		<!-- Contribution Cards -->
-		<div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-				{#each contributions as contribution}
-					<a
-						href={contribution.linkURL}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="os-card opacity-0 group relative block"
-					>
-						<!-- Card glow effect -->
-						<div class="absolute -inset-0.5 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500
-							{contribution.color === 'emerald' ? 'bg-gradient-to-b from-heading/45 to-heading-accent/35' : ''}
-							{contribution.color === 'neutral' ? 'bg-gradient-to-b from-heading/45 to-heading-accent/35' : ''}
-							{contribution.color === 'pink' ? 'bg-gradient-to-b from-heading/45 to-heading-accent/35' : ''}
-						"></div>
-
-						<!-- Card -->
-						<div class="relative flex flex-col items-center p-8 rounded-2xl bg-surface-muted/90 backdrop-blur-sm border transition-all duration-300
-							{contribution.color === 'emerald' ? 'border-heading/20 hover:border-heading/50' : ''}
-							{contribution.color === 'neutral' ? 'border-heading/20 hover:border-heading/50' : ''}
-							{contribution.color === 'pink' ? 'border-heading/20 hover:border-heading/50' : ''}
-						">
-							<!-- Icon container -->
-							<div class="relative mb-6">
-								<div class="absolute -inset-3 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300
-									{contribution.color === 'emerald' ? 'bg-heading/10' : ''}
-									{contribution.color === 'neutral' ? 'bg-heading/10' : ''}
-									{contribution.color === 'pink' ? 'bg-heading/10' : ''}
-								"></div>
-								<img
-									class="relative h-20 w-20 rounded-xl object-contain p-2 bg-surface border border-border-subtle group-hover:scale-110 transition-transform duration-300"
-									src={contribution.imgURL}
-									alt={contribution.name}
-								/>
-							</div>
-
-							<!-- Text content -->
-							<h3 class="text-xl font-bold text-txt space-grotesk mb-2 group-hover:text-heading transition-colors duration-300">
-								{contribution.name}
-							</h3>
-							<p class="text-sm text-txt-muted text-center leading-relaxed">
-								{contribution.description}
-							</p>
-
-							<!-- Hover indicator -->
-							<div class="mt-6 flex items-center gap-2 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300
-								{contribution.color === 'emerald' ? 'text-heading' : ''}
-								{contribution.color === 'neutral' ? 'text-heading' : ''}
-								{contribution.color === 'pink' ? 'text-heading' : ''}
-							">
-								<span>View Project</span>
-								<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-								</svg>
-							</div>
-						</div>
-					</a>
-				{/each}
-			</div>
-
-			<div id="open-source-end"></div>
-		</div>
+	<div class="contribution-grid">
+		{#each contributions as contribution}
+			<a class="contribution panel" href={contribution.linkURL} target="_blank" rel="noreferrer">
+				<div class="contribution-logo">
+					<img
+						class:shadcn-logo={contribution.imgURL === 'shadcn-ui.png'}
+						src={contribution.imgURL}
+						alt=""
+						width="26"
+						height="26"
+						loading="lazy"
+					/>
+				</div>
+				<h3>{contribution.name}</h3>
+				<p>{contribution.description}</p>
+				<span class="text-link">View project <span aria-hidden="true">↗</span></span>
+			</a>
+		{/each}
 	</div>
-</div>
+</section>

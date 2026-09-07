@@ -8,7 +8,6 @@
 	}
 
 	let { category, variant = 'square', gridArea = '' }: Props = $props();
-
 </script>
 
 <article
@@ -30,10 +29,12 @@
 		</header>
 
 		{#if variant === 'wide'}
-			<ul class="flex-1 columns-1 gap-2 sm:columns-2 lg:columns-3">
-				{#each category.items as item}
-					<li class="mb-2 flex break-inside-avoid items-center gap-3 rounded-lg bg-surface/60 px-3 py-2.5">
-						<span class="text-base" aria-hidden="true">{category.itemIcon}</span>
+			<ol role="list" class="places-list flex-1 columns-1 gap-2 sm:columns-2 lg:columns-3">
+				{#each category.items as item, index}
+					<li
+						class="mb-2 flex break-inside-avoid items-center gap-3 rounded-lg bg-surface/60 px-3 py-2.5"
+					>
+						<span class="favorite-number" aria-hidden="true">{index + 1}</span>
 						<div class="min-w-0 flex-1">
 							<span class="block text-base font-medium leading-6 text-heading">{item.name}</span>
 							{#if item.subtitle}
@@ -42,12 +43,12 @@
 						</div>
 					</li>
 				{/each}
-			</ul>
+			</ol>
 		{:else}
-			<ul class="flex-1 space-y-2">
-				{#each category.items as item}
+			<ol role="list" class="flex-1 space-y-2">
+				{#each category.items as item, index}
 					<li class="flex items-center gap-3 rounded-lg bg-surface/60 px-3 py-2.5">
-						<span class="text-base" aria-hidden="true">{category.itemIcon}</span>
+						<span class="favorite-number" aria-hidden="true">{index + 1}</span>
 						<div class="min-w-0 flex-1">
 							<span class="block text-base font-medium leading-6 text-heading">{item.name}</span>
 							{#if item.subtitle}
@@ -56,7 +57,7 @@
 						</div>
 					</li>
 				{/each}
-			</ul>
+			</ol>
 		{/if}
 	</div>
 </article>

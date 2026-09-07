@@ -49,7 +49,6 @@ There's something deeply satisfying about taking an idea from concept to complet
     <img src="https://toplobster.io/vercel.png" height="50" width="50" />
     <img src="https://toplobster.io/netlify.png" height="50" width="50" />
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" height="50" width="50" />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg" height="50" width="50" />
     <img src="https://toplobster.io/mapbox.png" height="50" width="50" />
     <img src="https://www.solodev.com/file/2e7ff4de-48b3-11ed-bb2e-0eaef3759f5f/stripe-icon.png" height="50" width="50" />
     <img src="https://toplobster.io/cloudinary.png" height="50" width="50" />

@@ -4,41 +4,20 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon-blender.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Hunter Stevens • Software Engineer</title>
-		<!-- Prevent flash of wrong theme -->
-		<script>
-			(function () {
-				const theme = localStorage.getItem('theme');
-				if (theme === 'light') {
-					document.documentElement.classList.remove('dark');
-				}
-			})();
-		</script>
-		<!-- Google Fonts-->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Roboto+Mono&family=Roboto:wght@400;900&family=Space+Grotesk:wght@500&display=swap"
-			rel="stylesheet"
+		<meta
+			name="description"
+			content="Hunter Stevens is a software engineer building thoughtful web experiences with Svelte, TypeScript, and a human touch."
 		/>
+		<title>Hunter Stevens • Software Engineer</title>
+		<script>
+			try {
+				if (localStorage.getItem('theme') === 'light')
+					document.documentElement.classList.remove('dark');
+			} catch {}
+		</script>
 		%sveltekit.head%
 	</head>
-
-	<style>
-		@import '/global.css';
-		@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Roboto+Mono&family=Roboto:wght@400;900&family=Space+Grotesk:wght@500&display=swap');
-	</style>
-
-	<body
-		data-sveltekit-preload-data="hover"
-		class="custom-wrapper relative mx-auto max-w-7xl bg-background p-2 antialiased transition-colors duration-300 md:p-4"
-	>
+	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
-
-<style>
-	html {
-		scroll-behavior: smooth;
-	}
-</style>

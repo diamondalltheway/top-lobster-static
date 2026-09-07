@@ -1,77 +1,20 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
-	import { createPopper } from '@popperjs/core';
-
-	interface Props {
-		name?: string;
-		linkURL?: string;
-		imgURL?: string;
-	}
-
-	let { name = '', linkURL = '', imgURL = '' }: Props = $props();
-
-	let tooltip: HTMLElement = $state();
-	let referenceElement: HTMLElement = $state();
-	let popperInstance: any = null;
-	let tooltipTimeout: ReturnType<typeof setTimeout>;
-
-	function showTooltip() {
-		tooltipTimeout = setTimeout(() => {
-			tooltip.style.display = 'block';
-			popperInstance.update();
-		}, 100);
-	}
-
-	function hideTooltip() {
-		clearTimeout(tooltipTimeout);
-		tooltip.style.display = 'none';
-	}
-
-	function initializePopper() {
-		try {
-			popperInstance = createPopper(referenceElement, tooltip, {
-				placement: 'top',
-			});
-			tooltip.style.display = 'none';
-		} catch (error) {
-			console.error('Popper initialization error:', error);
-		}
-	}
-
-	function addEventListeners() {
-		referenceElement.addEventListener('mouseover', showTooltip);
-		referenceElement.addEventListener('mouseout', hideTooltip);
-	}
-
-	function removeEventListeners() {
-		referenceElement.removeEventListener('mouseover', showTooltip);
-		referenceElement.removeEventListener('mouseout', hideTooltip);
-	}
-
-	onMount(() => {
-		initializePopper();
-		addEventListeners();
-	});
-
-	onDestroy(() => {
-		removeEventListeners();
-	});
+	let {
+		name = '',
+		linkURL = '',
+		imgURL = '',
+	}: { name?: string; linkURL?: string; imgURL?: string } = $props();
 </script>
 
-<div class="my-2">
-	<div
-		bind:this={tooltip}
-		class="py- glow space-grotesk fixed text-lg font-semibold text-heading"
-		style="display: none;"
-	>
-		{name}
-	</div>
-	<a bind:this={referenceElement} href={linkURL} target="_blank">
-		<img
-			class="to hover:motion-preset-shake border-1 col-span-1 mx-auto flex h-14 justify-center rounded-lg border border-icon-border bg-icon-bg bg-gradient-to-b from-icon-border object-cover p-2 shadow-md shadow-surface-muted
-			{name === 'Docker' || name === 'Zod' ? 'p-0' : 'p-2'}"
-			src={imgURL}
-			alt=""
-		/>
-	</a>
-</div>
+<a class="tech-link" href={linkURL} target="_blank" rel="noreferrer" aria-label={name}>
+	<img
+		class:shadcn-logo={name === 'Shadcn UI'}
+		class:dark-mode-logo={['Mapbox', 'Astro', 'Pinecone'].includes(name)}
+		src={imgURL}
+		alt=""
+		width="26"
+		height="26"
+		loading="lazy"
+	/>
+	<span class="tech-tooltip" aria-hidden="true">{name}</span>
+</a>

@@ -6,17 +6,12 @@
 	const movies = favoritesConfig.categories.find((c) => c.id === 'movies')!;
 	const shows = favoritesConfig.categories.find((c) => c.id === 'shows')!;
 	const places = favoritesConfig.categories.find((c) => c.id === 'places')!;
-
 </script>
 
-<div class="favorites-container mx-auto max-w-7xl px-6 py-8 lg:px-8" id="favorites">
+<div class="favorites-container shell" id="favorites">
 	<!-- Header -->
-	<div class="mb-10 text-center">
-		<h2
-			class="glow space-grotesk text-heading text-4xl font-extrabold drop-shadow-lg sm:text-5xl"
-		>
-			Favorites
-		</h2>
+	<div class="section-heading">
+		<h2 class="section-title">Favorites</h2>
 		<p class="mt-2 text-base text-txt-muted">Things I love, all in one place</p>
 	</div>
 
@@ -83,5 +78,4 @@
 			gap: 0.75rem;
 		}
 	}
-
 </style>

@@ -1,57 +1,46 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { isDarkMode } from '$lib/stores/theme';
-
-	let mounted = $state(false);
-
-	onMount(() => {
-		isDarkMode.init();
-		mounted = true;
-	});
+	onMount(() => isDarkMode.init());
 </script>
 
 <button
+	type="button"
+	class="icon-button theme-toggle"
+	data-theme={$isDarkMode ? 'dark' : 'light'}
 	onclick={() => isDarkMode.toggle()}
-	class="bg-icon-bg border-icon-border hover:border-heading focus:ring-heading/50 relative flex h-9
-		   w-9 items-center justify-center
-		   rounded-full border transition-all
-		   duration-300 focus:outline-none focus:ring-2"
 	aria-label={$isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
 >
-	{#if mounted}
-		<!-- Sun icon (shown in light mode - indicates current state) -->
+	<span class="theme-orbit" aria-hidden="true">
 		<svg
-			class="absolute h-5 w-5 text-heading transition-all duration-300
-				   {!$isDarkMode ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-75 opacity-0'}"
+			class="theme-sun"
+			width="22"
+			height="22"
+			viewBox="0 0 24 24"
 			fill="none"
 			stroke="currentColor"
-			viewBox="0 0 24 24"
-			stroke-width="2"
+			stroke-width="1.4"
+			stroke-linecap="round"
 		>
+			<circle class="theme-sun-core" cx="12" cy="12" r="4" />
 			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+				class="theme-sun-rays"
+				d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
 			/>
 		</svg>
-
-		<!-- Moon icon (shown in dark mode - indicates current state) -->
 		<svg
-			class="text-heading absolute h-5 w-5 transition-all duration-300
-				   {$isDarkMode ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-75 opacity-0'}"
+			class="theme-moon"
+			width="22"
+			height="22"
+			viewBox="0 0 24 24"
 			fill="none"
 			stroke="currentColor"
-			viewBox="0 0 24 24"
-			stroke-width="2"
+			stroke-width="1.4"
+			stroke-linecap="round"
+			stroke-linejoin="round"
 		>
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-			/>
+			<path d="M19.8 14.3A8 8 0 0 1 9.7 4.2a8 8 0 1 0 10.1 10.1Z" />
+			<path class="theme-star" d="M18 3v4m-2-2h4M21 9v2m-1-1h2" />
 		</svg>
-	{:else}
-		<!-- Placeholder while mounting to prevent layout shift -->
-		<div class="h-5 w-5"></div>
-	{/if}
+	</span>
 </button>
