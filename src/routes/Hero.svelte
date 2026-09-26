@@ -16,7 +16,7 @@
 			<a href="#about" class="text-link">A little about me <span aria-hidden="true">›</span></a>
 		</div>
 		<div class="hero-meta">
-			<span>Currently building at <strong>StruCalc</strong></span><span class="meta-divider"
+			<span>Currently building at <a href="https://strucalc.com/" target="_blank" rel="noreferrer" class="hover:underline"><strong>StruCalc</strong></a></span><span class="meta-divider"
 			></span><span
 				>English <span class="meta-level">Native</span> · Spanish
 				<span class="meta-level">C1</span></span

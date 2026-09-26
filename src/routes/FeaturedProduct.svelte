@@ -9,7 +9,7 @@
 		'Behind the interface is a focused data preparation flow: official-source Colombian address data is filtered, normalized, deduplicated, geocoded, and packaged into campaign-ready exports.',
 	];
 	const linkURL = 'https://dataforest.io';
-	const imgURL = 'dataforest-screenshot@2x.png';
+	const imgURL = 'dataforest-hero.png';
 	const stats = [
 		{
 			value: '10M+',
@@ -25,23 +25,6 @@
 			value: 'CSV',
 			label: 'export workflow',
 			description: 'Campaign-ready downloads for operators who need usable data quickly.',
-		},
-	];
-	const highlights = [
-		{
-			title: 'Geospatial explorer',
-			description:
-				'A Mapbox workflow where visual selection, coverage review, and exports stay connected.',
-		},
-		{
-			title: 'Export-focused workflow',
-			description:
-				'Users can move from market exploration to campaign-ready CSV data without spreadsheet cleanup.',
-		},
-		{
-			title: 'Prepared address data',
-			description:
-				'Raw public data becomes normalized, deduplicated, geocoded, and packaged for real campaigns.',
 		},
 	];
 	const icons = [
@@ -88,61 +71,53 @@
 		</p>
 	</div>
 
-	<div class="mt-10">
-		<a href={linkURL} target="_blank" rel="noreferrer" class="product-frame group block">
-			<div class="frame-toolbar" aria-hidden="true">
-				<i></i><i></i><i></i><span>dataforest.io</span>
-			</div>
-			<img
-				src={imgURL}
-				alt="DataForest.io map interface showing verified address points and a checkout cart"
-				decoding="async"
-				class="glow-box aspect-[2254/1178] w-full bg-product-image-bg object-cover object-left-top transition-transform duration-500 group-hover:scale-[1.01]"
-			/>
-		</a>
-	</div>
-
-	<div class="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
-		<div>
-			<h3 class="gradient-title space-grotesk p-1 text-3xl font-semibold sm:text-4xl">
-				<a href={linkURL} target="_blank" rel="noreferrer" class="inline-flex items-center">
-					{title}
-				</a>
-			</h3>
-			<p class="mt-4 text-xl font-semibold leading-8 text-txt">
-				{summary}
-			</p>
-			<div class="mt-6 max-w-3xl space-y-4 text-base leading-7 text-txt-secondary">
-				{#each description as paragraph}
-					<p>{paragraph}</p>
-				{/each}
-			</div>
-
-			<div class="mt-8">
-				<h4 class="eyebrow">What I built</h4>
-				<div class="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
-					{#each highlights as highlight}
-						<div class="rounded-lg border border-border-subtle bg-surface-elevated/70 p-4">
-							<div class="font-semibold text-txt">{highlight.title}</div>
-							<p class="mt-2 text-sm leading-6 text-txt-muted">{highlight.description}</p>
-						</div>
-					{/each}
+	<div class="mt-10 flow-root">
+		<div class="mx-auto mb-8 max-w-lg lg:float-right lg:mb-6 lg:ml-10 lg:w-[46%] lg:max-w-[560px]">
+			<a href={linkURL} target="_blank" rel="noreferrer" class="product-frame group block">
+				<div class="frame-toolbar" aria-hidden="true">
+					<i></i><i></i><i></i><span>dataforest.io</span>
 				</div>
-			</div>
+				<img
+					src={imgURL}
+					alt="DataForest.io landing-page hero featuring direct-mail address data for Colombia"
+					width="1470"
+					height="1251"
+					decoding="async"
+					class="glow-box h-auto w-full bg-product-image-bg transition-transform duration-500 group-hover:scale-[1.01]"
+				/>
+			</a>
 		</div>
 
-		<div>
-			<div class="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
-				{#each stats as stat}
-					<div class="rounded-lg border border-border-subtle bg-surface-muted/70 p-4">
-						<div class="space-grotesk text-3xl font-normal text-heading">{stat.value}</div>
-						<div class="mt-1 text-xs font-medium text-txt">{stat.label}</div>
-						<p class="mt-2 text-sm leading-6 text-txt-muted">{stat.description}</p>
-					</div>
-				{/each}
-			</div>
+		<h3 class="gradient-title space-grotesk p-1 text-3xl font-semibold sm:text-4xl">
+			<a href={linkURL} target="_blank" rel="noreferrer" class="inline-flex items-center">
+				{title}
+			</a>
+		</h3>
+		<p class="mt-4 text-xl font-semibold leading-8 text-txt">
+			{summary}
+		</p>
+		<div class="mt-6 space-y-4 text-base leading-7 text-txt-secondary">
+			{#each description as paragraph}
+				<p>{paragraph}</p>
+			{/each}
+		</div>
 
-			<div class="mt-8 grid grid-cols-4 gap-3 sm:grid-cols-6 lg:grid-cols-4">
+	</div>
+
+	<div class="mt-10 space-y-8 border-t border-border-subtle pt-8">
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+			{#each stats as stat}
+				<div class="rounded-lg border border-border-subtle bg-surface-muted/70 p-5 sm:p-6">
+					<div class="space-grotesk text-3xl font-normal text-heading">{stat.value}</div>
+					<div class="mt-1 text-xs font-medium text-txt">{stat.label}</div>
+					<p class="mt-3 text-sm leading-6 text-txt-muted">{stat.description}</p>
+				</div>
+			{/each}
+		</div>
+
+		<div class="flex flex-col gap-4 border-t border-border-subtle pt-6 sm:flex-row sm:items-center sm:gap-8">
+			<h4 class="eyebrow shrink-0">Built with</h4>
+			<div class="flex flex-wrap gap-3">
 				{#each icons as data}
 					<Icon name={data.name} linkURL={data.linkURL} imgURL={data.imgURL} />
 				{/each}
