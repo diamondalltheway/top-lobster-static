@@ -206,20 +206,21 @@
 					imgURL="vertical-spanish-homepage.jpg"
 					icons={vertical_spanish_icons}
 				/>
-
-				<Product
-					title="CampaginHero.io"
-					description="CampaignHero.io is a search/discovery platform for 14,200 email designs. It leverages vector databases to enable semantic and image-based search."
-					linkURL="https://CampaginHero.io"
-					imgURL="ch-demo.png"
-					icons={campaign_hero_icons}
-				/>
 			</div>
 		</section>
 
 		<section class="product-group" aria-labelledby="legacy-products-title">
 			<h3 id="legacy-products-title" class="product-group-title">Legacy products</h3>
 			<div class="product-grid product-grid-legacy">
+				<Product
+					title="CampaginHero.io"
+					description="CampaignHero.io is a search/discovery platform for 14,200 email designs. It leverages vector databases to enable semantic and image-based search."
+					linkURL="https://CampaginHero.io"
+					imgURL="ch-demo.png"
+					icons={campaign_hero_icons}
+					legacy={true}
+				/>
+
 				<Product
 					title="AirMailer.io"
 					description="AirMailer.io allows marketers to generate mailing list with just a few clicks. I like to think of it as a vending machine for addresses. (94 Million Addresses)"
