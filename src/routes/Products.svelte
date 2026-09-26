@@ -206,6 +206,13 @@
 					imgURL="vertical-spanish-homepage.jpg"
 					icons={vertical_spanish_icons}
 				/>
+
+				<Product
+					title="Flow Editor"
+					description="Flow Editor is a distraction-free writing tool nested within Vertical Spanish. It keeps your writing in your browser, with Markdown preview, focus and quiet modes, and flexible export options."
+					linkURL="https://verticalspanish.com/flow-editor"
+					imgURL="flow-editor.png"
+				/>
 			</div>
 		</section>
 
