@@ -28,7 +28,7 @@
 			Hey there! <span>👋</span>
 		</h2>
 		<p class="mt-6 text-xl font-semibold leading-8">
-			I am Hunter, from The Woodlands, Texas - just north of Houston. As a software developer, I
+			I am Hunter, from The Woodlands, Texas - just north of Houston. As a Software engineer, I
 			enjoy building applications of all kinds with people from all over the world. 👨🏻‍💻 🌍
 		</p>
 		<div class="mt-10 max-w-2xl text-lg font-normal">
