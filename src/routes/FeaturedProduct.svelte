@@ -1,32 +1,29 @@
 <script lang="ts">
+	import { copy } from '$lib/i18n';
 	import Icon from '$lib/components/Icon.svelte';
 
 	const title = 'DataForest.io';
-	const summary = 'A map-first address product for direct mail in Colombia.';
-	const description = [
-		'DataForest starts with a simple observation: direct mail is only useful when businesses can reach real homes in the exact places they care about. In Colombia, that address layer has historically been hard to buy, hard to verify, and hard to operationalize.',
-		'I built DataForest around the map because the product is geographic at its core. Users can inspect coverage, search apartments or addresses, choose a market area, and leave with campaign-ready data instead of another spreadsheet cleanup project.',
-		'Behind the interface is a focused data preparation flow: official-source Colombian address data is filtered, normalized, deduplicated, geocoded, and packaged into campaign-ready exports.',
-	];
+	const summary = 'featured.summary' as const;
+	const description = ['featured.background', 'featured.map', 'featured.preparation'] as const;
 	const linkURL = 'https://dataforest.io';
 	const imgURL = 'dataforest-hero.png';
 	const stats = [
 		{
-			value: '10M+',
-			label: 'addresses in process',
-			description: 'A national data asset built for precise geographic campaigns.',
+			value: 'featured.addressCount',
+			label: 'featured.addressLabel',
+			description: 'featured.addressDescription',
 		},
 		{
-			value: 'Map-first',
-			label: 'selection flow',
-			description: 'Users buy addresses from the same interface they use to understand coverage.',
+			value: 'featured.mapValue',
+			label: 'featured.mapLabel',
+			description: 'featured.mapDescription',
 		},
 		{
-			value: 'CSV',
-			label: 'export workflow',
-			description: 'Campaign-ready downloads for operators who need usable data quickly.',
+			value: 'featured.csvValue',
+			label: 'featured.csvLabel',
+			description: 'featured.csvDescription',
 		},
-	];
+	] as const;
 	const icons = [
 		{
 			name: 'TypeScript',
@@ -62,12 +59,11 @@
 
 <section class="featured-product section shell">
 	<div class="section-heading mx-auto max-w-4xl">
-		<p class="eyebrow">Featured Product: DataForest.io</p>
-		<h2 class="section-title">The address infrastructure Colombia needs.</h2>
+		<p class="eyebrow">{$copy['featured.eyebrow']}</p>
+		<h2 class="section-title">{$copy['featured.heading']}</h2>
 
 		<p class="mx-auto mt-4 max-w-3xl text-lg leading-8 text-txt-muted sm:text-xl">
-			A focused product system: geospatial UX, data preparation, and export workflows in one working
-			platform.
+			{$copy['featured.intro']}
 		</p>
 	</div>
 
@@ -79,7 +75,7 @@
 				</div>
 				<img
 					src={imgURL}
-					alt="DataForest.io landing-page hero featuring direct-mail address data for Colombia"
+					alt={$copy['featured.imageAlt']}
 					width="1470"
 					height="1251"
 					decoding="async"
@@ -94,29 +90,30 @@
 			</a>
 		</h3>
 		<p class="mt-4 text-xl font-semibold leading-8 text-txt">
-			{summary}
+			{$copy[summary]}
 		</p>
 		<div class="mt-6 space-y-4 text-base leading-7 text-txt-secondary">
 			{#each description as paragraph}
-				<p>{paragraph}</p>
+				<p>{$copy[paragraph]}</p>
 			{/each}
 		</div>
-
 	</div>
 
 	<div class="mt-10 space-y-8 border-t border-border-subtle pt-8">
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 			{#each stats as stat}
 				<div class="rounded-lg border border-border-subtle bg-surface-muted/70 p-5 sm:p-6">
-					<div class="space-grotesk text-3xl font-normal text-heading">{stat.value}</div>
-					<div class="mt-1 text-xs font-medium text-txt">{stat.label}</div>
-					<p class="mt-3 text-sm leading-6 text-txt-muted">{stat.description}</p>
+					<div class="space-grotesk text-3xl font-normal text-heading">{$copy[stat.value]}</div>
+					<div class="mt-1 text-xs font-medium text-txt">{$copy[stat.label]}</div>
+					<p class="mt-3 text-sm leading-6 text-txt-muted">{$copy[stat.description]}</p>
 				</div>
 			{/each}
 		</div>
 
-		<div class="flex flex-col gap-4 border-t border-border-subtle pt-6 sm:flex-row sm:items-center sm:gap-8">
-			<h4 class="eyebrow shrink-0">Built with</h4>
+		<div
+			class="flex flex-col gap-4 border-t border-border-subtle pt-6 sm:flex-row sm:items-center sm:gap-8"
+		>
+			<h4 class="eyebrow shrink-0">{$copy['featured.builtWith']}</h4>
 			<div class="flex flex-wrap gap-3">
 				{#each icons as data}
 					<Icon name={data.name} linkURL={data.linkURL} imgURL={data.imgURL} />

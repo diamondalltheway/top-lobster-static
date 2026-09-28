@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { copy } from '$lib/i18n';
 	import { onMount } from 'svelte';
 	import { testimonials } from '$lib/config/testimonials';
 	import TestimonialCard from '$lib/components/TestimonialCard.svelte';
@@ -77,10 +78,10 @@
 
 <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-title">
 	<div class="section-heading shell">
-		<h2 id="testimonials-title" class="section-title">Beyond expectations</h2>
+		<h2 id="testimonials-title" class="section-title">{$copy['testimonials.heading']}</h2>
 		<p>
-			Thoughtful work. Lasting relationships.<br class="hidden sm:block" /> A few words from the people
-			I’ve worked with.
+			{$copy['testimonials.intro']}<br class="hidden sm:block" />
+			{$copy['testimonials.introPeople']}
 		</p>
 	</div>
 	<!-- A focusable scroll region provides native and arrow-key access to the complete quotes. -->
@@ -89,7 +90,7 @@
 		class="testimonial-viewport"
 		bind:this={viewport}
 		role="region"
-		aria-label="Testimonials — use arrow keys or swipe to browse"
+		aria-label={$copy['testimonials.region']}
 		tabindex="0"
 		onmouseenter={() => (hovering = true)}
 		onmouseleave={() => {
@@ -120,14 +121,16 @@
 		</div>
 	</div>
 	<div class="testimonial-controls shell">
-		<span>From clients & collaborators</span>
+		<span>{$copy['testimonials.from']}</span>
 		<div>
-			<button class="icon-button" aria-label="Previous testimonial" onclick={() => move(-1)}
-				>←</button
+			<button
+				class="icon-button"
+				aria-label={$copy['testimonials.previous']}
+				onclick={() => move(-1)}>←</button
 			>
 			{#if !reducedMotion}<button
 					class="icon-button pause-control"
-					aria-label={paused ? 'Play testimonials' : 'Pause testimonials'}
+					aria-label={$copy[paused ? 'testimonials.play' : 'testimonials.pause']}
 					aria-pressed={paused}
 					onclick={() => (paused = !paused)}
 				>
@@ -145,7 +148,9 @@
 							aria-hidden="true"><path d="M4 2h2v12H4zM10 2h2v12h-2z" /></svg
 						>{/if}
 				</button>{/if}
-			<button class="icon-button" aria-label="Next testimonial" onclick={() => move(1)}>→</button>
+			<button class="icon-button" aria-label={$copy['testimonials.next']} onclick={() => move(1)}
+				>→</button
+			>
 		</div>
 	</div>
 </section>

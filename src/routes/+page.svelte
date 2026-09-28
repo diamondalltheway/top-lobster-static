@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { copy } from '$lib/i18n';
 	import Header from './Header.svelte';
 	import Hero from './Hero.svelte';
 	import Letter from './Letter.svelte';
@@ -12,7 +13,7 @@
 	import OpenSource from './OpenSource.svelte';
 </script>
 
-<a href="#main-content" class="skip-link">Skip to content</a>
+<a href="#main-content" class="skip-link">{$copy['navigation.skip']}</a>
 <div class="portfolio">
 	<Header />
 	<main id="main-content">

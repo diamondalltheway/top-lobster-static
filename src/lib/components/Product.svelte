@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { copy, formatMessage } from '$lib/i18n';
 	import Icon from './Icon.svelte';
 	interface Props {
 		title?: string;
@@ -24,13 +25,14 @@
 		target="_blank"
 		rel="noreferrer"
 		class="product-image"
-		aria-label={`Visit ${title}`}
+		aria-label={formatMessage($copy['products.visit'], { title })}
 	>
-		<img src={imgURL} alt={`${title} project preview`} loading="lazy" />
+		<img src={imgURL} alt={formatMessage($copy['products.preview'], { title })} loading="lazy" />
 	</a>
 	<h4>
 		<a href={linkURL} target="_blank" rel="noreferrer"
-			>{title}<span aria-hidden="true">↗</span>{#if legacy}<span class="legacy-badge">Legacy</span
+			>{title}<span aria-hidden="true">↗</span>{#if legacy}<span class="legacy-badge"
+					>{$copy['products.legacyBadge']}</span
 				>{/if}</a
 		>
 	</h4>

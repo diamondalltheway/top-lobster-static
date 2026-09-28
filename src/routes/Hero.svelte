@@ -1,24 +1,37 @@
+<script lang="ts">
+	import { copy } from '$lib/i18n';
+</script>
+
 <section id="top" class="hero shell" aria-labelledby="hero-title">
 	<div class="hero-copy">
 		<a href="#products" class="announcement"
-			><span class="status-dot"></span> Ideas into working products
+			><span class="status-dot"></span>
+			{$copy['hero.announcement']}
 			<span aria-hidden="true">›</span></a
 		>
-		<h1 id="hero-title" class="editorial-title">Software with<br /><span>a human touch.</span></h1>
+		<h1 id="hero-title" class="editorial-title">
+			{$copy['hero.title']}<br /><span>{$copy['hero.titleAccent']}</span>
+		</h1>
 		<p class="hero-description">
-			I'm Hunter Stevens, a software engineer who cares about the details. I build thoughtful web
-			experiences, from the first idea to the final interaction.
+			{$copy['hero.description']}
 		</p>
 		<div class="hero-actions">
 			<a href="#products" class="surface-button"
-				>Explore my work <span aria-hidden="true">↗</span></a
+				>{$copy['hero.explore']} <span aria-hidden="true">↗</span></a
 			>
-			<a href="#about" class="text-link">A little about me <span aria-hidden="true">›</span></a>
+			<a href="#about" class="text-link"
+				>{$copy['about.eyebrow']} <span aria-hidden="true">›</span></a
+			>
 		</div>
 		<div class="hero-meta">
-			<span>Currently building at <a href="https://strucalc.com/" target="_blank" rel="noreferrer" class="hover:underline"><strong>StruCalc</strong></a></span><span class="meta-divider"
-			></span><span
-				>English <span class="meta-level">Native</span> · Spanish
+			<span
+				>{$copy['hero.currently']}
+				<a href="https://strucalc.com/" target="_blank" rel="noreferrer" class="hover:underline"
+					><strong>StruCalc</strong></a
+				></span
+			><span class="meta-divider"></span><span
+				>{$copy['hero.english']} <span class="meta-level">{$copy['hero.native']}</span>
+				{$copy['hero.spanish']}
 				<span class="meta-level">C1</span></span
 			>
 		</div>
@@ -36,17 +49,18 @@
 			/>
 			<img class="portrait-alternate" src="/hunter-coco.jpg" alt="" width="640" height="800" />
 			<div class="portrait-caption">
-				<span>Engineer. Builder. Lifelong learner.</span>
+				<span>{$copy['hero.portraitCaption']}</span>
 			</div>
 		</div>
 		<div class="portrait-note">
-			<span class="status-dot"></span> Made with care, down to the details.
+			<span class="status-dot"></span>
+			{$copy['hero.portraitNote']}
 		</div>
 	</div>
 </section>
 
-<div class="credentials shell" aria-label="Background and education">
-	<p>A foundation in business.<br /><span>A curiosity for everything technical.</span></p>
+<div class="credentials shell" aria-label={$copy['credentials.label']}>
+	<p>{$copy['credentials.business']}<br /><span>{$copy['credentials.curiosity']}</span></p>
 	<a href="https://www.uh.edu/" target="_blank" rel="noreferrer"
 		><img
 			class="credential-logo"
@@ -54,7 +68,7 @@
 			alt=""
 			width="36"
 			height="36"
-		/><span>University of Houston<small>BBA in Marketing</small></span></a
+		/><span>University of Houston<small>{$copy['credentials.degree']}</small></span></a
 	>
 	<a href="https://launchschool.com/courses" target="_blank" rel="noreferrer"
 		><img
@@ -63,11 +77,11 @@
 			alt=""
 			width="36"
 			height="36"
-		/><span>Launch School<small>Core Curriculum Graduate</small></span></a
+		/><span>Launch School<small>{$copy['credentials.graduate']}</small></span></a
 	>
 	<a href="https://www.youtube.com/@HunterScript/featured" target="_blank" rel="noreferrer"
 		><img class="credential-logo" src="/logos/youtube.svg" alt="" width="36" height="36" /><span
-			>@HunterScript<small>Sharing what I learn</small></span
+			>@HunterScript<small>{$copy['credentials.youtube']}</small></span
 		></a
 	>
 </div>

@@ -1,13 +1,14 @@
 <script lang="ts">
+	import { copy } from '$lib/i18n';
 	import { onMount } from 'svelte';
 
 	const stats = [
-		{ value: 27, label: 'Months' },
-		{ value: 935, label: 'Study hours' },
-		{ value: 13, label: 'Assessments' },
-	];
+		{ value: 27, label: 'school.months' },
+		{ value: 935, label: 'school.hours' },
+		{ value: 13, label: 'school.assessments' },
+	] as const;
 	let statsElement: HTMLDListElement;
-	let displayedValues = $state(stats.map((stat) => stat.value));
+	let displayedValues = $state<number[]>(stats.map((stat) => stat.value));
 
 	onMount(() => {
 		const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -51,8 +52,8 @@
 <section id="ls-section" class="section shell" aria-labelledby="school-title">
 	<img src="/logo-ls.png" class="school-logo" alt="Launch School" loading="lazy" />
 	<div class="section-heading">
-		<h2 id="school-title" class="section-title">A foundation that lasts.</h2>
-		<p>Launch School Core Curriculum Graduate. Mastery through first principles.</p>
+		<h2 id="school-title" class="section-title">{$copy['school.heading']}</h2>
+		<p>{$copy['school.intro']}</p>
 	</div>
 	<dl class="school-stats" bind:this={statsElement}>
 		{#each stats as stat, index}<div>
@@ -61,27 +62,22 @@
 						>{stat.value}</span
 					>
 				</dd>
-				<dt>{stat.label}</dt>
+				<dt>{$copy[stat.label]}</dt>
 			</div>{/each}
 	</dl>
 	<div class="school-reflection panel">
-		<h3>Notes on Launch School</h3>
+		<h3>{$copy['school.notes']}</h3>
 		<p>
-			Launch School was one of the hardest things I have ever done. It was also one of the most
-			rewarding. During my time at Launch School, I learned much more than syntax and semantics, I
-			learned attention to detail and acquired a procedural mindset.
+			{$copy['school.experience']}
 		</p>
 		<p>
-			The core curriculum begins with first principles, which is by no means an attractive way to
-			start, but it highlights the seriousness of the program. A complete understanding of the
-			fundamentals is required before touching higher-level abstractions, and this is what makes the
-			core curriculum so special.
+			{$copy['school.foundations']}
 		</p>
 		<a
 			class="surface-button"
 			href="https://launchschool.com/courses"
 			target="_blank"
-			rel="noreferrer">View curriculum <span aria-hidden="true">↗</span></a
+			rel="noreferrer">{$copy['school.curriculum']} <span aria-hidden="true">↗</span></a
 		>
 	</div>
 </section>

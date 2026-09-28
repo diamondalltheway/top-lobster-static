@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { copy } from '$lib/i18n';
 	import Icon from '$lib/components/Icon.svelte';
 	const technologies = [
 		{
@@ -205,9 +206,9 @@
 
 <section id="tech" class="section shell" aria-labelledby="tech-title">
 	<div class="section-heading">
-		<p class="eyebrow">The toolkit</p>
-		<h2 id="tech-title" class="section-title">Built with the right tools.</h2>
-		<p>Browser-native and server-side technologies for thoughtful web experiences.</p>
+		<p class="eyebrow">{$copy['tech.eyebrow']}</p>
+		<h2 id="tech-title" class="section-title">{$copy['tech.heading']}</h2>
+		<p>{$copy['tech.description']}</p>
 	</div>
 	<div class="tech-panel panel">
 		<ul class="tech-grid">

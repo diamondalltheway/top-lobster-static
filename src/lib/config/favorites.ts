@@ -1,25 +1,22 @@
-// Favorites Configuration
-// Single source of truth for all favorites data
+import type { MessageKey } from '$lib/i18n';
 
 export interface FavoriteItem {
-	name: string;
+	nameKey: MessageKey;
 	subtitle?: string;
+	subtitleKey?: MessageKey;
 }
-
 export interface FavoriteCategory {
 	id: string;
-	title: string;
+	titleKey: MessageKey;
 	icon: string;
 	itemIcon: string;
 	items: FavoriteItem[];
 }
-
 export interface GoatConfig {
-	title: string;
+	titleKey: MessageKey;
 	icon: string;
 	content: string;
 }
-
 export interface FavoritesConfig {
 	categories: FavoriteCategory[];
 	goat: GoatConfig;
@@ -29,100 +26,260 @@ export const favoritesConfig: FavoritesConfig = {
 	categories: [
 		{
 			id: 'books',
-			title: 'Favorite Books',
 			icon: '📚',
 			itemIcon: '📖',
+			titleKey: 'favorites.books.title',
 			items: [
-				{ name: 'The Little Prince', subtitle: 'Antoine de Saint-Exupéry' },
-				{ name: '12 Rules for Life', subtitle: 'Jordan B. Peterson' },
-				{ name: 'Hard Thing About Hard Things', subtitle: 'Ben Horowitz' },
-				{ name: 'Zero to One', subtitle: 'Peter Thiel' },
-				{ name: 'Rework', subtitle: 'Jason Fried • David Heinemeier Hanson' },
-				{ name: 'Delivering Happiness', subtitle: 'Tony Hsieh' },
-				{ name: 'The Launch Pad: Inside Y Combinator', subtitle: 'Randal Stross' },
-				{ name: 'Remote', subtitle: 'Jason Fried • David Heinemeier Hanson' },
-				{ name: 'Shoe Dog', subtitle: 'Phil Knight' },
-				{ name: 'Crazy Love', subtitle: 'Francis Chan' },
-				{ name: 'Tocqueville and the American Experiment', subtitle: 'William R. Cook' },
-				{ name: 'Extreme Ownership', subtitle: 'Jocko Wilink • Leif Babin' },
-				{ name: 'Outliers', subtitle: 'Malcom Gladwell' },
-				{ name: 'David and Goliath', subtitle: 'Malcom Gladwell' },
-				{ name: 'A New Grammar Reference of Modern Spanish', subtitle: 'John Butt • Carmen Benjamin' }
-			]
+				{
+					nameKey: 'favorites.books.littlePrince',
+					subtitle: 'Antoine de Saint-Exupéry',
+				},
+				{
+					nameKey: 'favorites.books.rules',
+					subtitle: 'Jordan B. Peterson',
+				},
+				{
+					nameKey: 'favorites.books.hardThings',
+					subtitle: 'Ben Horowitz',
+				},
+				{
+					nameKey: 'favorites.books.zeroToOne',
+					subtitle: 'Peter Thiel',
+				},
+				{
+					nameKey: 'favorites.books.rework',
+					subtitle: 'Jason Fried • David Heinemeier Hanson',
+				},
+				{
+					nameKey: 'favorites.books.happiness',
+					subtitle: 'Tony Hsieh',
+				},
+				{
+					nameKey: 'favorites.books.launchPad',
+					subtitle: 'Randal Stross',
+				},
+				{
+					nameKey: 'favorites.books.remote',
+					subtitle: 'Jason Fried • David Heinemeier Hanson',
+				},
+				{
+					nameKey: 'favorites.books.shoeDog',
+					subtitle: 'Phil Knight',
+				},
+				{
+					nameKey: 'favorites.books.crazyLove',
+					subtitle: 'Francis Chan',
+				},
+				{
+					nameKey: 'favorites.books.tocqueville',
+					subtitle: 'William R. Cook',
+				},
+				{
+					nameKey: 'favorites.books.ownership',
+					subtitle: 'Jocko Wilink • Leif Babin',
+				},
+				{
+					nameKey: 'favorites.books.outliers',
+					subtitle: 'Malcom Gladwell',
+				},
+				{
+					nameKey: 'favorites.books.davidGoliath',
+					subtitle: 'Malcom Gladwell',
+				},
+				{
+					nameKey: 'favorites.books.grammar',
+					subtitle: 'John Butt • Carmen Benjamin',
+				},
+			],
 		},
 		{
 			id: 'movies',
-			title: 'Favorite Movies',
 			icon: '🍿',
 			itemIcon: '🎥',
+			titleKey: 'favorites.movies.title',
 			items: [
-				{ name: "You've Got Mail" },
-				{ name: 'Interstellar' },
-				{ name: 'Blood Diamond' },
-				{ name: 'Angels in the Outfield' },
-				{ name: 'Lord of the Rings (Trilogy)' },
-				{ name: 'Gangs of New York' },
-				{ name: '100 Foot Journey' },
-				{ name: 'The Matrix' },
-				{ name: 'Training Day' },
-				{ name: 'Catch Me If You Can' }
-			]
+				{
+					nameKey: 'favorites.movies.mail',
+				},
+				{
+					nameKey: 'favorites.movies.interstellar',
+				},
+				{
+					nameKey: 'favorites.movies.diamond',
+				},
+				{
+					nameKey: 'favorites.movies.angels',
+				},
+				{
+					nameKey: 'favorites.movies.rings',
+				},
+				{
+					nameKey: 'favorites.movies.gangs',
+				},
+				{
+					nameKey: 'favorites.movies.journey',
+				},
+				{
+					nameKey: 'favorites.movies.matrix',
+				},
+				{
+					nameKey: 'favorites.movies.training',
+				},
+				{
+					nameKey: 'favorites.movies.catch',
+				},
+			],
 		},
 		{
 			id: 'shows',
-			title: 'Favorite TV Shows',
 			icon: '🎬',
 			itemIcon: '📺',
+			titleKey: 'favorites.shows.title',
 			items: [
-				{ name: 'Severance' },
-				{ name: 'Suits' },
-				{ name: "That 70's Show" },
-				{ name: 'Body Guard' },
-				{ name: 'Line of Duty' },
-				{ name: 'Dexter' },
-				{ name: 'Cheers' },
-				{ name: 'Yu Yu Hakusho' },
-				{ name: 'True Detective' },
-				{ name: 'Fargo' }
-			]
+				{
+					nameKey: 'favorites.shows.severance',
+				},
+				{
+					nameKey: 'favorites.shows.suits',
+				},
+				{
+					nameKey: 'favorites.shows.seventies',
+				},
+				{
+					nameKey: 'favorites.shows.bodyguard',
+				},
+				{
+					nameKey: 'favorites.shows.lineOfDuty',
+				},
+				{
+					nameKey: 'favorites.shows.dexter',
+				},
+				{
+					nameKey: 'favorites.shows.cheers',
+				},
+				{
+					nameKey: 'favorites.shows.yuyu',
+				},
+				{
+					nameKey: 'favorites.shows.trueDetective',
+				},
+				{
+					nameKey: 'favorites.shows.fargo',
+				},
+			],
 		},
 		{
 			id: 'places',
-			title: 'Favorite Places on Earth',
 			icon: '🌎',
 			itemIcon: '📍',
+			titleKey: 'favorites.places.title',
 			items: [
-				{ name: 'The Woodlands, Texas', subtitle: "I'm a hometown kind of guy" },
-				{ name: 'Tenerife, Spain', subtitle: 'Incredible amount of microclimates' },
-				{ name: 'Medellín, Colombia', subtitle: 'Lived here for 8 years' },
-				{ name: 'Santa Fé de Antioquia, Colombia', subtitle: 'Perfectly slow pace of life' },
-				{ name: 'Denver, Colorado', subtitle: 'Lived here for a year, Rocky Mountain Air' },
-				{ name: 'Papagayo, Costa Rica', subtitle: 'Great family memories' },
-				{ name: 'Rome, Italy', subtitle: 'If Rome can fall, nothing is forever' },
-				{ name: 'Maui, Hawaii', subtitle: 'Never been more relaxed' },
-				{ name: 'Nassau, Bahamas', subtitle: 'More fond family memories' },
-				{ name: 'Cusco, Peru', subtitle: 'Ancient' },
-				{ name: 'Lima, Peru', subtitle: 'Ceviche' },
-				{ name: 'Florence, Italy', subtitle: 'Refreshing taste of craftsmanship' },
-				{ name: 'San Pedro de Atacama, Chile', subtitle: 'Surreal landscapes' },
-				{ name: 'Kauai, Hawaii', subtitle: 'Classic family memories' },
-				{ name: 'Grand Cayman, Cayman Islands', subtitle: 'Islands are easy to love, stringrays!' },
-				{ name: 'Lübbecke, Germany', subtitle: 'First taste of Europe' },
-				{ name: 'Jardín, Colombia', subtitle: "Named 'Garden' in Spanish for its beauty" },
-				{ name: 'Madrid, Spain', subtitle: 'All around underrated' },
-				{ name: 'Granada, Spain', subtitle: 'Creativity that inspires' },
-				{ name: 'Paracas, Perú', subtitle: 'Animals all over the place' },
-				{ name: 'Valle de Corcoa, Colombia', subtitle: 'Tallest palm trees in the world' },
-				{ name: 'Villa de Leyva, Colombia', subtitle: 'Great mix of relaxation + things to do' },
-				{ name: 'Santa Marta, Colombia', subtitle: 'Major fan of Parque Tayrona' },
-				{ name: 'El Retiro, Colombia', subtitle: 'Classic mountain town of Antioquia' },
-				{ name: 'Cartagena, Colombia', subtitle: 'Historic Caribbean city' }
-			]
-		}
+				{
+					nameKey: 'favorites.places.woodlands',
+					subtitleKey: 'favorites.places.woodlands.note',
+				},
+				{
+					nameKey: 'favorites.places.tenerife',
+					subtitleKey: 'favorites.places.tenerife.note',
+				},
+				{
+					nameKey: 'favorites.places.medellin',
+					subtitleKey: 'favorites.places.medellin.note',
+				},
+				{
+					nameKey: 'favorites.places.santaFe',
+					subtitleKey: 'favorites.places.santaFe.note',
+				},
+				{
+					nameKey: 'favorites.places.denver',
+					subtitleKey: 'favorites.places.denver.note',
+				},
+				{
+					nameKey: 'favorites.places.papagayo',
+					subtitleKey: 'favorites.places.papagayo.note',
+				},
+				{
+					nameKey: 'favorites.places.rome',
+					subtitleKey: 'favorites.places.rome.note',
+				},
+				{
+					nameKey: 'favorites.places.maui',
+					subtitleKey: 'favorites.places.maui.note',
+				},
+				{
+					nameKey: 'favorites.places.nassau',
+					subtitleKey: 'favorites.places.nassau.note',
+				},
+				{
+					nameKey: 'favorites.places.cusco',
+					subtitleKey: 'favorites.places.cusco.note',
+				},
+				{
+					nameKey: 'favorites.places.lima',
+					subtitleKey: 'favorites.places.lima.note',
+				},
+				{
+					nameKey: 'favorites.places.florence',
+					subtitleKey: 'favorites.places.florence.note',
+				},
+				{
+					nameKey: 'favorites.places.atacama',
+					subtitleKey: 'favorites.places.atacama.note',
+				},
+				{
+					nameKey: 'favorites.places.kauai',
+					subtitleKey: 'favorites.places.kauai.note',
+				},
+				{
+					nameKey: 'favorites.places.cayman',
+					subtitleKey: 'favorites.places.cayman.note',
+				},
+				{
+					nameKey: 'favorites.places.lubbecke',
+					subtitleKey: 'favorites.places.lubbecke.note',
+				},
+				{
+					nameKey: 'favorites.places.jardin',
+					subtitleKey: 'favorites.places.jardin.note',
+				},
+				{
+					nameKey: 'favorites.places.madrid',
+					subtitleKey: 'favorites.places.madrid.note',
+				},
+				{
+					nameKey: 'favorites.places.granada',
+					subtitleKey: 'favorites.places.granada.note',
+				},
+				{
+					nameKey: 'favorites.places.paracas',
+					subtitleKey: 'favorites.places.paracas.note',
+				},
+				{
+					nameKey: 'favorites.places.cocora',
+					subtitleKey: 'favorites.places.cocora.note',
+				},
+				{
+					nameKey: 'favorites.places.leyva',
+					subtitleKey: 'favorites.places.leyva.note',
+				},
+				{
+					nameKey: 'favorites.places.santaMarta',
+					subtitleKey: 'favorites.places.santaMarta.note',
+				},
+				{
+					nameKey: 'favorites.places.retiro',
+					subtitleKey: 'favorites.places.retiro.note',
+				},
+				{
+					nameKey: 'favorites.places.cartagena',
+					subtitleKey: 'favorites.places.cartagena.note',
+				},
+			],
+		},
 	],
 	goat: {
-		title: 'Greatest of All Time',
+		titleKey: 'favorites.goat',
 		icon: '🏀',
-		content: 'Jordan. 🏆 🏆 🏆 🏆 🏆 🏆'
-	}
+		content: 'Jordan. 🏆 🏆 🏆 🏆 🏆 🏆',
+	},
 };

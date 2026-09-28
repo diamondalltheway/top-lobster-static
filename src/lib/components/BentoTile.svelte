@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { copy, formatMessage } from '$lib/i18n';
 	import type { FavoriteCategory } from '$lib/config/favorites';
 
 	interface Props {
@@ -23,8 +24,10 @@
 		<header class="mb-4 flex items-center gap-3">
 			<span class="text-3xl" aria-hidden="true">{category.icon}</span>
 			<div class="min-w-0 flex-1">
-				<h3 class="text-xl font-bold text-heading drop-shadow-sm">{category.title}</h3>
-				<p class="text-base text-txt-muted">{category.items.length} favorites</p>
+				<h3 class="text-xl font-bold text-heading drop-shadow-sm">{$copy[category.titleKey]}</h3>
+				<p class="text-base text-txt-muted">
+					{formatMessage($copy['favorites.count'], { count: category.items.length })}
+				</p>
 			</div>
 		</header>
 
@@ -36,9 +39,13 @@
 					>
 						<span class="favorite-number" aria-hidden="true">{index + 1}</span>
 						<div class="min-w-0 flex-1">
-							<span class="block text-base font-medium leading-6 text-heading">{item.name}</span>
-							{#if item.subtitle}
-								<span class="block text-sm leading-5 text-txt-muted">{item.subtitle}</span>
+							<span class="block text-base font-medium leading-6 text-heading"
+								>{$copy[item.nameKey]}</span
+							>
+							{#if item.subtitle || item.subtitleKey}
+								<span class="block text-sm leading-5 text-txt-muted"
+									>{item.subtitleKey ? $copy[item.subtitleKey] : item.subtitle}</span
+								>
 							{/if}
 						</div>
 					</li>
@@ -50,9 +57,13 @@
 					<li class="flex items-center gap-3 rounded-lg bg-surface/60 px-3 py-2.5">
 						<span class="favorite-number" aria-hidden="true">{index + 1}</span>
 						<div class="min-w-0 flex-1">
-							<span class="block text-base font-medium leading-6 text-heading">{item.name}</span>
-							{#if item.subtitle}
-								<span class="block text-sm leading-5 text-txt-muted">{item.subtitle}</span>
+							<span class="block text-base font-medium leading-6 text-heading"
+								>{$copy[item.nameKey]}</span
+							>
+							{#if item.subtitle || item.subtitleKey}
+								<span class="block text-sm leading-5 text-txt-muted"
+									>{item.subtitleKey ? $copy[item.subtitleKey] : item.subtitle}</span
+								>
 							{/if}
 						</div>
 					</li>

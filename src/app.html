@@ -4,17 +4,25 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon-blender.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta
-			name="description"
-			content="Hunter Stevens is a software engineer building thoughtful web experiences with Svelte, TypeScript, and a human touch."
-		/>
-		<title>Hunter Stevens • Software Engineer</title>
 		<script>
 			try {
 				if (localStorage.getItem('theme') === 'light')
 					document.documentElement.classList.remove('dark');
 			} catch {}
+			try {
+				if (localStorage.getItem('language') === 'es') {
+					document.documentElement.setAttribute('data-language-pending', '');
+					// Never leave the English fallback hidden if hydration fails.
+					setTimeout(() => document.documentElement.removeAttribute('data-language-pending'), 1500);
+				}
+			} catch {}
 		</script>
+		<style>
+			html[data-language-pending] .portfolio,
+			html[data-language-pending] .skip-link {
+				visibility: hidden;
+			}
+		</style>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

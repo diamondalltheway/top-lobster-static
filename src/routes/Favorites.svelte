@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { copy } from '$lib/i18n';
 	import BentoTile from '$lib/components/BentoTile.svelte';
 	import { favoritesConfig } from '$lib/config/favorites';
 
@@ -11,8 +12,8 @@
 <div class="favorites-container shell" id="favorites">
 	<!-- Header -->
 	<div class="section-heading">
-		<h2 class="section-title">Favorites</h2>
-		<p class="mt-2 text-base text-txt-muted">Things I love, all in one place</p>
+		<h2 class="section-title">{$copy['favorites.heading']}</h2>
+		<p class="mt-2 text-base text-txt-muted">{$copy['favorites.description']}</p>
 	</div>
 
 	<!-- Bento Grid -->
@@ -34,7 +35,7 @@
 			<div class="relative z-10 flex h-full flex-col items-center justify-center text-center">
 				<span class="mb-2 text-4xl">{favoritesConfig.goat.icon}</span>
 				<h3 class="text-xl font-bold text-heading drop-shadow-sm">
-					{favoritesConfig.goat.title}
+					{$copy[favoritesConfig.goat.titleKey]}
 				</h3>
 				<p class="mt-3 text-lg font-semibold text-txt">
 					{favoritesConfig.goat.content}

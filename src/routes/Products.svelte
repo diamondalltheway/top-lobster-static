@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { copy } from '$lib/i18n';
 	import Product from '$lib/components/Product.svelte';
 	import FeaturedProduct from './FeaturedProduct.svelte';
 
@@ -190,18 +191,18 @@
 <div id="products" class="section">
 	<div class="shell">
 		<div class="section-heading mx-auto max-w-2xl">
-			<h2 class="section-title">Ideas, out in the world.</h2>
+			<h2 class="section-title">{$copy['products.heading']}</h2>
 			<p class="mt-2 text-lg leading-8 text-txt-muted">
-				A selection of public-facing products I have worked on.
+				{$copy['products.intro']}
 			</p>
 		</div>
 
 		<section class="product-group" aria-labelledby="live-products-title">
-			<h3 id="live-products-title" class="product-group-title">Live products</h3>
+			<h3 id="live-products-title" class="product-group-title">{$copy['products.live']}</h3>
 			<div class="product-grid product-grid-live">
 				<Product
 					title="VerticalSpanish.com"
-					description="Vertical Spanish is a lightweight verb study app for Spanish students. It leans into IndexedDB so conjugation practice stays fast, local, and distraction-free."
+					description={$copy['products.verticalSpanish']}
 					linkURL="https://verticalspanish.com"
 					imgURL="vertical-spanish-homepage.jpg"
 					icons={vertical_spanish_icons}
@@ -209,7 +210,7 @@
 
 				<Product
 					title="Flow Editor"
-					description="Flow Editor is a distraction-free writing tool nested within Vertical Spanish. It keeps your writing in your browser, with Markdown preview, focus and quiet modes, and flexible export options."
+					description={$copy['products.flowEditor']}
 					linkURL="https://verticalspanish.com/flow-editor"
 					imgURL="flow-editor.png"
 				/>
@@ -217,11 +218,11 @@
 		</section>
 
 		<section class="product-group" aria-labelledby="legacy-products-title">
-			<h3 id="legacy-products-title" class="product-group-title">Legacy products</h3>
+			<h3 id="legacy-products-title" class="product-group-title">{$copy['products.legacy']}</h3>
 			<div class="product-grid product-grid-legacy">
 				<Product
 					title="CampaginHero.io"
-					description="CampaignHero.io is a search/discovery platform for 14,200 email designs. It leverages vector databases to enable semantic and image-based search."
+					description={$copy['products.campaignHero']}
 					linkURL="https://CampaginHero.io"
 					imgURL="ch-demo.png"
 					icons={campaign_hero_icons}
@@ -230,7 +231,7 @@
 
 				<Product
 					title="AirMailer.io"
-					description="AirMailer.io allows marketers to generate mailing list with just a few clicks. I like to think of it as a vending machine for addresses. (94 Million Addresses)"
+					description={$copy['products.airMailer']}
 					linkURL="https://airmailer.io"
 					imgURL="airmailer_ss.png"
 					icons={air_mailer_icons}
@@ -239,7 +240,7 @@
 
 				<Product
 					title="UpScout.io"
-					description="Messaging and filtering system for UpWork. We allow freelancers to filter out the noise and focus on the jobs that matter. Sit back and let the jobs come to you."
+					description={$copy['products.upScout']}
 					linkURL="https://upscout.io"
 					imgURL="upscout_ss.png"
 					icons={up_scout_icons}
@@ -248,7 +249,7 @@
 
 				<Product
 					title="DataForest.io"
-					description="DataForest.io helps marketers explore geotargeted homeowner and address data on a map, then export campaign-ready lists."
+					description={$copy['products.dataForest']}
 					linkURL="https://dataforest.io"
 					imgURL="df-demo.png"
 					icons={data_forest_icons}
