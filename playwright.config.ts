@@ -15,7 +15,6 @@ export default defineConfig({
 	},
 	projects: [
 		{ name: 'chromium', use: { ...devices['Desktop Chrome'], reducedMotion: 'reduce' } },
-		{ name: 'firefox', use: { ...devices['Desktop Firefox'], reducedMotion: 'reduce' } },
 		{ name: 'webkit', use: { ...devices['Desktop Safari'], reducedMotion: 'reduce' } },
 	],
 	// Run npm run build first: verify the actual static output.

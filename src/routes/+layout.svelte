@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { dev } from '$app/environment';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { onMount, tick } from 'svelte';
 	import { copy, language, languageReady, readLanguage } from '$lib/i18n';
 	import '../app.css';
@@ -8,6 +10,8 @@
 	}
 
 	let { children }: Props = $props();
+
+	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
 	onMount(() => {
 		// Match the prerendered English DOM before restoring a saved preference.

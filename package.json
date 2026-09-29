@@ -43,6 +43,7 @@
 	"type": "module",
 	"dependencies": {
 		"@floating-ui/dom": "^1.5.3",
+		"@vercel/analytics": "^2.0.1",
 		"bits-ui": "^2.15.0",
 		"clsx": "^2.1.1",
 		"embla-carousel-svelte": "^8.0.2",
