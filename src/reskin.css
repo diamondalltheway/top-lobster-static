@@ -542,10 +542,15 @@ h3.space-grotesk {
 }
 .nav-actions {
 	display: flex;
+	flex-shrink: 0;
 	gap: 14px;
 	align-items: center;
 }
 .nav-contact {
+	/* Reserve the longer English label's space in either language. */
+	width: 140px;
+	flex-shrink: 0;
+	justify-content: space-between;
 	min-height: 40px;
 	padding: 7px 16px;
 	font-size: 13px;
