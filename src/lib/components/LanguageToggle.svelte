@@ -15,13 +15,24 @@
 	onclick={() => setLanguage(target)}
 >
 	<span class="toggle-scene language-scene" aria-hidden="true">
-		<svg class="language-map" viewBox="0 0 74 30" fill="none" focusable="false">
-			<g class="map-lines" stroke="currentColor" stroke-width=".7">
-				<ellipse cx="37" cy="15" rx="29" ry="22" /><ellipse cx="37" cy="15" rx="14" ry="22" />
-				<path d="M0 15h74M4 5Q37 17 70 5M4 25Q37 13 70 25" />
+		<svg
+			class="language-globe"
+			viewBox="0 0 74 30"
+			fill="none"
+			stroke="currentColor"
+			stroke-width=".75"
+			focusable="false"
+		>
+			<g class="globe-latitudes">
+				<circle cx="37" cy="15" r="26" />
+				<path d="M11 15h52M13 5Q37 13 61 5M13 25Q37 17 61 25" />
 			</g>
-			<path class="map-route" d="M14 23Q27 3 58 10" stroke="currentColor" stroke-dasharray="2 3" />
-			<path class="map-plane" d="m34 13 10-4-4 10-2-4-4-2Z" fill="currentColor" />
+			<g class="globe-meridians globe-meridians-en">
+				<path d="M37-11C13-8 13 38 37 41M37-11C45-8 45 38 37 41M37-11C69-6 69 36 37 41" />
+			</g>
+			<g class="globe-meridians globe-meridians-es">
+				<path d="M37-11C5-6 5 36 37 41M37-11C29-8 29 38 37 41M37-11C61-8 61 38 37 41" />
+			</g>
 		</svg>
 	</span>
 	<span class="language-label language-label-en" aria-hidden="true">EN</span>

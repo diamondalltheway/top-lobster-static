@@ -334,7 +334,9 @@ h3.space-grotesk {
 	color: hsl(var(--text-secondary));
 }
 .dark .toggle-scene {
-	box-shadow: inset 0 1px 3px #00000080, inset 0 -1px 0 #ffffff0d;
+	box-shadow:
+		inset 0 1px 3px #00000080,
+		inset 0 -1px 0 #ffffff0d;
 }
 .dark .coast-scene {
 	background: linear-gradient(#0c0c0c, #262626);
@@ -384,19 +386,29 @@ h3.space-grotesk {
 .dark .language-scene {
 	background: linear-gradient(145deg, #111111, #303030);
 }
-.map-lines {
-	opacity: 0.22;
+.globe-latitudes {
+	opacity: 0.2;
 }
-.map-route {
-	opacity: 0.45;
+.globe-meridians {
+	transition:
+		transform 650ms var(--toggle-ease),
+		opacity 650ms var(--toggle-ease);
 }
-.map-plane {
-	opacity: 0.65;
-	transform-origin: center;
-	transition: transform 650ms var(--toggle-ease);
+.globe-meridians-en {
+	opacity: 0.34;
+	transform: translateX(0);
 }
-.language-toggle[data-language='es'] .map-plane {
-	transform: translate(-4px, 2px) rotate(-15deg);
+.globe-meridians-es {
+	opacity: 0;
+	transform: translateX(7px);
+}
+.language-toggle[data-language='es'] .globe-meridians-en {
+	opacity: 0;
+	transform: translateX(-7px);
+}
+.language-toggle[data-language='es'] .globe-meridians-es {
+	opacity: 0.34;
+	transform: translateX(0);
 }
 .language-label {
 	position: absolute;
